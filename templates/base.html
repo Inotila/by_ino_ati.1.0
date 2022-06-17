@@ -38,11 +38,22 @@
 </head>
 
 <body>
-    <header class="container-fluid fix top"></header>
+    <header class="container-fluid fixed-top"></header>
 
     {% if messages %}
     <div class="message-container"></div>
     {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block postload_js %}
+    {% endblock %}
+
+    <footer class="container-fluid fixed-bottom"></footer>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
