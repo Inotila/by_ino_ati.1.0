@@ -37,22 +37,16 @@
     <title>@by_ino_ati {% block extra_title %}{% endblock %}</title>
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
     <nav class="container-fluid fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
 
-        <div class="row">
-            <div class="col">
+        <div class="row w-100">
+            <div class="col w-100">
                 <div class="logo navbar-brand text-left">
                     <a href="#">@by_ino_ati</a>
                 </div>
-                <div class="row justify-content-left">
-                    <div class="col">
-                        <div>Sign-up</div>
-                        <div>Login</div>
-                        <div>profile</div>
-                        <div>bag</div>
-                    </div>
-                </div>
+            </div>
+            <div class="col w-100">
                 <div class="justify-content-center">
                     <form action="GET">
                         <div>
@@ -74,6 +68,23 @@
                     </ul>
                 </div>
             </div>
+            <div class="col w-100">
+                    <ul class="navbar-nav ms-auto list-inline list-unstyled">
+                        <li>
+                            <a href="">
+                                <div><i class="fas fa-user fa-lg"></i>
+                                <p>Profile</p>
+                            </div>
+                            </a>
+                            </div>
+                        </li>
+                        <li>Login</li>
+                        <li>profile</li>
+                        <li>bag</li>
+                    </ul>
+
+            </div>
+        </div>
     </nav>
     </header>
 
