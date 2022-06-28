@@ -38,29 +38,43 @@
 </head>
 
 <body>
-    <header class="container-fluid fixed-top">
+    <nav class="container-fluid fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+
         <div class="row">
             <div class="col">
-                <div>Sign-up</div>
-                <div>Login</div>
-                <div>profile</div>
-                <div>bag</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div>@by_ino_ati</div>
-                <div>search bar</div>
+                <div class="logo navbar-brand text-left">
+                    <a href="#">@by_ino_ati</a>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col">
+                        <div>Sign-up</div>
+                        <div>Login</div>
+                        <div>profile</div>
+                        <div>bag</div>
+                    </div>
+                </div>
+                <div class="justify-content-center">
+                    <form action="GET">
+                        <div>
+                            <input type="text">
+                            <button>
+                                <span>
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
                 <div>
-                    <ul>
-                        <li>Home</li>
-                        <li>Paintings</li>
-                        <li>Ink</li>
-                        <li>Artist Bio</li>
+                    <ul class="navbar-nav ms-auto list-inline list-unstyled text-center">
+                        <li lass="nav-item dropdown">Home</li>
+                        <li lass="nav-item">Paintings</li>
+                        <li lass="nav-item">Ink</li>
+                        <li lass="nav-item">Artist Bio</li>
                     </ul>
                 </div>
             </div>
-        </div>
+    </nav>
     </header>
 
     {% if messages %}
