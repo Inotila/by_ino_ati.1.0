@@ -47,6 +47,13 @@ nav {
     width: 50%;
 }
 
+button  {
+    background:none;
+    color:white;
+    border:none;
+    margin:0px;
+}
+
 #search-box{
     width: 85%;
 }
