@@ -16,8 +16,13 @@ a {
 }
 
 .row {
-    margin-right: -15px; 
-    margin-left: -15px;
+    margin: 0px;
+}
+
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 
@@ -63,37 +68,17 @@ nav {
     width: 50%;
 }
 
-button  {
-    background:none;
-    color:white;
-    border:none;
-    margin:0px;
-}
-
 #search-box{
     width: 85%;
 }
 
+.search-container > div > form> div > button{
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding:0px;
+}
 /* right/catergory section */
-
-/* .categories {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-} */
-
-li {
-    margin-right: 0.5rem !important;
-}
-
-.user-profile-top-items > ul > li{
-    margin-bottom: 0.5rem !important;
-}
-
-.items-in-bag-num {
-    margin-bottom: 0rem;
-}
-
 
 /* foot */
 footer {
