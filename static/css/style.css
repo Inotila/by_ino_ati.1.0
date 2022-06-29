@@ -15,6 +15,11 @@ a {
     color: #F5F5F5;
 }
 
+.row {
+    margin-right: -15px; 
+    margin-left: -15px;
+}
+
 
 /* nav bar  */
 nav {
@@ -26,6 +31,15 @@ nav {
     margin: 0px !important;
 }
 
+.navbar-toggler {
+    padding: 0.rem;
+    font-size: 1.25rem;
+    background-color: #000000;
+    border: 1px solid #f8f9fa;
+}
+
+/* logo */
+
 .logo {
     position: absolute;
     bottom: 0;
@@ -33,6 +47,8 @@ nav {
     font-weight: 400;
     margin-left: 0.5rem;
 }
+
+/* mid/search section */
 
 .search-container {
     position: relative;
@@ -58,22 +74,16 @@ button  {
     width: 85%;
 }
 
-.categories {
+/* right/catergory section */
+
+/* .categories {
     position: absolute;
     bottom: 0;
     right: 0;
-}
+} */
 
 li {
     margin-right: 0.5rem !important;
-}
-
-.user-profile-top-items{
-    float: right;
-}
-
-.user-profile-top-items > ul {
-    height: 50% !important;
 }
 
 .user-profile-top-items > ul > li{
