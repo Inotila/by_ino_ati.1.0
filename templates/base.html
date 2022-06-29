@@ -26,17 +26,17 @@
 <body class="d-flex flex-column h-100">
     <nav class="container-fluid fixed-top navbar navbar-expand-lg ">
 
-        <div class="row w-100">
+        <div class="row w-100 d-flex flex-row">
             <div class="col w-100">
                 <div class="logo navbar-brand text-left">
                     <a href="#">@by_ino_ati</a>
                 </div>
             </div>
-            <div class="col w-100">
-                <div class="justify-content-center">
+            <div class="col w-100 search-container">
+                <div class="justify-content-center search-bar">
                     <form action="GET">
-                        <div>
-                            <input type="text">
+                        <div id="search">
+                            <input id="search-box" type="text" name="q" placeholder="Search" >
                             <button>
                                 <span>
                                     <i class="fas fa-search"></i>
@@ -45,18 +45,10 @@
                         </div>
                     </form>
                 </div>
-                <div>
-                    <ul class="navbar-nav ms-auto list-inline list-unstyled text-center">
-                        <li lass="nav-item dropdown">Home</li>
-                        <li lass="nav-item">Paintings</li>
-                        <li lass="nav-item">Ink</li>
-                        <li lass="nav-item">Artist Bio</li>
-                    </ul>
-                </div>
             </div>
             <div class="col w-100">
-                <ul class="navbar-nav ms-auto list-inline list-unstyled">
-                    <li class="list-inline-item dropdown" data-toggle="dropdown" aria-haspopup="true"
+                <ul class="nav">
+                    <li class="nav-item dropdown" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         <a href="" id="login-options">
                             <div class="text-center">
@@ -77,7 +69,7 @@
                             {% endif %}
                         </div>
                     </li>
-                    <li class="list-inline-item">
+                    <li class="nav-item">
                         <a class="{% if kart_occupancy %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                             href="#">
                             <div class="text-center">
@@ -95,6 +87,14 @@
                         </a>
                     </li>
                 </ul>
+                <div>
+                    <ul class="nav list-inline list-unstyled text-center">
+                        <li lass="nav-item">Home</li>
+                        <li lass="nav-item">Paintings</li>
+                        <li lass="nav-item">Ink</li>
+                        <li lass="nav-item">Artist Bio</li>
+                    </ul>
+                </div>
             </div>
         </div>
         </div>

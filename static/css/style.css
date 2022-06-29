@@ -26,6 +26,15 @@ nav {
     font-weight: 400;
 }
 
+.search-container {
+    position: relative;
+}
+
+.search-bar {
+    position: absolute;
+    bottom: 0;
+}
+
 footer {
     background-color: #000 !important;
     color: #fff !important;
