@@ -7,12 +7,28 @@ body {
     font-family: David Libre !important;
 }
 
+a {
+    text-decoration: none;
+    color: #F5F5F5;
+}
+
 nav {
-    background-color: #000 !important;
-    color: #fff !important;
+    background-color: #000;
+    color: #F5F5F5;
+    font-family: Oswald;
+    font-weight: 200;
+}
+
+.logo {
+    position:absolute;
+    bottom:0;
+    font-family: Oswald;
+    font-weight: 400;
 }
 
 footer {
     background-color: #000 !important;
     color: #fff !important;
+     font-family: Oswald;
+    font-weight: 200;
 }
