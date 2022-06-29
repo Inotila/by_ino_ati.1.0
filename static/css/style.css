@@ -48,7 +48,7 @@
         font-weight: 200;
     }
 
-
+/* media for devices smaller than tablets */
     @media (max-width: 768px) {
       
     }
