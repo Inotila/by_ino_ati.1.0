@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="col w-100 search-container">
-                <div class="justify-content-center search-bar">
+                <div class="search-bar">
                     <form action="GET">
                         <div id="search">
                             <input id="search-box" type="text" name="q" placeholder="Search" >
@@ -46,49 +46,51 @@
                     </form>
                 </div>
             </div>
-            <div class="col w-100">
-                <ul class="nav">
-                    <li class="nav-item dropdown" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false">
-                        <a href="" id="login-options">
-                            <div class="text-center">
-                                <i class="fas fa-user fa-lg"></i>
-                                <p>Profile</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <a href="" class="dropdown-item">Product Management</a>
-                            {% endif %}
-                            <a href="" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Sign-up</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="{% if kart_occupancy %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                            href="#">
-                            <div class="text-center">
-                                <div>
-                                    <i class="fas fa-shopping-bag fa-lg"></i>
+            <div class="col w-100 right-side-container">
+                <div class="user-profile">
+                    <ul class="nav">
+                        <li class="nav-item dropdown list-inline list-unstyled" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <a href="" id="login-options">
+                                <div class="text-center">
+                                    <i class="fas fa-user fa-lg"></i>
+                                    <p>Profile</p>
                                 </div>
-                                <p>
-                                    {% if kart_occupancy %}
-                                    ${{ kart_occupancy|floatformat:2 }}
-                                    {% else %}
-                                    0
-                                    {% endif %}
-                                </p>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <a href="" class="dropdown-item">Product Management</a>
+                                {% endif %}
+                                <a href="" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Sign-up</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                {% endif %}
                             </div>
-                        </a>
-                    </li>
-                </ul>
-                <div>
-                    <ul class="nav list-inline list-unstyled text-center">
+                        </li>
+                        <li class="nav-item">
+                            <a class="{% if kart_occupancy %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                                href="#">
+                                <div class="text-center">
+                                    <div>
+                                        <i class="fas fa-shopping-bag fa-lg"></i>
+                                    </div>
+                                    <p>
+                                        {% if kart_occupancy %}
+                                        ${{ kart_occupancy|floatformat:2 }}
+                                        {% else %}
+                                        0
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="categories">
+                    <ul class="nav list-inline list-unstyled">
                         <li lass="nav-item">Home</li>
                         <li lass="nav-item">Paintings</li>
                         <li lass="nav-item">Ink</li>
@@ -117,7 +119,7 @@
             <a class="footer-text" href="https://www.instagram.com/by_ino_ati/" target="_blank"><i
                     class="fab fa-instagram-square ms-3"></i></a>
             <a class="footer-text" href="https://www.youtube.com/channel/UCMDy_5U6DVWqoroYKJb8VHw" target="_blank"><i
-                    class="fab fa-youtube-square ms-3"></i></a></p>z
+                    class="fab fa-youtube-square ms-3"></i></a></p>
     </footer>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
