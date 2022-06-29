@@ -1,54 +1,110 @@
-    html {
-        height: 100% !important;
-    }
+/* general */
 
-    body {
-        background-color: #F5F5F5 !important;
-        font-family: David Libre !important;
-    }
+html {
+    height: 100% !important;
+}
 
-    a {
-        text-decoration: none;
-        color: #F5F5F5;
-    }
+body {
+    background-color: #F5F5F5 !important;
+    font-family: David Libre !important;
+    
+}
 
-    nav {
-        background-color: #000;
-        color: #F5F5F5;
-        font-family: Oswald;
-        font-weight: 200;
+a {
+    text-decoration: none;
+    color: #F5F5F5;
+}
+
+
+/* nav bar  */
+nav {
+    background-color: #000;
+    color: #F5F5F5;
+    font-family: Oswald;
+    font-weight: 200;
+    padding:0px !important;
+    margin: 0px !important;
+}
+
+.logo {
+    position: absolute;
+    bottom: 0;
+    font-family: Oswald;
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    display:flex;
+    justify-content:center
+}
+
+.search-bar {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+}
+
+#search-box{
+    width: 85%;
+}
+
+.categories {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+li {
+    margin-right: 0.5rem !important;
+}
+
+.user-profile-top-items{
+    float: right;
+}
+
+.user-profile-top-items > ul {
+    height: 50% !important;
+}
+
+.user-profile-top-items > ul > li{
+    margin-bottom: 0.5rem !important;
+}
+
+.items-in-bag-num {
+    margin-bottom: 0rem;
+}
+
+
+/* foot */
+footer {
+    background-color: #000 !important;
+    color: #fff !important;
+    font-family: Oswald;
+    font-weight: 200;
+    font-size: large
+}
+
+/* media for devices smaller than tablets */
+@media (max-width: 768px) {
+    .col {
+        padding: 0px;
     }
 
     .logo {
-        position: absolute;
-        bottom: 0;
-        font-family: Oswald;
-        font-weight: 400;
-    }
-
-    .search-container {
-        position: relative;
-    }
+    margin-left: 1rem;
+}
 
     .search-bar {
-        position: absolute;
-        bottom: 0;
-    }
-    
-    .categories {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-    }
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 
-    footer {
-        background-color: #000 !important;
-        color: #fff !important;
-        font-family: Oswald;
-        font-weight: 200;
-    }
 
-/* media for devices smaller than tablets */
-    @media (max-width: 768px) {
-      
-    }
+    #search-box{
+    width: 55%;
+}
+}

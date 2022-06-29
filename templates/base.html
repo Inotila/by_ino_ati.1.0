@@ -24,8 +24,7 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-    <nav class="container-fluid fixed-top navbar navbar-expand-lg ">
-
+    <nav class="fixed-top">
         <div class="row w-100 d-flex flex-row">
             <div class="col w-100">
                 <div class="logo navbar-brand text-left">
@@ -33,10 +32,10 @@
                 </div>
             </div>
             <div class="col w-100 search-container">
-                <div class="search-bar">
+                <div class="search-bar ">
                     <form action="GET">
                         <div id="search">
-                            <input id="search-box" type="text" name="q" placeholder="Search" >
+                            <input id="search-box" type="text" name="q" placeholder="Search">
                             <button>
                                 <span>
                                     <i class="fas fa-search"></i>
@@ -47,58 +46,68 @@
                 </div>
             </div>
             <div class="col w-100 right-side-container">
-                <div class="user-profile">
-                    <ul class="nav">
-                        <li class="nav-item dropdown list-inline list-unstyled" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <a href="" id="login-options">
-                                <div class="text-center">
-                                    <i class="fas fa-user fa-lg"></i>
-                                    <p>Profile</p>
-                                </div>
-                            </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                                {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                <a href="" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Sign-up</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                                {% endif %}
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="{% if kart_occupancy %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                                href="#">
-                                <div class="text-center">
-                                    <div>
-                                        <i class="fas fa-shopping-bag fa-lg"></i>
+                <div class="user-profile-and-catergories">
+                    <div class=" user-profile-top-items">
+                        <ul class="nav">
+                            <li class="nav-item dropdown list-inline list-unstyled" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <a href="" id="login-options">
+                                    <div class="text-center">
+                                        <i class="fas fa-user fa-lg"></i>
+                                        <p>Profile</p>
                                     </div>
-                                    <p>
-                                        {% if kart_occupancy %}
-                                        ${{ kart_occupancy|floatformat:2 }}
-                                        {% else %}
-                                        0
-                                        {% endif %}
-                                    </p>
+                                </a>
+                                <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                    {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                    <a href="" class="dropdown-item">Product Management</a>
+                                    {% endif %}
+                                    <a href="" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Sign-up</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    {% endif %}
                                 </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="categories">
-                    <ul class="nav list-inline list-unstyled">
-                        <li lass="nav-item">Home</li>
-                        <li lass="nav-item">Paintings</li>
-                        <li lass="nav-item">Ink</li>
-                        <li lass="nav-item">Artist Bio</li>
-                    </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="{% if kart_occupancy %}text-info font-weight-bold{% else %}text-black{% endif %}"
+                                    href="#">
+                                    <div class="text-center">
+                                        <div>
+                                            <i class="fas fa-shopping-bag fa-lg"></i>
+                                        </div>
+                                        <p id="items-in-bag-num">
+                                            {% if kart_occupancy %}
+                                            ${{ kart_occupancy|floatformat:2 }}
+                                            {% else %}
+                                            0
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="categories-container">
+                        <ul class="nav list-inline list-unstyled categories">
+                            <li lass="nav-item categories-item">
+                                <a href="">Home</a>
+                            </li>
+                            <li lass="nav-item categories-item">
+                                <a href="">Paintings</a>
+                            </li>
+                            <li lass="nav-item categories-item">
+                                <a href="">Ink</a>
+                            </li>
+                            <li lass="nav-item categories-item">
+                                <a href="">Artist Bio</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </nav>
     {% if messages %}
