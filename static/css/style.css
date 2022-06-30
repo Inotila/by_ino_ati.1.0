@@ -6,7 +6,8 @@ html {
 
 body {
     background-color: #F5F5F5 !important;
-    font-family: David Libre !important;
+    font-family: Oswald;
+    font-weight: 400;
     
 }
 
@@ -116,9 +117,17 @@ footer {
     margin:0.5rem;
 }
 
+/* welcoming text */
+div > div > p > a {
+    color:black;
+}
+
+
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
     .col {
+
+        
         padding: 0px;
     }
 
