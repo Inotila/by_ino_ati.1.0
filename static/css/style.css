@@ -134,9 +134,11 @@ div > div > p > a {
 
 .trending-Img-container{
     height: 100%;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.trending-catergor{
+.trending-catergory{
     height: 100%;
 }
 
@@ -148,6 +150,10 @@ div > div > p > a {
     height: 100%;
 }
 
+
+.bottom-secondary-img{
+    margin-top: 0.5rem;
+}
 
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
