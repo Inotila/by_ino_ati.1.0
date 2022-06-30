@@ -132,6 +132,10 @@ div > div > p > a {
 
 /* homepage img link container */
 
+.trend-col{
+    padding:0px !important;
+}
+
 .trending-Img-container{
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
