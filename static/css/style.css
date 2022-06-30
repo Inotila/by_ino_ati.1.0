@@ -132,9 +132,20 @@ div > div > p > a {
 
 /* homepage img link container */
 
-.trending-homepage-link-container {
-    margin-bottom: 0.5rem;
-    width: 50%;
+.trending-Img-container{
+    height: 100%;
+}
+
+.trending-catergor{
+    height: 100%;
+}
+
+.secondary-img-container{
+    height: 50%;
+}
+
+.secondary-img{
+    height: 100%;
 }
 
 
