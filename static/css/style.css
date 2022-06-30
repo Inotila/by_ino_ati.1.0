@@ -108,6 +108,14 @@ footer {
     font-size: large
 }
 
+/* index */
+
+/* hero-img */
+
+.hero-image-container{
+    margin:0.5rem;
+}
+
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
     .col {
