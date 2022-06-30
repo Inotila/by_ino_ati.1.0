@@ -30,6 +30,10 @@ p {
     margin-bottom: 0;
 }
 
+.off-padding{
+    padding: 0px !important;
+}
+
 
 /* nav bar  */
 nav {
@@ -166,9 +170,11 @@ div > div > p > a {
     margin-bottom: 0.5rem;
 }
 
-.home-page-btn{
+.homepage-btn{
     margin-right: 0.5rem;
     width: 5rem;
+    color: #F5F5F5;
+    background-color: #000;
 }
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
