@@ -3,11 +3,13 @@
 
 {% block content%}
 <div class="container-fluid">
+    <!-- hero-image -->
     <div class="row">
         <div class="col d-flex justify-content-center hero-image-container">
             <img src="{% static 'images/logoblack.png' %}" id="hero-image" class="img-fluid" alt="logo">
         </div>
     </div>
+    <!-- welcome-text -->
     <div class="row">
         <div class="col d-flex justify-content-center welcome-text-container">
             <p class="text-center">
@@ -16,28 +18,30 @@
             </p>
         </div>
     </div>
+    <!-- trending image links -->
     <div class="row d-flex justify-content-center">
-        <div class="col trending-homepage-link-container">
-            <div id="trending-homepage-link" class="home-category-img">
+        <div class="col">
+            <div id="trending-homepage-link  trending-homepage-link-container h-25" class="home-category-img">
                 <a href="">
-                    <img src="{% static 'images/eliko.jpg' %}" id="hero-image" class="img-fluid" alt="logo">
+                    <img src="{% static 'images/eliko.jpg' %}" class="" alt="logo">
                 </a>
-                
+
             </div>
         </div>
         <div class="col trending-homepage-link-container">
             <div id="non-trending-homepage-link" class="home-category-img">
                 <a href="">
-                    <img src="{% static 'images/ompenda.jpg' %}" id="hero-image" class="img-fluid" alt="logo">
+                    <img src="{% static 'images/ompenda.jpg' %}" class="" alt="logo">
                 </a>
             </div>
-            <div id="non-trending-homepage-link" class="home-category-img">
+            <div id="non-trending-homepage-link h-25" class="home-category-img">
                 <a href="">
-                    <img src="{% static 'images/readers.jpg' %}" id="hero-image" class="img-fluid" alt="logo">
-                </a>    
+                    <img src="{% static 'images/readers.jpg' %}" class="" alt="logo">
+                </a>
             </div>
         </div>
     </div>
+    <!-- button links to catergories -->
     <div class="row justify-content-center">
         <a href="#" class="btn btn-dark homepage-btn">paintings</a>
         <a href="#" class="btn btn-dark homepage-btn">ink</a>

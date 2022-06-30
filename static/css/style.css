@@ -130,6 +130,13 @@ div > div > p > a {
     margin-bottom: 0.5rem;
 }
 
+/* homepage img link container */
+
+.trending-homepage-link-container {
+    margin-bottom: 0.5rem;
+    width: 50%;
+}
+
 
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
