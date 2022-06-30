@@ -74,49 +74,47 @@
             </div>
         </div>
         <div class="row w-100 d-flex flex-row">
-            <div class="col">
+            <div class="col lower-row-col">
                 <div class="logo navbar-brand text-left">
                     <a href="#">@by_ino_ati</a>
                 </div>
             </div>
             <div class="col search-container">
-                <div class="search-bar ">
-                    <form action="GET">
-                        <div id="search">
-                            <input id="search-box" type="text" name="q" placeholder="Search">
-                            <button>
-                                <span>
-                                    <i class="fas fa-search"></i>
-                                </span>
+                <form action="GET">
+                    <div class="input-group">
+                        <input type="text" class="form-control search-bar" placeholder="Search"
+                            aria-label="User's search" name="art-search">
+                        <div class="input-group-append">
+                            <button><span class="input-group-text" id="search-icon-container"><i
+                                    class="fas fa-search"></i></span>
                             </button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
-            <div class="col">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="toggleMobileMenu">
-                    <!-- list for nav bar links -->
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="">Paintings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="">Ink</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="">Pencil</a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="col">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu"
+                aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="toggleMobileMenu">
+                <!-- list for nav bar links -->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="">Paintings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="">Ink</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="">Pencil</a>
+                    </li>
+                </ul>
             </div>
+        </div>
         </div>
     </nav>
     {% if messages %}
