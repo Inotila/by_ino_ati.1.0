@@ -1,108 +1,282 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<img src="./static/images/logoblack.png" width="320px">
 
-Welcome Inotila,
+To the live page from the terminal type:
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+`python3 manage.py runserver`
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+To run the webpage click on this link: <a href="https://by-ino-ati.herokuapp.com/" target="_blank">by_ino_ati</a>
 
-## Gitpod Reminders
+<img src="./static/images/responsive.png" width="700">
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# by_ino_ati(Portfolio 4)
 
-`python3 -m http.server`
+This project is for my final submission for my forth milestone. The aim of the project is to code and deploy a responsive website using Java Script, python+ django, HTML and CSS. 
 
-A blue button should appear to click: _Make Public_,
+## About by_ino_ati
 
-Another blue button should appear to click: _Open Browser_.
+Is a web application where users can view and interact with art by artist Inotila Nghaamwa(the owner of the page). 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The site owner is an artist, and would like to offer users a platform where they can view and interact with his art work by being able to like and comment on individial picuters. In addition the owner would like to be able to handle data at the back end and make post on to the page using the backend. Furthermore, the owner would like to also be able to commnicate the latest delopments to his users via email, so he want to give user the opportuinty to signup for a mailing list. The owner would like to keep adding features to the site and updating it to increase the way in which site users can engage with the content,the owner and each other.
 
-A blue button should appear to click: _Make Public_,
+The users are primarily art enthusists, art collectors, and other peopler in the artist commuinity. These user would like to easily navigate the application and be able to interact with the content and get feedback from the app and other users. In addition user want to be able to clearly view the content in a familiar manner that they are use to on applications such as instagram.
 
-Another blue button should appear to click: _Open Browser_.
+## Value
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+users can view the art work,in well categorized pages and also in full single view. In addition, users can interact with the conten by liking and commenting on it. Users also have the ability to delete and update their comments, the app has a full CRUD fuctionality.
 
-To log into the Heroku toolbelt CLI:
+In addition, the UI is easy to understand and navigate. Furthermore, the site offers the user feedback alerting the users on consequence of their actions are. The app has an easy sign up, login and logout pages. Only users who are signed up can comment or like the content. This gives the owner the ability to get valuable data from the users to interact with them, and users get the ability to change and add data as they please.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Potential features (before starting)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+1. a grid view of art works
+2. like content and view number of likes a post has.
+3. Comment on post and view comments from other users and the amount of comments a post recieved.
+4. An easy to understand UI.
+5. An easy signup process to be authenticated.
+6. view detials about the art work.
+7. See the availabilty to purchase the art work
+8. live bids.
+9. Users will be able to bid on art works.
+10. Share button to allow users to share posts on other social medias.
+11. A booking page where site users can book artist for a commision.
 
-------
+## Actual Features (end product)
+1. Welcome/home page -
+<br>
+<img src="./static/images/homepage.png" width="700">
+<br>
+On this page the user is welcomed, and the tone/vibe of the game is set. From this page first-time users will be able to know that this is an art application.
 
-## Release History
+In addition, the home page offers navigation buttons that are simply titled in order for them to easily understand what exactly it is that the button will do/take them to. 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+2. Art view/grid pages(Painting, Ink, Pencil) - 
+<br>
+<img src="./static/images/gridview.png" width="700">
+<br>
+<img src="./static/images/gridview1.png" width="700">
+<br>
+<img src="./static/images/gridview2.png" width="700">
+<br>
+This page is where users can view all the content on offer in their categories. On this page user can also see how many likes a specific post has. And they can click on the page title to further view a large sigular image.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+3. Art detail page - 
+<br>
+<img src="./static/images/comment.png" width="700">
+<img src="./static/images/like.png" width="700">
+<br>
+This page contains a single view of the image clicked on by the user from the art view page. On this page users can get a better look at the content. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+In addition users who are signed in can like the content and they can leave and edit comments. This a platform that art lovers can discuss what they are seeing.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+4. SignUp/signout  - 
+<br>
+<img src="./static/images/signup.png" width="700">
+<br>
+<img src="./static/images/signout.png" width="700">
+<br>
+<img src="./static/images/alerts.png" width="700">
+<br>
+<img src="./static/images/alerts1.png" width="700">
+<br>
+On this page user can sign up to gain full access to apps functionality. It is an easy and quick process for the user. When user is logged the nav bar, in addition to a message alert , will let them know that they have logged in because the option to login will change to log out.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+In addtion the app has an easy signout page.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+4. A functioning database in the backend-
+<br>
+<img src="./static/images/data.png" width="700">
+<br>
+This application that has a easy to navigate admin pannel where the owner can view data and make post to the mainpage. In addition the owner can also create drafts post that he can complelet at a later stage.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+5. Logo - 
+<br>
+<img src="./static/images/logoblack.png" width="700">
+<br>
+A nice logo that also serves as a home button.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+6. Footer and social media links-
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+A footer to keep social media links. These links are links that open in new tabs so as to not take the user away from the website.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The social media links are useful for the users because they encourage the user to get in contact with the developer on other platforms (Facebook, Instagram and YouTube).
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+7. Join Mail list
+<br>
+<img src="./static/images/maillist2.png" width="700">
+<br>
+<img src="./static/images/maillist.png" width="700">
+<br>
+Users can join a mailing list or opt out of it. This mailing list gives user the option of getting timely updates about new art pieces and sales that are live on the app.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The owner can user this to get data to communicate directly with site users.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Future Features
+1. An Status to bar that will show the availabilty of the arts pieces and their prices
+2. Users will be able to share post to other apps
+3. Users will be able to make bids on art pieces
+4. User will be able to like content from the grid view page to
+5. The number of comments a post gets will also be displayed
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Testing
 
-------
+I did manual test to ensure that the apps features works as expected.
 
-## FAQ about the uptime script
+i created a super user to make post to app and view the data from the back end. And this all worked. All post on the app where upload via the admin panel.
+<br>
+<img src="./static/images/data.png" width="700">
+<br>
+I created also logged in as a user in the front end to ensure that the post are rendering as expected and they did. The signup function works, and i signed out and back in again just to ensure that both the signout and signin works
+<br>
+<img src="./static/images/signup.png" width="700">
+<br>
+Signed up with a fake user 
+<br>
+<img src="./static/images/signout.png" width="700">
+<br>
+Signed out out fake
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+I started by testing that all the links in the navbar and the home page buttons work and lead to where they are intended and they did. The logo will send you home, as will the home link in navbar. 
+<br>
+<img src="./static/images/homepage.png" width="700">
+<br>
 
-**How will this affect me?**
+The ink,painting, and pencil links in the navbar and the homepage buttons  all lead to their respective pages
+<br>
+<img src="./static/images/gridview.png" width="700">
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+a view of the page that painting button leads to
+<br>
+<img src="./static/images/gridview1.png" width="700">
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+a view of the page that ink button leads to
+<br>
+<img src="./static/images/gridview2.png" width="700">
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+a view of the page that pencil button leads to
+<br>
+I tested that like, comment, edit and delete buttons all work by going to the page of a single post and liked the post, created a comment, edited it and then deleted it.
 
-**So….?**
+<img src="./static/images/comment.png" width="700">
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+I created a test comment.
 
-**Can I opt out?**
+<img src="./static/images/edit.png" width="700">
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+I then edited the text.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<img src="./static/images/like.png" width="700">
 
-**Anything more?**
+I liked the post, inidicated by the black heart.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<img src="./static/images/delete.png" width="700">
 
----
+I then deleted the comment i edited earlier.
 
-Happy coding!
+all of these buttons redirected me to the right page and executed exactly what i expected them to do.
+
+In additon I also had other users test the app, and they all reported that its functions and features all worked as expected. They found no broken links or images and all the buttons fired.
+
+
+For the mailing list I created a fake user name Max as you will see in the images below max was able to join the mail list and was notified about this success. All the button in this form work as expected.
+
+<img src="./static/images/maillist2.png" width="700">
+
+<img src="./static/images/maillist.png" width="700">
+
+## wireframes and mockups
+
+<img src="./static/imagesmockups.jpeg" width="700">
+
+<img src="./static/imagesmockups1.jpeg" width="700">
+
+<img src="./static/imagesmockups2.jpeg" width="700">
+
+<img src="./static/imagesmockups3.jpeg" width="700">
+
+
+## Bugs and fixes
+
+### bug 1-sign up
+The sign up page would not load after a user filled in all the details. Pressing submit would cause an error because allauth was trying to send an email to the email that the user would fill in.
+
+### Solved bugs
+To fix this error i added " EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' " to the back end.
+
+## Unfixed bugs
+
+None
+
+## Validator testing
+
+Html - No errors returned from the official w3c validator
+
+<img src="./static/images/validator_html.png" width="700">
+
+<img src="./static/images/validator_html1.png" width="700">
+
+<img src="./static/images/validator_html2.png" width="700">
+
+<img src="./static/images/validator_html3.png" width="700">
+
+<img src="./static/images/validator_html4.png" width="700">
+
+
+CSS - No errors returned from the official (jigsaw) validator
+
+<img src="./static/images/validator_css.png" width="700">
+
+Javascript - No errors returned from the jshint validator
+
+<img src="./static/images/validator_js.png" width="700">
+
+Python - The only errors i have are for the line being too long, i opted not to put them on the next line because they were causeing my app to fail. I also got an E701 error because i revered the oder od date by adding a " - " to my completed_on variable.
+
+<img src="./static/images/validator_python.png" width="700">
+
+<img src="./static/images/validator_python1.png" width="700">
+
+<img src="./static/images/validator_python2.png" width="700">
+
+<img src="./static/images/validator_python3.png" width="700">
+
+<img src="./static/images/validator_python4.png" width="700">
+
+<img src="./static/images/validator_python5.png" width="700">
+
+<img src="./static/images/validator_python6.png" width="700">
+
+This app also  meets the accessibilty requirements of lighthouse in devtools
+
+<img src="./static/images/lighthouse.png" width="700">
+
+## Deployment
+This project has been deployed on heroku. The live link to project is: <a href="https://by-ino-ati.herokuapp.com/" target="_blank">by_ino_ati</a>
+The steps to deploy this project are:
+
+I created the app on herokus site and i made my set my configvars to match the ones in my workspace 
+
+From the GitHub I logged into heroku
+
+I then signed into the app that I wanted to deploy
+
+i changed my debug to False and removed my DISABLE_COLLECTSTATIC configvar
+
+I added, commited and pushed. And then i pushed to heroku main.
+
+## Credits/Reference 
+This work is the original work of Inotila Nghaamwa, however the following resources were used to supplement:
+
+### Code
+I used similar coding approaches to that which was used for the i think and therefore I blog. Particularly the Post and comment method. I therefore added my own custom model in MailingList. In addition I used a similar timeout funciton to make the message alert timeout. 
+
+### Media
+All images used are the property of Inotila Nghaamwa.
+
+### Credits 
+
+Content -
+Text-Written by Inotila Nghaamwa.
+
+Images - All images used are the property of Inotila Nghaamwa.
