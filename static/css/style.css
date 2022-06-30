@@ -138,7 +138,7 @@ div > div > p > a {
 
 .trending-Img-container{
     margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .trending-catergory{
@@ -149,6 +149,7 @@ div > div > p > a {
 
 .bottom-secondary-img{
     margin-top: 0.5rem;
+    
 }
 
 .fill-space {
@@ -156,6 +157,18 @@ div > div > p > a {
     justify-content: center;
     align-items: center;
     overflow: hidden
+}
+
+/* homepage buttons */
+
+.home-page-btn-container{
+    margin-top:0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.home-page-btn{
+    margin-right: 0.5rem;
+    width: 5rem;
 }
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
