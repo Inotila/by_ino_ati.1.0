@@ -83,6 +83,16 @@ nav {
     border-radius: 0.25rem;
 }
 
+.search-icon-button{
+    border:none;
+}
+
+.input-group{
+    margin-bottom:0.5rem;
+    
+}
+
+
 /* right/catergory section */
 
 .justify-content-end > li {
