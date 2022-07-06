@@ -27,7 +27,7 @@ class Art(models.Model):
 
     class Meta:
         """ this oders the post from oldest to news comments"""
-        ordering: ['-completed_on']
+        ordering: ['date_completed']
 
     def __str__(self):
         return self.title
@@ -51,3 +51,9 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment: {self.body} by {self.name}"
 
+
+class Newsletter(models.Model):
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.email
