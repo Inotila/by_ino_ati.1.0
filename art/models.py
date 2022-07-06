@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
 class Media(models.Model):
     """this handles the data about what type of material was used to create the art work"""
     media = models.CharField(max_length=250, null=False)
