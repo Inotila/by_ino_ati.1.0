@@ -16,7 +16,7 @@ class Art(models.Model):
     caption = models.TextField()
     date_completed = models.DateField(auto_now=False)
     price = models.IntegerField()
-    art_image = CloudinaryField('image', default='placeholder')
+    art_image = CloudinaryField('image', blank=False)
     likes = models.ManyToManyField(User, related_name='art_likes', blank=True)
     size = models.CharField(max_length=100, unique=False, default='cm')
     is_available = models.BooleanField(default=False, null=False)
@@ -53,6 +53,7 @@ class Comment(models.Model):
 
 
 class Newsletter(models.Model):
+    """handles the data for the news letter"""
     email = models.EmailField()
 
     def __str__(self):
