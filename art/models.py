@@ -2,13 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-
-class Media(models.Model):
-    """this handles the data about what type of material was used to create the art work"""
-    media = models.CharField(max_length=250, null=False)
-
-    def __str__(self):
-        return self.media
+TYPE_OF_MEDIA = (("Acrylics on Canvas", "Acrylics on Canvas"),
+ ("Acrylics on Paper", "Acrylics on Paper"),
+  ("Acrylics on Mixed Media", "Acrylics on Mixed Media"), 
+  ("Ink on Paper", "Ink on Paper"), ("Pencil on Paper", "Pencil on Paper"))
 
 
 class Art(models.Model):
@@ -21,8 +18,7 @@ class Art(models.Model):
     likes = models.ManyToManyField(User, related_name='art_likes', blank=True)
     size = models.CharField(max_length=100, unique=False, default='cm')
     is_available = models.BooleanField(default=False, null=False)
-    media = models.ForeignKey(
-        Media, on_delete=models.CASCADE, related_name="media_used")
+    media = models.CharField(max_length=100, choices=TYPE_OF_MEDIA, blank=False)
     is_framed = models.BooleanField(default=False, null=False)
     handling_tips = models.TextField()
 
