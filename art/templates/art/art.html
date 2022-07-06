@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="container-fluid">
+    <!-- hero-image -->
+    <div class="row">
+        <div class="col d-flex justify-content-center hero-image-container">
+            <img src="{% static 'images/logoblack.png' %}" id="hero-image" class="img-fluid" alt="logo">
+        </div>
+    </div>
+    <!-- welcome-text -->
+    <div class="row">
+        <div class="col d-flex justify-content-center welcome-text-container">
+            <p class="text-center">
+                Welcome to the official website of Inotila Opoeli Nghaamwa <br>
+                <a class="" href="#">[read more about Inotila]</a>
+            </p>
+        </div>
+    </div>
+    <!-- trending image links -->
+    <div class="row d-inline-flex justify-content-center">
+        <div class="col-8 col-lg-4 col-md-8 trend-col">
+            <div class="trending-Img-container fill-space">
+                <a href="">
+                    <img src="{% static 'images/eliko.jpg' %}" class="trending-catergory img-fluid" alt="trending-catergor">
+                </a>
+            </div>
+        </div>
+        <div class="col-4 col-lg-2 col-md-4 d-flex flex-column trend-col">
+            <div class="secondary-img-container fill-space">
+                <a href="">
+                    <img src="{% static 'images/ompenda.jpg' %}" class="secondary-img img-fluid" alt="trending-catergor">
+                </a>
+            </div>
+            <div class="secondary-img-container fill-space">
+                <a href="">
+                    <img src="{% static 'images/readers.jpg' %}" class="secondary-img img-fluid bottom-secondary-img" alt="trending-catergor">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- button links to catergories -->
+    <div class="row">
+        <div class="col">
+            <div class="home-page-btn-container  d-flex justify-content-center">
+                <a href="#" class="btn homepage-btn">paintings</a>
+                <a href="#" class="btn homepage-btn">ink</a>
+                <a href="#" class="btn homepage-btn">pencil</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
