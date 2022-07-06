@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 
 class Media(models.Model):
     """this handles the data about what type of material was used to create the art work"""
-    media = models.CharField(null=False)
+    media = models.CharField(max_length=250, null=False)
 
     def __str__(self):
         return self.media
@@ -12,7 +12,7 @@ class Media(models.Model):
 
 class Art(models.Model):
     """this handles the data for the art works and its details"""
-    title = models.CharField(null=False)
+    title = models.CharField(max_length=250, null=False)
     caption = models.TextField()
     date_completed = models.DateField(auto_now=False)
     price = models.IntegerField()
@@ -21,7 +21,7 @@ class Art(models.Model):
     size = models.CharField(max_length=100, unique=False, default='cm')
     is_available = models.BooleanField(default=False, null=False)
     media = models.ForeignKey(
-        Media, on_delete=models.CASCADE, related_name="media")
+        Media, on_delete=models.CASCADE, related_name="media_used")
     is_framed = models.BooleanField(default=False, null=False)
     handling_tips = models.TextField()
 
@@ -36,11 +36,11 @@ class Art(models.Model):
 class Comment(models.Model):
     """handles the data for the comments users make"""
     art = models.ForeignKey(
-        Art, on_delete=models.CASCADE, related_name="comments")
+        Art, on_delete=models.CASCADE, related_name="art_commented_on")
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, null=True, blank=False)
     name = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True, blank=False)
+        User, on_delete=models.CASCADE, null=True, blank=False, related_name="commenting_user_name")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
