@@ -1,1 +1,1 @@
-web: gunicorn byinoati.wsgi
+web: gunicorn by_ino_ati.wsgi
