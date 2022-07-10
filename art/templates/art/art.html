@@ -6,6 +6,9 @@
     <div class="row">
         <div class="col">
     <h1>Blah Blah blah</h1>
+    {% for image in art %}
+    <img class="card-img post-image" src="{{ image.art_image.url }}" alt="a picture of art work by artist inotila nghaamwa">
+    {% endfor %}
         </div>
     </div>
 </div>
