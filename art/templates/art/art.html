@@ -2,30 +2,29 @@
 {% load static %}
 
 {% block content%}
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col">
-            <h1>Blah Blah blah</h1>
+        <div class="col-12">
+            <!-- Art post Column -->
+            <h1 class="text-center welcome-text mt-3 mb-3">{{ category|title }}</h1>
         </div>
     </div>
-    <div class="row">
-        <!-- loops through all art to be displayed-->
+    <div class="row g-3">
+        <!-- loops through all art to be displayed -->
         {% for image in art %}
-        <div class="col-12">
-            <div class="card">
-                <a href="">
-                    <img class="card-img post-image" src="{{ image.art_image.url }}"
-                        alt="a picture of art work by artist inotila nghaamwa">
-                </a>
+        <div class="col-12 mb-3 col-md-6 col-lg-4 d-flex justify-content-center">
+            <div class="car post-card">
+                <!-- card image if no image is assigned to the post a default image from static file will display -->
+                <a href=""><img class="card-img post-image" src="{{ image.art_image.url }}"
+                    alt="a picture of art work by artist inotila nghaamwa"></a>
             </div>
         </div>
-    </div>
-    {% empty %}
-    <div class="col-12 text-danger text-center mt-3">
-        <p>
+        <!-- text that is displayed if no post have been uploaded yet and the page is empty -->
+        {% empty %}
+        <div class="col-12 text-danger text-center mt-3">
             No art works have been uploaded to this page yet, please come back soon!
-        </p>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
 {% endblock %}
