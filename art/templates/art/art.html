@@ -6,11 +6,26 @@
     <div class="row">
         <div class="col">
             <h1>Blah Blah blah</h1>
-            {% for image in art %}
-            <a href="{% url 'art_details' art.title %}"><img class="card-img post-image" src="{{ image.art_image.url }}"
-                    alt="a picture of art work by artist inotila nghaamwa">
-            </a> {% endfor %}
         </div>
     </div>
+    <div class="row">
+        <!-- loops through all art to be displayed-->
+        {% for image in art %}
+        <div class="col-12">
+            <div class="card">
+                <a href="">
+                    <img class="card-img post-image" src="{{ image.art_image.url }}"
+                        alt="a picture of art work by artist inotila nghaamwa">
+                </a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12 text-danger text-center mt-3">
+        <p>
+            No art works have been uploaded to this page yet, please come back soon!
+        </p>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
