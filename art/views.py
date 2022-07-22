@@ -18,15 +18,15 @@ def art_display(request):
     return render(request, 'art/art.html', context)
 
 
-def art_detail(request):
+def art_detail(request, id):
     """
     renders a detailed display of a single art image
     """
 
-    details = Art.get_object_or_404(title)
+    details = get_object_or_404(Art, pk=id)
 
     context = {
         'details': details,
     }
 
-    return render(request, 'details.html', context)
+    return render(request, 'art/details.html', context)

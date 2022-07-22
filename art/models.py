@@ -2,10 +2,26 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-TYPE_OF_MEDIA = (("Acrylics on Canvas", "Acrylics on Canvas"),
- ("Acrylics on Paper", "Acrylics on Paper"),
-  ("Acrylics on Mixed Media", "Acrylics on Mixed Media"), 
-  ("Ink on Paper", "Ink on Paper"), ("Pencil on Paper", "Pencil on Paper"))
+
+class Media(models.Model):
+    type = models.CharField(max_length=100, null=False, blank=False)
+
+    class Meta:
+        ordering: ['type']
+
+    def __str__(self):
+        return self.type
+
+
+class Category(models.Model):
+    type = models.CharField(max_length=25, null=False, blank=False)
+
+    class Meta:
+        ordering: ['type']
+        verbose_name_plural = "Categories"
+
+    def __str__(self):
+        return self.type
 
 
 class Art(models.Model):
@@ -18,7 +34,8 @@ class Art(models.Model):
     likes = models.ManyToManyField(User, related_name='art_likes', blank=True)
     size = models.CharField(max_length=100, unique=False, default='cm')
     is_available = models.BooleanField(default=False, null=False)
-    media = models.CharField(max_length=100, choices=TYPE_OF_MEDIA, blank=False)
+    media = models.ForeignKey(Media, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     is_framed = models.BooleanField(default=False, null=False)
     handling_tips = models.TextField()
 
@@ -37,7 +54,8 @@ class Comment(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, null=True, blank=False)
     name = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True, blank=False, related_name="commenting_user_name")
+        User, on_delete=models.CASCADE, null=True,
+        blank=False, related_name="commenting_user_name")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 

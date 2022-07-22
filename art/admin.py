@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Art, Comment, Newsletter
+from .models import Art, Comment, Newsletter, Media, Category
 
 
 class ArtAdmin(admin.ModelAdmin):
@@ -10,6 +10,7 @@ class ArtAdmin(admin.ModelAdmin):
         'price',
         'is_available',
         'media',
+        'category',
         'is_framed',
     )
     ordering = ('date_completed',)
@@ -18,3 +19,5 @@ class ArtAdmin(admin.ModelAdmin):
 admin.site.register(Art, ArtAdmin)
 admin.site.register(Comment)
 admin.site.register(Newsletter)
+admin.site.register(Media)
+admin.site.register(Category)
