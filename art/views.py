@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Art
+from .models import Art, Category
 
 # Create your views here.
 
@@ -8,11 +8,12 @@ def art_display(request):
     """
     render a display of all the art
     """
+    category = request.GET['category']
+    art = Art.objects.filter(category=category)
 
-    art = Art.objects.all()
-    
     context = {
         'art': art,
+        'category': category,
     }
 
     return render(request, 'art/art.html', context)
