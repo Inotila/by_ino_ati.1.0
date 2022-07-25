@@ -80,12 +80,12 @@
                 </div>
             </div>
             <div class="col-5 col-lg-6 search-container off-padding">
-                <form action="GET">
+                <form method="GET" action="{% url 'art' %}">
                     <div class="input-group">
                         <input type="text" class="form-control search-bar" placeholder="Search"
                             aria-label="User's search" name="art-search">
                         <div class="input-group-append">
-                            <button class="search-icon-button">
+                            <button class="search-icon-button" type="submit">
                                 <span class="input-group-text" id="search-icon-container"><i
                                     class="fas fa-search"></i></span>
                             </button>
