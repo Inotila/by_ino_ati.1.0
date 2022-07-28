@@ -190,6 +190,11 @@ div > div > p > a {
     height: 30rem;
     object-fit: cover;
 }
+
+/* bag template */
+.empty_bag_links{
+    color: #000 !important;
+}
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
 

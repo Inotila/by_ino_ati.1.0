@@ -2,5 +2,41 @@
 {% load static %}
 
 {% block content%}
-
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center welcome-text mt-3 mb-3">Shopping bag</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if bag_items %}
+            <div class="table-responsive">
+            </div>
+            {% else %}
+            <p class="text-center welcome-text mt-3 mb-3">Your bag is empty.</p>
+            <div class="text-center">
+                <a href="{% url 'art' %}?category=1" class="empty_bag_links">
+                    <span class="icon">
+                        <i class="fas fa chevron-left"></i>
+                    </span>
+                    <span>View painted art pieces</span>
+                </a>
+                <a href="{% url 'art' %}?category=2" class="empty_bag_links">
+                    <span class="icon">
+                        <i class="fas fa chevron-left"></i>
+                    </span>
+                    <span>View painted art pieces</span>
+                </a>
+                <a href="{% url 'art' %}?category=3" class="empty_bag_links">
+                    <span class="icon">
+                        <i class="fas fa chevron-left"></i>
+                    </span>
+                    <span>View painted art pieces</span>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
