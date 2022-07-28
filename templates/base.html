@@ -59,8 +59,8 @@
                                         <i class="fas fa-shopping-bag fa-lg"></i>
                                     </div>
                                     <p id="items-in-bag-num">
-                                        {% if number_of_items_in_bag %}
-                                        ${{ number_of_items_in_bag|floatformat:2 }}
+                                        {% if art_piece_count %}
+                                        {{ art_piece_count }}
                                         {% else %}
                                         0
                                         {% endif %}
