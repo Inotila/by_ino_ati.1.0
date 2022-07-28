@@ -52,15 +52,15 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="{% if kart_occupancy %}text-info font-weight-bold{% else %}text-black{% endif %}"
-                                href="#">
+                            <a class="{% if number_of_items_in_bag %}text-info font-weight-bold{% else %}text-black{% endif %}"
+                                href="{% url 'view_bag' %}">
                                 <div class="text-center">
                                     <div>
                                         <i class="fas fa-shopping-bag fa-lg"></i>
                                     </div>
                                     <p id="items-in-bag-num">
-                                        {% if kart_occupancy %}
-                                        ${{ kart_occupancy|floatformat:2 }}
+                                        {% if number_of_items_in_bag %}
+                                        ${{ number_of_items_in_bag|floatformat:2 }}
                                         {% else %}
                                         0
                                         {% endif %}
