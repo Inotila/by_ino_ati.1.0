@@ -12,6 +12,107 @@
         <div class="col">
             {% if bag_items %}
             <div class="table-responsive">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Art Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price/th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    {% for item in bag_items %}
+                    <tr>
+                        <td class="p-3 w-25">
+                            <img class="img-fluid rounded" src="{{ item.art.art_image.url }}">
+                        </td>
+                        <td>
+                            <p>
+                                {{item.art.title}}
+                            </p>
+                            <p>
+                                {{item.art.size}}
+                            </p>
+                            <p>
+                                {{item.art.Media}}
+                            </p>
+                            <p>
+                                is framed: {{item.art.is_framed}}
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                Price: {{item.art.price}}
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                {{item.quantity}}
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+
+                            </p>
+                            <p>
+                                <p>
+
+                                </p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td class="p-3 w-25">
+                            <img class="img-fluid rounded" src="{{ item.art.art_image.url }}">
+                        </td>
+                        <td>
+                            <p>
+
+                            </p>
+                            <p>
+
+                            </p>
+
+                            </p>
+                            <p>
+
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+
+                                <p>
+
+                                </p>
+                        </td>
+                        <td>
+                            <p>
+                                Bag Total: ${{total|floatformat:2}}
+                            </p>
+                            <p>
+                                Delivery: ${{ delivery|floatformat:2}}
+                            </p>
+                            <p>
+                                Subtotal: ${{grand_total}}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="#" class="btn homepage-btn">Proceed to checkout</a>
+                        </td>
+                    </tr>
+                </table>
             </div>
             {% else %}
             <p class="text-center welcome-text mt-3 mb-3">Your bag is empty.</p>
