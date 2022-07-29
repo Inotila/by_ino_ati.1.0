@@ -30,6 +30,7 @@ def bag_contents(request):
         'total': total,
         'art_piece_count': art_piece_count,
         'grand_total': grand_total,
+        'delivery': delivery,
     }
 
     return context
