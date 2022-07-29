@@ -8,13 +8,12 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 
-def add_art_to_bag(request, art_id):
+def add_to_bag(request, art_id):
     """ Add art piece to shopping bag"""
 
     quantity = 1
-    redirect_url = request.POST.GET(redirect_url)
+    redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
-
     bag[art_id] = quantity
 
     request.session['bag'] = bag
