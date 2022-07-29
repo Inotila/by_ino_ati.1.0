@@ -195,6 +195,10 @@ div > div > p > a {
 .empty_bag_links{
     color: #000 !important;
 }
+
+.remove-item{
+    color: #000 !important;
+}
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
 

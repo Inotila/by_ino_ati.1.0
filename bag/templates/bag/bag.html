@@ -17,7 +17,7 @@
                         <tr>
                             <th scope="col">Art Info</th>
                             <th scope="col"></th>
-                            <th scope="col">Price/th>
+                            <th scope="col">Price</th>
                             <th scope="col">Qty</th>
                             <th scope="col">Subtotal</th>
                         </tr>
@@ -43,7 +43,7 @@
                         </td>
                         <td>
                             <p>
-                                Price: {{item.art.price}}
+                                ${{item.art.price}}
                             </p>
                         </td>
                         <td>
@@ -53,12 +53,13 @@
                         </td>
                         <td>
                             <p>
-
+                                ${{item.art.price}}
                             </p>
-                            <p>
-                                <p>
-
-                                </p>
+                        </td>
+                        <td>
+                            <a href="" class="remove-item" id="remove_{{ item.art_id}}">
+                                <i class="fas fa-times"></i>
+                            </a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -140,4 +141,21 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'itemId': itemId
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>
 {% endblock %}
