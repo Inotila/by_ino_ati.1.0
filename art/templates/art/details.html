@@ -13,6 +13,7 @@
             <img class="card-img" src="{{ details.art_image.url }}" alt="a picture of art work by artist inotila nghaamwa">
         </div>
         <div class="col  text-center">
+            <h1>Details about art piece</h1>
             <p>Media:</p>
             <p>{{details.media}}</p>
             <br>
@@ -24,9 +25,9 @@
             <br>
             <p>price:</p>
             <p>{{details.price}}</p>
-            <form action="{% url 'add_art_to_bag' image.id %}" method="POST">
+            <form action="{% url 'add_to_bag' details.id %}" method="POST">
                 {% csrf_token %}
-                <input type="submit" class="btn homepage-btn text-uppercase" data-art_id="{{ image.id }}" value="Add to Bag">
+                <input type="submit" class="btn homepage-btn text-uppercase" data-art_id="{{ details.id }}" value="Add to Bag">
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
         </div>
