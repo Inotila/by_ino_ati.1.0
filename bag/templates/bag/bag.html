@@ -57,7 +57,7 @@
                             </p>
                         </td>
                         <td>
-                            <a href="" class="remove-item" id="remove_{{ item.art_id}}">
+                            <a class="remove-item" id="remove_{{ item.art_id}}" data-this_art_id="{{ item.art_id }}">
                                 <i class="fas fa-times"></i>
                             </a>
                         </td>
@@ -146,10 +146,10 @@
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}`;
+        var id = $(this).data('this_art_id');
+        var url = `/bag/remove/${itemId}/`;
         var data = {
-            'csrfmiddlewaretoken': csrfToken,
-            'itemId': itemId
+            'csrfmiddlewaretoken': csrfToken, 'art_id': id
         };
 
         $.post(url, data)
