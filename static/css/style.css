@@ -198,6 +198,7 @@ div > div > p > a {
 
 .remove-item{
     color: #000 !important;
+    cursor: pointer;
 }
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
