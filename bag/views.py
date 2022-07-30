@@ -22,12 +22,12 @@ def add_to_bag(request, art_id):
 
 def remove_from_bag(request, art_id):
     """Remove the item from the shopping bag"""
-
+   
     try:
-        if art_id in request.POST:
-            bag.pop(art_id)
+        id = None
+        bag = request.session.get('bag', {})
+        bag.pop(art_id)
 
-        request.session['bag'] = bag
         return HttpResponse(status=200)
 
     except Exception as e:

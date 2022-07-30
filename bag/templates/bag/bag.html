@@ -57,7 +57,7 @@
                             </p>
                         </td>
                         <td>
-                            <a class="remove-item" id="remove_{{ item.art_id}}" data-this_art_id="{{ item.art_id }}">
+                            <a class="remove-item" id="remove_{{ item.art_id}}" data-item="{{ item.art_id}}">
                                 <i class="fas fa-times"></i>
                             </a>
                         </td>
@@ -68,29 +68,10 @@
                             <img class="img-fluid rounded" src="{{ item.art.art_image.url }}">
                         </td>
                         <td>
-                            <p>
-
-                            </p>
-                            <p>
-
-                            </p>
-
-                            </p>
-                            <p>
-
-                            </p>
                         </td>
                         <td>
-                            <p>
-
-                            </p>
                         </td>
                         <td>
-                            <p>
-
-                                <p>
-
-                                </p>
                         </td>
                         <td>
                             <p>
@@ -146,11 +127,9 @@
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var id = $(this).data('this_art_id');
+        var id = $(this).data('art_id');
         var url = `/bag/remove/${itemId}/`;
-        var data = {
-            'csrfmiddlewaretoken': csrfToken, 'art_id': id
-        };
+        var data = { 'csrfmiddlewaretoken': csrfToken, 'id': id};
 
         $.post(url, data)
             .done(function () {
