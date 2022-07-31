@@ -15,6 +15,7 @@ def add_to_bag(request, art_id):
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
     bag[art_id] = quantity
+    print(bag)
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -22,11 +23,12 @@ def add_to_bag(request, art_id):
 
 def remove_from_bag(request, art_id):
     """Remove the item from the shopping bag"""
-   
+
     try:
         id = None
         bag = request.session.get('bag', {})
         bag.pop(art_id)
+        print(bag)
 
         return HttpResponse(status=200)
 
