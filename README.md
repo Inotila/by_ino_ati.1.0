@@ -9,7 +9,7 @@ To run the webpage click on this link: [by_ino_ati](https://by-ino-ati.herokuapp
 ![Am I responsive image](static/images/responsive.png)
 # by_ino_ati(Portfolio 4)
 
-This project is for my final submission for my forth milestone. The aim of the project is to code and deploy a responsive website using Java Script, python+ django, HTML and CSS. 
+This project is for my final submission for my fifth milestone. The aim of the project is to code and deploy a responsive e-commerce website using Java Script, python+ django, HTML and CSS. 
 
 ## About by_ino_ati
 
@@ -28,15 +28,15 @@ In addition, the UI is easy to understand and navigate. Furthermore, the site of
 ## Potential features (before starting)
 
 1. A grid view of art works
-2. Like content and view number of likes a post has.
+2. Like content.
 3. Comment on post and view comments from other users and the amount of comments a post received.
 4. An easy to understand UI.
 5. An easy signup process to be authenticated.
 6. View details about the art work.
-7. See the availability to purchase the art work
-8. Live bids.
-9. Users will be able to bid on art works.
-10. Share button to allow users to share posts on other social media.
+7. Purchase the art work
+8. Live bids on art works.
+9. A view and review items in shopping bag.
+10. Easy payment method.
 11. A booking page where site users can book artist for a commission.
 
 ## Actual Features (end product)
@@ -218,25 +218,35 @@ I created this entity relationship diagram to guide me in creating my data struc
 ![an image of the mock-ups done during the design process](static/images/entityrelationshipdiagram.jpg)
 
 ### Wireframes
-I created these wireframes during the design process using Figma. Below are the images of each page found on the app.
+I designed a high fidelity prototype for my wireframes Figma. This prototype has most of the fuctionality of that will be seen in the live site. However, during the developement of the live site I found certain pages required a different design either to the ones seen in the prototype. Furthermore, certain features in the prototype may be implimented in future releases. The prototype is availabe for testing here:  [Prototype](https://www.figma.com/proto/ovBwxM0RloJGWQoZdNKPAg/%40by_ino_ati?node-id=2%3A4&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A4)
 
 #### Home view wireframe
-![an image of the mock-ups done during the design process](static/images/wireframe1.jpg)
+![an image of the mock-ups done during the design process](static/images/wireframes/home.png)
+
+#### Bio wireframe
+![an image of the mock-ups done during the design process](static/images/wireframes/bio.png)
 
 #### Art view wireframe
-![an image of the mock-ups done during the design process](static/images/wireframe2.jpg)
+![an image of the mock-ups done during the design process](static/images/wireframes/painting.png)
 
+#### Second art view wireframe( might have)
+![an image of the mock-ups done during the design process](static/images/wireframes/grid.png)
+
+#### Third art view wireframe( might have)
+![an image of the mock-ups done during the design process](static/images/wireframes/scroll.png)
+wireframes/
 #### Details view wireframe
-![an image of the mock-ups done during the design process](static/images/wireframe3.jpg)
+![an image of the mock-ups done during the design process](static/images/wireframes/details.png)
 
-#### Sign-in view wireframe
-![an image of the mock-ups done during the design process](static/images/wireframe4.jpg)
+#### Payout and bag view wireframe
+![an image of the mock-ups done during the design process](static/images/wireframes/payout.png)
 
-#### Signup view wireframe
-![an image of the mock-ups done during the design process](static/images/wireframe5.jpg)
+#### Checkout and bag view wireframe
+![an image of the mock-ups done during the design process](static/images/wireframes/checkout.png)
 
-#### Sign-out view wireframe
-![an image of the mock-ups done during the design process](static/images/wireframe6.jpg)
+#### Thanks for payment view wireframe
+![an image of the mock-ups done during the design process](static/images/wireframes/thanks.png)
+
 
 ### Project task list 
 I made a project task list to ensure I was aware of all the requirements and that all them were met (see figure A, B, and C). Below are the three list I worked with. 
