@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse
+from django.contrib import messages
+from art.models import Art
 
 # Create your views here.
 
@@ -10,11 +12,13 @@ def view_bag(request):
 
 def add_to_bag(request, art_id):
     """ Add art piece to shopping bag"""
-
+    
+    art = Art.objects.get(pk=art_id)
     quantity = 1
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
     bag[art_id] = quantity
+    messages.success(request, f'Added {art.title} to your bag')
     print(bag)
 
     request.session['bag'] = bag
