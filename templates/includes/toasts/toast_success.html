@@ -8,6 +8,35 @@
         </button>
     </div>
     <div class="toast-body bg-white">
-        {{ message }}        
+        <div class="row">
+            <div class="col">{{ message }}</div>
+            <hr class="mt-1 mb-3">
+        </div>    
+        {% if grand_total %}
+        <p> Your bag ({{ art_piece_count }})</p>
+        <div class="bag-notification-wrapper">
+        {% for item in bag_items %}
+            <div class="row">
+                <div class="col-3">
+                    <img class="w-100" src="{{item.art.art_image.url}}" alt="">
+                </div>
+                <div class="col">
+                    <p>Title: {{ item.art.title|upper }}</p>
+                    <p>Price: {{ item.art.price }} SEK</p>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="row">
+            <div class="col btn homepage-btn">
+                <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-0">
+                    <span class="text-uppercase">Go To Secure Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+        {% endif %}
     </div>
 </div>
