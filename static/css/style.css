@@ -200,6 +200,22 @@ div > div > p > a {
     color: #000 !important;
     cursor: pointer;
 }
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
 
