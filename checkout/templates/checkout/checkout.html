@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center welcome-text mt-3 mb-3">Shopping bag</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+         <p>Please fill in the form to proceed to payment</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var item = $(this).data('item');
+        var url = `/bag/remove/${itemId}/`;
+        var data = { 'csrfmiddlewaretoken': csrfToken, 'item': item};
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>
+{% endblock %}
