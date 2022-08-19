@@ -84,6 +84,7 @@
                 </fieldset>
                 <fieldset>
                     <legend>Payment</legend>
+                    <!-- Used to display stripe card element -->
                     <div class="mb-3" id="card-element"></div>
                     <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
@@ -114,7 +115,7 @@
 </div>
 {% endblock %}
 
-{% block postloadjs %}
+{% block postload_js %}
 {{ block.super }}
 {{ stripe_public_key|json_script:"id_stripe_public_key" }}
 {{ client_secret|json_script:"id_client_secret" }}
