@@ -8,6 +8,7 @@ def bag_contents(request):
     """ process the contents of the bag"""
 
     bag_items = []
+    art_ids = []
     total = 0
     art_piece_count = 0
     delivery = 1000
@@ -22,6 +23,7 @@ def bag_contents(request):
             'quantity': quantity,
             'art': art
         })
+        art_ids.append(art_id)
 
     grand_total = total + delivery
 
@@ -31,6 +33,7 @@ def bag_contents(request):
         'art_piece_count': art_piece_count,
         'grand_total': grand_total,
         'delivery': delivery,
+        'art_ids': art_ids
     }
 
     return context
