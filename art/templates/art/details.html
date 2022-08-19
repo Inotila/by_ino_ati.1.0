@@ -24,12 +24,16 @@
             <p>{{details.date_completed}}</p>
             <br>
             <p>price:</p>
-            <p>{{details.price}}</p>
+            <p>{{details.price}} SEK</p>
+            {% if request.user.is_authenticated %}
             <form action="{% url 'add_to_bag' details.id %}" method="POST">
                 {% csrf_token %}
                 <input type="submit" class="btn homepage-btn text-uppercase" data-art_id="{{ details.id }}" value="Add to Bag">
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
+            {% else %}
+            <strong><p><a href="" class="override-a-defualt"> Sign-up</a> or <a href="" class="override-a-defualt">login</a> to purchase this piece</p></strong>
+            {% endif %}
         </div>
     </div>
 </div>

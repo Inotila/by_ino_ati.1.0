@@ -34,6 +34,10 @@ p {
     padding: 0px !important;
 }
 
+.override-a-defualt {
+    color: #000 !important;
+}
+
 
 /* nav bar  */
 nav {
