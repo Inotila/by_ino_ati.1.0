@@ -22,19 +22,19 @@
     <div class="row d-inline-flex justify-content-center">
         <div class="col-8 col-lg-4 col-md-8 trend-col">
             <div class="trending-Img-container fill-space">
-                <a href="">
+                <a href="{% url 'art' %}?category=1">
                     <img src="{% static 'images/eliko.jpg' %}" class="trending-catergory img-fluid" alt="trending-catergor">
                 </a>
             </div>
         </div>
         <div class="col-4 col-lg-2 col-md-4 d-flex flex-column trend-col">
             <div class="secondary-img-container fill-space">
-                <a href="">
+                <a href="{% url 'art' %}?category=2">
                     <img src="{% static 'images/ompenda.jpg' %}" class="secondary-img img-fluid" alt="trending-catergor">
                 </a>
             </div>
             <div class="secondary-img-container fill-space">
-                <a href="">
+                <a href="{% url 'art' %}?category=3">
                     <img src="{% static 'images/readers.jpg' %}" class="secondary-img img-fluid bottom-secondary-img" alt="trending-catergor">
                 </a>
             </div>
@@ -44,9 +44,9 @@
     <div class="row">
         <div class="col">
             <div class="home-page-btn-container  d-flex justify-content-center">
-                <a href="{% url 'art' %}?category=painting" class="btn homepage-btn">paintings</a>
-                <a href="{% url 'art' %}?category=ink" class="btn homepage-btn">ink</a>
-                <a href="{% url 'art' %}?category=pencil" class="btn homepage-btn">pencil</a>
+                <a href="{% url 'art' %}?category=1" class="btn homepage-btn">paintings</a>
+                <a href="{% url 'art' %}?category=2" class="btn homepage-btn">ink</a>
+                <a href="{% url 'art' %}?category=3" class="btn homepage-btn">pencil</a>
             </div>
         </div>
     </div>
