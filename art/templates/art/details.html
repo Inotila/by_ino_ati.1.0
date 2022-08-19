@@ -17,6 +17,16 @@
             <p>Media:</p>
             <p>{{details.media}}</p>
             <br>
+            <br>
+            <p>Framed:</p>
+            {% if details.framed %}
+            <p>Yes</p>
+            {% else %}
+            <p>No</p>
+            {% endif %}
+            <br>
+            <p>{{details.size}}</p>
+            <br>
             <p>Size:</p>
             <p>{{details.size}}</p>
             <br>
