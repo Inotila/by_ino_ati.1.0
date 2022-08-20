@@ -8,18 +8,19 @@
             <h2 class="text-center welcome-text mt-3 mb-3">Shopping bag</h2>
         </div>
     </div>
+    <hr>
     <div class="row">
         <div class="col">
             {% if bag_items %}
             <div class="table-responsive">
-                <table class="table table-borderless">
+                <table class="table table-borderless text-center">
                     <thead>
                         <tr>
-                            <th scope="col">Art Info</th>
+                            <th scope="col">Art Piece:</th>
                             <th scope="col"></th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Subtotal</th>
+                            <th scope="col">Price:</th>
+                            <th scope="col">Qty:</th>
+                            <th scope="col">Subtotal:</th>
                         </tr>
                     </thead>
                     {% for item in bag_items %}
@@ -37,13 +38,19 @@
                             <p>
                                 {{item.art.Media}}
                             </p>
+                            {% if item.art.is_framed %}
                             <p>
-                                is framed: {{item.art.is_framed}}
+                                Framed
                             </p>
+                            {% else %}
+                            <p>
+                                No Frame
+                            </p>
+                            {% endif %}
                         </td>
                         <td>
                             <p>
-                                ${{item.art.price}}
+                                {{item.art.price}} SEK
                             </p>
                         </td>
                         <td>
@@ -53,7 +60,7 @@
                         </td>
                         <td>
                             <p>
-                                ${{item.art.price}}
+                                {{item.art.price}} SEK
                             </p>
                         </td>
                         <td>
@@ -75,14 +82,14 @@
                         </td>
                         <td>
                             <p>
-                                Bag Total: ${{total|floatformat:2}}
+                                Total: {{total|floatformat:2}} SEK
                             </p>
                             <p>
-                                Delivery: ${{ delivery|floatformat:2}}
+                                Delivery: {{ delivery|floatformat:2}} SEK
                             </p>
-                            <p>
-                                Subtotal: ${{grand_total}}
-                            </p>
+                            <strong> <p>
+                                Subtotal: {{grand_total}} SEK
+                            </p></strong>
                         </td>
                     </tr>
                     <tr>
@@ -91,7 +98,7 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <a href="{% url 'checkout' %}" class="btn homepage-btn">Proceed checkout</a>
+                            <a href="{% url 'checkout' %}" class="btn homepage-btn add-to-bag">Proceed checkout</a>
                         </td>
                     </tr>
                 </table>
@@ -129,7 +136,10 @@
         var itemId = $(this).attr('id').split('remove_')[1];
         var item = $(this).data('item');
         var url = `/bag/remove/${itemId}/`;
-        var data = { 'csrfmiddlewaretoken': csrfToken, 'item': item};
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'item': item
+        };
 
         $.post(url, data)
             .done(function () {
