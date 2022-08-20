@@ -37,7 +37,7 @@
             {% if request.user.is_authenticated %}
                 {% if bag_items %}
                     {% if details.id|lower in art_ids|lower %}
-                        <p class="text-muted mb-3">Proceed to checkout to finish this purchase.</p>
+                        <p class="text-muted mb-3">Proceed to checkout to finish this purchase or <a class="text-muted" href="{% url 'art' %}?category=1">veiw more art</a></p>
                         <a href="{% url 'checkout' %}" id="after-add-to-bag-btn"class="btn homepage-btn go-to-checkout">CHECKOUT</a>
                     {% else %}
                         <form action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
