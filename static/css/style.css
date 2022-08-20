@@ -17,7 +17,7 @@ a {
 
 h1 {
     font-family: send flowers;
-    font-weight:600;
+    font-size: 5rem;
 }
 
 .row {
@@ -164,7 +164,7 @@ footer {
     font-size: large
 }
 
-/*------------------ index ----------------------*/
+/*------------------ Homepage index.html ----------------------*/
 
 /* hero-img */
 
@@ -196,11 +196,8 @@ div > div > p > a {
     height: 100%;
 }
 
-
-
 .bottom-secondary-img{
     margin-top: 0.5rem;
-    
 }
 
 .fill-space {
@@ -231,7 +228,7 @@ div > div > p > a {
     font-weight: bold;
 }
 
-/* art template */
+/*------------- art view art.html ------------------*/
 
 .art-card-container{
     width: 100%;
@@ -245,7 +242,21 @@ div > div > p > a {
     object-fit: cover;
 }
 
-/* bag template */
+/*------------- details view details.html ------------------*/
+
+.add-to-bag:hover {
+    background-color: #12330c;
+    color: #F5F5F5;
+    border: 1px solid #000;
+}
+
+.go-to-checkout{
+    background-color: #12330c;
+    color: #F5F5F5;
+    border: 1px solid #000;
+}
+
+/*------------- bag template ------------------*/
 .empty_bag_links{
     color: #000 !important;
 }
@@ -323,8 +334,6 @@ div > div > p > a {
 
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
-
-
     .logo {
 }
 

@@ -14,38 +14,36 @@
                 alt="a picture of art work by artist inotila nghaamwa">
         </div>
         <div class="col  text-center">
-            <h2>Details about art piece</h2>
-            <p>Media:</p>
-            <p>{{details.media}}</p>
-            <br>
-            <p>Framed:</p>
-            {% if details.framed %}
-            <p>Yes</p>
-            {% else %}
-            <p>No</p>
-            {% endif %}
-            <br>
-            <p>{{details.size}}</p>
-            <br>
-            <p>Size:</p>
-            <p>{{details.size}}</p>
-            <br>
-            <p>Completed:</p>
-            <p>{{details.date_completed}}</p>
-            <br>
-            <p>price:</p>
-            <p>{{details.price}} SEK</p>
-
-            
+            <div class="mb-3"> <h2>Details about art piece</h2>
+                <p>Media:</p>
+                <p>{{details.media}}</p>
+                <br>
+                <p>Framed:</p>
+                {% if details.framed %}
+                <p>Yes</p>
+                {% else %}
+                <p>No</p>
+                {% endif %}
+                <br>
+                <p>{{details.size}}</p>
+                <br>
+                <p>Size:</p>
+                <p>{{details.size}}</p>
+                <br>
+                <p>Completed:</p>
+                <p>{{details.date_completed}}</p>
+                <br>
+                <p>price:</p>
+                <p>{{details.price}} SEK</p></div>            
             {% if request.user.is_authenticated %}
                 {% if bag_items %}
                     {% if details.id|lower in art_ids|lower %}
-                        <p>Painting is already in your bag</p>
-                        <a href="{% url 'checkout' %}" id="after-add-to-bag-btn"class="btn homepage-btn">Go to checkout</a>
+                        <p class="text-muted mb-3">Proceed to checkout to finish this purchase.</p>
+                        <a href="{% url 'checkout' %}" id="after-add-to-bag-btn"class="btn homepage-btn go-to-checkout">CHECKOUT</a>
                     {% else %}
                         <form action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
                             {% csrf_token %}
-                            <input type="submit" id="add-to-bag-btn" class="btn homepage-btn text-uppercase"
+                            <input type="submit" class="btn homepage-btn text-uppercase add-to-bag"
                                 data-art_id="{{ details.id }}" value="Add to Bag">
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
@@ -53,15 +51,15 @@
                 {% else %}
                 <form action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
                     {% csrf_token %}
-                    <input type="submit" id="add-to-bag-btn" class="btn homepage-btn text-uppercase"
+                    <input type="submit" class="btn homepage-btn text-uppercase add-to-bag"
                         data-art_id="{{ details.id }}" value="Add to Bag">
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
                 {% endif %}
             {% else %}
             <strong>
-                <p><a href="" class="override-a-defualt"> Sign-up</a> or <a href="" class="override-a-defualt">login</a>
-                    to purchase this piece</p>
+                <p><a href="{% url 'account_signup' %}" class="override-a-defualt"> Sign-up</a> for free or <a href="{% url 'account_login' %}" class="override-a-defualt">login</a>
+                    to purchase this piece and enjoy other features of this site.</p>
             </strong>
             {% endif %}
         </div>
