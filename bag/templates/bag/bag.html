@@ -50,7 +50,7 @@
                         </td>
                         <td>
                             <p>
-                                {{item.art.price}} SEK
+                                {{item.art.price|floatformat:2}} SEK
                             </p>
                         </td>
                         <td>
@@ -60,7 +60,7 @@
                         </td>
                         <td>
                             <p>
-                                {{item.art.price}} SEK
+                                {{item.art.price|floatformat:2}} SEK
                             </p>
                         </td>
                         <td>
@@ -88,7 +88,7 @@
                                 Delivery: {{ delivery|floatformat:2}} SEK
                             </p>
                             <strong> <p>
-                                Subtotal: {{grand_total}} SEK
+                                Subtotal: {{grand_total|floatformat:2}} SEK
                             </p></strong>
                         </td>
                     </tr>

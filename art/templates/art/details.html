@@ -32,7 +32,7 @@
                 <strong><p>{{details.date_completed}}</p></strong>
                 <br>
                 <p>Price:</p>
-                <strong><p>{{details.price}} SEK</p></strong>
+                <strong><p>{{details.price|floatformat:2}} SEK</p></strong>
                 </div>            
             {% if request.user.is_authenticated %}
                 {% if bag_items %}
