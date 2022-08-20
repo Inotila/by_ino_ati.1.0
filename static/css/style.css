@@ -8,7 +8,6 @@ body {
     background-color: #F5F5F5 !important;
     font-family: Oswald;
     font-weight: 400;
-    
 }
 
 a {
@@ -29,7 +28,6 @@ h1 {
     padding: 0px;
 }
 
-
 p {
     margin-top: 0;
     margin-bottom: 0;
@@ -44,7 +42,7 @@ p {
 }
 
 
-/* nav bar  */
+/*--------------------------- nav bar ----------------------- */
 nav {
     background-color: #000;
     color: #F5F5F5;
@@ -117,7 +115,7 @@ nav {
     margin: 0.5rem;
 }
 
-/* stripe */
+/* ------------------------- stripe ----------------------- */
 
 .StripeElement,
 .stripe-style-input {
@@ -157,7 +155,7 @@ nav {
     border: 1px solid #000;
 }
 
-/* foot */
+/*----------------- footer --------------- */
 footer {
     background-color: #000 !important;
     color: #fff !important;
@@ -166,7 +164,7 @@ footer {
     font-size: large
 }
 
-/* index */
+/*------------------ index ----------------------*/
 
 /* hero-img */
 
@@ -224,6 +222,13 @@ div > div > p > a {
     width: 10rem;
     color: #F5F5F5;
     background-color: #000;
+}
+
+.non-payment-btn:hover {
+    background-color: #bbbbbb;
+    color: #000;
+    border: 1px solid #000;
+    font-weight: bold;
 }
 
 /* art template */
