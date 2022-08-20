@@ -16,25 +16,24 @@
         <div class="col  text-center">
             <div class="mb-3"> <h2>Details about art piece</h2>
                 <p>Media:</p>
-                <p>{{details.media}}</p>
+                <strong><p>{{details.media}}</p></strong>
                 <br>
                 <p>Framed:</p>
                 {% if details.framed %}
-                <p>Yes</p>
+                <strong><p>Yes</p></strong>
                 {% else %}
-                <p>No</p>
+                <strong><p>No</p></strong>
                 {% endif %}
                 <br>
-                <p>{{details.size}}</p>
-                <br>
                 <p>Size:</p>
-                <p>{{details.size}}</p>
+                <strong><p>{{details.size}}</p></strong>
                 <br>
                 <p>Completed:</p>
-                <p>{{details.date_completed}}</p>
+                <strong><p>{{details.date_completed}}</p></strong>
                 <br>
-                <p>price:</p>
-                <p>{{details.price}} SEK</p></div>            
+                <p>Price:</p>
+                <strong><p>{{details.price}} SEK</p></strong>
+                </div>            
             {% if request.user.is_authenticated %}
                 {% if bag_items %}
                     {% if details.id|lower in art_ids|lower %}
