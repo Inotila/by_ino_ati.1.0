@@ -1,5 +1,4 @@
 <div class="toast custom-toast rounded-0 border-top-0" data-autohide="false">
-    <div class="arrow-up arrow-success"></div>
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header bg-white text-dark">
         <strong class="mr-auto">Success!</strong>
@@ -17,8 +16,8 @@
         <div class="bag-notification-wrapper">
         {% for item in bag_items %}
             <div class="row">
-                <div class="col-3">
-                    <img class="w-100" src="{{item.art.art_image.url}}" alt="">
+                <div class="col-3 mb-1">
+                    <img class="w-100" src="{{item.art.art_image.url}}" alt="a small thumbnail of art work by Inotila Nghaamwa">
                 </div>
                 <div class="col">
                     <p>Title: {{ item.art.title|upper }}</p>
@@ -27,9 +26,9 @@
             </div>
         {% endfor %}
         <div class="row">
-            <div class="col btn homepage-btn">
-                <a href="{% url 'view_bag' %}" class="btn btn-black btn-block rounded-0">
-                    <span class="text-uppercase">Go To Secure Checkout</span>
+            <div class="col btn homepage-btn go-to-checkout">
+                <a href="{% url 'view_bag' %}" class="btn btn-block rounded-0 override-a-defualt">
+                    <span class="text-uppercase">Checkout</span>
                     <span class="icon">
                         <i class="fas fa-lock"></i>
                     </span>

@@ -252,10 +252,16 @@ div > div > p > a {
 
 .go-to-checkout{
     background-color: #12330c;
-    color: #F5F5F5;
+    color: #F5F5F5 !important;
     border: 1px solid #000;
 }
 
+
+.go-to-checkout > a {
+    background-color: #12330c;
+    color: #F5F5F5 !important;
+    border: 1px solid #000;
+}
 /*------------- bag template ------------------*/
 .empty_bag_links{
     color: #000 !important;
@@ -279,18 +285,6 @@ div > div > p > a {
 
 .toast-capper {
     height: 2px;
-}
-
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
-.arrow-up {
-    width: 0; 
-    height: 0; 
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
-    border-bottom: 10px solid black;
-    position: absolute;
-    top: -10px;
-    right: 36px;
 }
 
 /* Convenience classes - colors copied from Bootstrap */
