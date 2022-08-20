@@ -11,29 +11,30 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <p class="">Order Summary ({{ art_piece_count }})</p>
+            <strong><p class="">Order Summary </p></strong>
+            <p>Number of art pieces in shopping bag: {{ art_piece_count }}</p>
             <div class="row">
                 <div class="col-7">
                     <p class="">Art Piece</p>
                 </div>
-                <div class="col-3">
-                    <p class="">Subtotal</p>
+                <div class="col-5">
+                    <p class="text-right">Subtotal</p>
                 </div>
             </div>
             {% for item in bag_items %}
             <div class="row">
-                <div class="col-2 ">
+                <div class="col-2 mb-1">
                     <a href="{% url 'details' item.art.id %}">
                         {% if item.art.art_image %}
                         <img class="w-100" src="{{ item.art.art_image.url }}" alt="{{ art.title }}">
                         {% endif %}
                     </a>
                 </div>
-                <div class="col-7">
-                    <p class="my-0"><strong>{{ item.art.title }}</strong></p>
-                    <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                <div class="col-5">
+                    <p class="my-0"><strong>Title:</strong> {{ item.art.title }}</p>
+                    <p class="my-0 small text-muted"><strong> Qty:</strong> {{ item.quantity }}</p>
                 </div>
-                <div class="col-3 text-right">
+                <div class="col-5 text-right">
                     <p class="my-0 small text-muted">Price: ${{ item.art.price }}</p>
                 </div>
             </div>
@@ -41,14 +42,12 @@
             <hr class="my-0">
             <div class="row text-black text-right">
                 <div class="col-7 offset-2">
-                    <p class="my-0">Order Total:</p>
-                    <p class="my-0">Delivery:</p>
-                    <p class="my-0">Grand Total:</p>
+                   
                 </div>
                 <div class="col-3">
-                    <p class="my-0">${{ total | floatformat:2 }}</p>
-                    <p class="my-0">${{ delivery | floatformat:2 }}</p>
-                    <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                    <p class="my-0"><strong>Art piece(s):</strong> {{ total | floatformat:2 }} SEK</p>
+                    <p class="my-0"><strong>Delivery:</strong> {{ delivery | floatformat:2 }} SEK</p>
+                    <p class="my-0"><strong>Grand Total: {{ grand_total | floatformat:2 }} SEK</strong></p>
                 </div>
             </div>
         </div>
