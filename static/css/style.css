@@ -209,6 +209,11 @@ div > div > p > a {
 
 /* homepage buttons */
 
+.shop-btn{
+background-color: #b49404 !important;
+border: 1px solid #000;
+}
+
 .home-page-btn-container{
     margin-top:0.5rem;
     margin-bottom: 0.5rem;
