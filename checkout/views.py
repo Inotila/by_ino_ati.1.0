@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
+
 from .forms import OrderFrom
+from .models import Order, OrderLineItem
+from art.models import Art
 from bag.contexts import bag_contents
 import stripe
 
@@ -25,7 +28,30 @@ def checkout(request):
         }
         order_form = OrderFrom(form_data)
         if order_form.is_valid():
-            order_form.save()
+            order = order_form.save()
+            for art_id, item_data in bag.items():
+                try:
+                    art = Art.objects.get(id=art_id)
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            art=art,
+                            quantity=item_data,
+                        )
+                        order_line_item.save()
+                except Art.DoesNotExist:
+                    messages.error(request, (
+                        "One of the products in your bag wasn't found in our database. "
+                        "Please call us for assistance!")
+                    )
+                    order.delete()
+                    return redirect(reverse('view_bag'))
+
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('checkout_done', args=[order.order_number]))
+        else:
+            messages.error(request, 'There was an error with your form. \
+                Please double check your information.')
     else:
         bag = request.session.get('bag')
         if not bag:
