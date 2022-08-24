@@ -89,7 +89,7 @@ def checkout(request):
 
 def checkout_done(request, order_number):
     """
-    Handle comlpleted checkouts
+    Handle completed checkouts
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
