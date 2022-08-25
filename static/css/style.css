@@ -249,8 +249,8 @@ border: 1px solid #000;
 
 /*------------- details view details.html ------------------*/
 
-.add-to-bag:hover {
-    background-color: #12330c;
+.add-to-bag, .go-to-checkout:hover {
+    background-color: #79e067;
     color: #F5F5F5;
     border: 1px solid #000;
 }
