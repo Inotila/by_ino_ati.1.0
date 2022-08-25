@@ -29,7 +29,7 @@ class Art(models.Model):
     title = models.CharField(max_length=250, null=False)
     caption = models.TextField()
     date_completed = models.DateField(auto_now=False)
-    price = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     art_image = CloudinaryField('image', blank=False)
     likes = models.ManyToManyField(User, related_name='art_likes', blank=True)
     size = models.CharField(max_length=100, unique=False, default='cm')
