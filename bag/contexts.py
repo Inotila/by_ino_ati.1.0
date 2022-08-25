@@ -11,16 +11,17 @@ def bag_contents(request):
     art_ids = []
     total = 0
     art_piece_count = 0
-    delivery = 1000
+    delivery = settings.STANDARD_DELIVERY_FEE
     bag = request.session.get('bag', {})
 
-    for art_id, quantity in bag.items():
+    for art_id, item_data in bag.items():
+        # if isinstance(item_data, int):
         art = get_object_or_404(Art, pk=art_id)
-        total += art.price
-        art_piece_count += quantity
+        total += item_data * art.price
+        art_piece_count += item_data
         bag_items.append({
             'art_id': art_id,
-            'quantity': quantity,
+            'quantity': item_data,
             'art': art
         })
         art_ids.append(art_id)
