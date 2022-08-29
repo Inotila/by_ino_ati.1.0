@@ -12,7 +12,9 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <strong><h2 class=" text-center">Order Summary </h2></strong>
+            <strong>
+                <h2 class=" text-center">Order Summary </h2>
+            </strong>
             <p class=" text-center">Number of art pieces in shopping bag: {{ art_piece_count }}</p>
             <hr class="w-25">
             <div class="row">
@@ -44,7 +46,7 @@
             <hr class="my-0">
             <div class="row text-black text-right">
                 <div class="col-7 offset-2">
-                   
+
                 </div>
                 <div class="col-3">
                     <p class="my-0"><strong>Art piece(s):</strong> {{ total | floatformat:2 }} SEK</p>
@@ -89,27 +91,29 @@
                     <div class="mb-3" id="card-element"></div>
                     <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                    <div class="submit-button text-right mt-5 mb-2">
-                        <a href="{% url 'view_bag' %}" class="">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="font-weight-bold override-a-defualt">Review Bag</span>
-                        </a>
-                        <button id="submit-button" class="complete-checkout">
-                            <span class="font-weight-bold ">Complete purchase</span>
-                            <span class="icon">
-                                <i class="fas fa-lock"></i>
-                            </span>
-                        </button>
-                        <p class="">
-                            <span class="icon">
-                                <i class="fas fa-exclamation-circle"></i>
-                            </span>
-                            <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
-                        </p>
-                    </div>
+                    <!-- Pass the client secret to the view so we can get the payment intent id -->
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
+                <div class="submit-button text-right mt-5 mb-2">
+                    <a href="{% url 'view_bag' %}" class="">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="font-weight-bold override-a-defualt">Review Bag</span>
+                    </a>
+                    <button id="submit-button" class="complete-checkout">
+                        <span class="font-weight-bold ">Complete purchase</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </button>
+                    <p class="">
+                        <span class="icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </span>
+                        <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                    </p>
+                </div>
             </form>
         </div>
     </div>
