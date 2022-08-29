@@ -29,9 +29,10 @@ class StripeWH_Handler:
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-        return HttpResponse(
-            content=f'Webhook received: {event["type"]}',
-            status=200)
+        # Clean data in the shipping details
+        for field, value in shipping_details.address.items():
+            if value == "":
+                shipping_details.address[field] = None
 
     def handle_payment_intent_payment_failed(self, event):
         """
