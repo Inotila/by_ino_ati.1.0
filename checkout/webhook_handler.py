@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Order, OrderLineItem
 from art.models import Art
 import json
-import timee
+import time
 
 
 class StripeWH_Handler:
