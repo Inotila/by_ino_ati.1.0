@@ -249,7 +249,13 @@ border: 1px solid #000;
 
 /*------------- details view details.html ------------------*/
 
-.add-to-bag,.complete-checkout,.go-to-checkout:hover {
+ .complete-checkout, .go-to-checkout:hover {
+    background-color: #79e067;
+    color: #F5F5F5;
+    border: 1px solid #000;
+}
+
+.add-to-bag:hover {
     background-color: #79e067;
     color: #F5F5F5;
     border: 1px solid #000;
@@ -267,7 +273,7 @@ border: 1px solid #000;
     border: 1px solid ##fff;
 }
 
-.go-to-checkout{
+.go-to-checkout, .add-to-bag, .complete-checkout{
     background-color: #12330c;
     color: #F5F5F5 !important;
     border: 1px solid #000;
