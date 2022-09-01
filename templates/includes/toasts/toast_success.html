@@ -11,7 +11,7 @@
             <div class="col">{{ message }}</div>
             <hr class="mt-1 mb-3">
         </div>    
-        {% if grand_total %}
+        {% if grand_total and not on_profile_page %}
         <p> <strong><span> Art pieces in bag:</span></strong> {{ art_piece_count }}</p>
         <div class="bag-notification-wrapper mt-1">
         {% for item in bag_items %}
