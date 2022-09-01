@@ -382,6 +382,12 @@ select option[value=""]{
     height: 100%;
 }
 
+/* --------------alluth css ---------------*/
+.login {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
     .logo {
