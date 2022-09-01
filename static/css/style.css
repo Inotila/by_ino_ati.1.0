@@ -351,6 +351,18 @@ border: 1px solid #000;
 
 /* ----------------- checkout-------------------- */
 
+#div-id_country > div > select {
+    padding: 0px;
+}
+select, select option{
+    color: #000;
+}
+
+select:invalid,
+select option[value=""]{
+    color: #aab7c4 !important;
+}
+
 #loading-overlay {
 	display: none;
 	position: fixed;
