@@ -7,11 +7,22 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="text-center welcome-text mt-3 mb-3">Checkout</h1>
+            <h1 class="text-center welcome-text mt-3 mb-3">My Profile</h1>
+            <hr>
         </div>
     </div>
     <div class="row text-center">
-        <div class="col">{{profile}}</div>
+        <div class="col-12 col-lg-6"><p class="text-muted">Default Delivery Information</p>
+            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn homepage-btn non-payment-btn float-right mb-3">Update Information</button>
+            </form>
+        </div>
+        <div class="col-12 col-lg-6">
+            <p class="text-muted">Order History</p>
+            {{ orders }}
+        </div></div>
     </div>
 </div>
 
