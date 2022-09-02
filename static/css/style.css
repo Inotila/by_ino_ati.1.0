@@ -406,6 +406,11 @@ select option[value=""]{
     color: #aab7c4;
 }
 
+.order-history {
+    max-height: 426px;
+    overflow-y: auto;
+}
+
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
     .logo {

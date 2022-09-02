@@ -174,9 +174,15 @@
     </div>
     <div class="row">
         <div class="col text-center mb-3">
-            <a href="" class="">
-                <span class="text-uppercase btn homepage-btn non-payment-btn">Shop more!</span>
+            {% if from_profile %}
+            <a href="{% url 'profile' %}" class="btn homepage-btn non-payment-btn">
+                <span class="text-uppercase">Go to profile</span>
             </a>
+            {% else %}
+            <a href="" class="btn homepage-btn non-payment-btn">
+                <span class="text-uppercase ">Shop more!</span>
+            </a>
+            {% endif %}
         </div>
     </div>
 </div>
