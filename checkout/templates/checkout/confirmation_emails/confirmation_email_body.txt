@@ -1,0 +1,22 @@
+Hi {{ order.full_name }}!
+
+This is a confirmation of your purchase of art works from @by_ino_ati. Below you will find your purchase information:
+
+Purchase Number: {{ order.order_number }}
+Purchase Date: {{ order.date }}
+
+Purchase Total: ${{ order.order_total }}
+Delivery: {{ order.delivery_cost }} SEK
+Grand Total: {{ order.grand_total }} SEK
+
+Your art work will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}. Along with the art work you will also find a letter of Authentication, please keep it safe. In the event that you hand the ownership of the art work to another person or entity please inform us so that we update our records. Such measure will help protect your investment.
+
+We've got your phone number on file as {{ order.phone_number }}. If this or any of your other details are not correct please inform us immidiately.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Sincerely,
+
+Boutique Ado
