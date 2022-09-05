@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from art.models import Art
 
 # Create your views here.
@@ -10,6 +11,7 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 
+@login_required
 def add_to_bag(request, art_id):
     """ Add art piece to shopping bag"""
 
@@ -24,6 +26,7 @@ def add_to_bag(request, art_id):
     return redirect(redirect_url)
 
 
+@login_required
 def remove_from_bag(request, art_id):
     """Remove the item from the shopping bag"""
 
