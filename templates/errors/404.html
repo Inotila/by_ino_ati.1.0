@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content%}
+<div class="container-fluid">
+    <!-- hero-image -->
+    <div class="row">
+        <div class="col d-flex justify-content-center hero-image-container">
+            <img src="{% static 'images/logoblack.png' %}" id="hero-image" class="img-fluid" alt="logo">
+        </div>
+    </div>
+    <!-- welcome-text -->
+    <div class="row">
+        <div class="col d-flex justify-content-center welcome-text-container">
+            <p class="text-center">
+                Sorry, the page you are looking for is not available. Use the buttons below to view art work that is on display.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mb-3">
+            <div class="home-page-btn-container  d-flex justify-content-center">
+                <a href="" class="btn homepage-btn shop-btn">shop</a>
+                <a href="{% url 'art' %}?category=1" class="btn homepage-btn non-payment-btn">paintings</a>
+                <a href="{% url 'art' %}?category=2" class="btn homepage-btn non-payment-btn">ink</a>
+                <a href="{% url 'art' %}?category=3" class="btn homepage-btn non-payment-btn">pencil</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
