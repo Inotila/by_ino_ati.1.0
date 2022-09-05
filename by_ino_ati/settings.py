@@ -29,6 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
+# DISABLE_COLLECTSTATIC = 1
 
 ALLOWED_HOSTS = ['byinoati.herokuapp.com', 'localhost']
 
