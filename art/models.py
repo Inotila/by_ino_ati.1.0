@@ -76,8 +76,15 @@ class Comment(models.Model):
 
 
 class Newsletter(models.Model):
-    """handles the data for the news letter"""
-    email = models.EmailField()
+    """collects data for users who joined the mail list"""
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, null=True, blank=False)
+    join = models.BooleanField(default=False, null=False)
+    joined_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        """oders the users on the date they joined"""
+        ordering = ['joined_on']
 
     def __str__(self):
-        return self.email
+        return f"{self.user.username}"

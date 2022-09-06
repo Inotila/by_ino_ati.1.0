@@ -23,19 +23,22 @@
         <div class="col-8 col-lg-4 col-md-8 trend-col">
             <div class="trending-Img-container fill-space">
                 <a href="{% url 'art' %}?category=1">
-                    <img src="{% static 'images/eliko.jpg' %}" class="trending-catergory img-fluid" alt="trending-catergor">
+                    <img src="{% static 'images/eliko.jpg' %}" class="trending-catergory img-fluid"
+                        alt="trending-catergor">
                 </a>
             </div>
         </div>
         <div class="col-4 col-lg-2 col-md-4 d-flex flex-column trend-col">
             <div class="secondary-img-container fill-space">
                 <a href="{% url 'art' %}?category=2">
-                    <img src="{% static 'images/ompenda.jpg' %}" class="secondary-img img-fluid" alt="trending-catergor">
+                    <img src="{% static 'images/ompenda.jpg' %}" class="secondary-img img-fluid"
+                        alt="trending-catergor">
                 </a>
             </div>
             <div class="secondary-img-container fill-space">
                 <a href="{% url 'art' %}?category=3">
-                    <img src="{% static 'images/readers.jpg' %}" class="secondary-img img-fluid bottom-secondary-img" alt="trending-catergor">
+                    <img src="{% static 'images/readers.jpg' %}" class="secondary-img img-fluid bottom-secondary-img"
+                        alt="trending-catergor">
                 </a>
             </div>
         </div>
@@ -53,7 +56,19 @@
     </div>
     <div class="row text-center mb-3">
         <div class="col">
-           
+            <!-- form for authenticated users to sign up join mailing list -->
+            {% if user.is_authenticated %}
+            <form class="mail-list" method="post" action="{% url 'home' %}">
+                <h4 class="text-center" style="text-align: center;">Get essential updates:</h4>
+                <p><strong>{{ user.username }}</strong> would you like to join get email notifications on new art works,
+                    new art
+                    works
+                    available for sale, and much more?</p>
+                {% csrf_token %}
+                {{ mail_form }}
+                <button>submit</button>
+            </form>
+            {% endif %}
         </div>
     </div>
 </div>
