@@ -11,6 +11,15 @@ def art_display(request):
     art = None
     query = None
     category = None
+    is_available = None
+
+    if request.GET:
+        if 'is_available' in request.GET:
+            is_available = request.GET['is_available']
+            art = Art.objects.filter(is_available=is_available)
+            if not art:
+                messages.error(request, "Sorry,the are no art works for sale right now. Please comeback later!")
+
     if request.GET:
         if 'category' in request.GET:
             category = request.GET['category']
@@ -21,9 +30,7 @@ def art_display(request):
             query = request.GET['art-search']
             queries = Q(title__icontains=query)
             art = Art.objects.filter(queries)
-            print(f'art is {art}')
             if not art:
-                print('no art')
                 messages.error(request, "not found")
                 return redirect(reverse('art'))
 

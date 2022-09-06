@@ -4,6 +4,9 @@ from cloudinary.models import CloudinaryField
 
 
 class Media(models.Model):
+    """
+    Creates the type of media used for the art work
+    """
     type = models.CharField(max_length=100, null=False, blank=False)
 
     class Meta:
@@ -14,6 +17,9 @@ class Media(models.Model):
 
 
 class Category(models.Model):
+    """
+    Creates catagories for art works
+    """
     type = models.CharField(max_length=25, null=False, blank=False)
 
     class Meta:
@@ -25,7 +31,9 @@ class Category(models.Model):
 
 
 class Art(models.Model):
-    """this handles the data for the art works and its details"""
+    """
+    this handles the data for the art works and its details
+    """
     title = models.CharField(max_length=250, null=False)
     caption = models.TextField()
     date_completed = models.DateField(auto_now=False)

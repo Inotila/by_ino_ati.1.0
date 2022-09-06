@@ -44,7 +44,7 @@
     <div class="row">
         <div class="col mb-3">
             <div class="home-page-btn-container  d-flex justify-content-center">
-                <a href="" class="btn homepage-btn shop-btn">shop</a>
+                <a href="{% url 'art' %}?is_available=True" class="btn homepage-btn shop-btn">shop</a>
                 <a href="{% url 'art' %}?category=1" class="btn homepage-btn non-payment-btn">paintings</a>
                 <a href="{% url 'art' %}?category=2" class="btn homepage-btn non-payment-btn">ink</a>
                 <a href="{% url 'art' %}?category=3" class="btn homepage-btn non-payment-btn">pencil</a>
