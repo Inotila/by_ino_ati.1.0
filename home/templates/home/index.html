@@ -58,6 +58,8 @@
         <div class="col">
             <!-- form for authenticated users to sign up join mailing list -->
             {% if user.is_authenticated %}
+            <!-- form will only display if user has not already submitted it before -->
+            {% if submitted_form == 0 %}
             <form class="mail-list" method="post" action="{% url 'home' %}">
                 <h4 class="text-center" style="text-align: center;">Get essential updates:</h4>
                 <p><strong>{{ user.username }}</strong> would you like to join get email notifications on new art works,
@@ -68,6 +70,7 @@
                 {{ mail_form }}
                 <button>submit</button>
             </form>
+            {% endif %}
             {% endif %}
         </div>
     </div>
