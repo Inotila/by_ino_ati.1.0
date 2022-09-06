@@ -3,8 +3,6 @@ from django.contrib import messages
 from django.db.models import Q
 from .models import Art, Category
 
-# Create your views here.
-
 
 def art_display(request):
     """
