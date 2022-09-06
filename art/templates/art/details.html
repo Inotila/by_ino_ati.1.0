@@ -10,8 +10,29 @@
     </div>
     <div class="row">
         <div class="col">
-            <img class="card-img" src="{{ details.art_image.url }}"
+            <div class="card mb-3">
+                <img class="card-img" src="{{ details.art_image.url }}"
                 alt="a picture of art work by artist inotila nghaamwa">
+                <div class="card-body d-flex justify-content-between">
+                    <!-- form for only signed in users to like post -->
+                    {% if user.is_authenticated %}
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <!-- {% if liked %} -->
+                        <button id="like-button" type="submit" name="user_art_like" value="">
+                            <p><i class="far fa-heart"></i></p>
+                        </button>
+                        <!-- {% else %} -->
+                        <button id="unlike-button" type="submit" name="user_art_like" value="">
+                            <p><i class="far fa-heart"></i></p>
+                        </button>
+                        <!-- {% endif %} -->
+                    </form>
+                    {% else %}
+                    <p><i class="far fa-heart"></i></p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
         <div class="col  text-center">
             <div class="mb-3">
