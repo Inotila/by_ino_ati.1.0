@@ -16,17 +16,17 @@
                 <div class="card-body d-flex justify-content-between">
                     <!-- form for only signed in users to like post -->
                     {% if user.is_authenticated %}
-                    <form action="" method="post">
+                    <form action="{% url 'like_art_piece' details.id %}" method="post">
                         {% csrf_token %}
-                        <!-- {% if liked %} -->
-                        <button id="like-button" type="submit" name="user_art_like" value="">
+                        {% if liked %}
+                        <button id="like-button" type="submit" name="user_art_like" value="{{details.id}}">
+                            <p><i class="fas fa-heart"></i></p>
+                        </button>
+                        {% else %}
+                        <button id="unlike-button" type="submit" name="user_art_unlike" value="{{details.id}}">
                             <p><i class="far fa-heart"></i></p>
                         </button>
-                        <!-- {% else %} -->
-                        <button id="unlike-button" type="submit" name="user_art_like" value="">
-                            <p><i class="far fa-heart"></i></p>
-                        </button>
-                        <!-- {% endif %} -->
+                        {% endif %}
                     </form>
                     {% else %}
                     <p><i class="far fa-heart"></i></p>
