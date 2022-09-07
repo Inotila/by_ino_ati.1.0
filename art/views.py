@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.models import User
@@ -44,14 +45,14 @@ def art_display(request):
     return render(request, 'art/art.html', context)
 
 
-def art_detail(self, request, id):
+def art_detail(request, id):
     """
     renders a detailed display of a single art image
     """
 
     details = get_object_or_404(Art, pk=id)
     liked = False
-    if details.likes.filter(id=self.request.user.id).exists():
+    if details.likes.filter(id=request.user.id).exists():
         liked = True
 
     context = {
@@ -62,15 +63,14 @@ def art_detail(self, request, id):
     return render(request, 'art/details.html', context)
 
 
-def like_item(self, request, slug, View):
+def like_item(request, id):
     """handles post likes"""
     details = get_object_or_404(Art, pk=id)
 
     if details.likes.filter(id=request.user.id).exists():
-        ost.likes.remove(request.user)
+        details.likes.remove(request.user)
     else:
-        post.likes.add(request.user)
+        details.likes.add(request.user)
 
-    print(user)
     print('liked it')
-    return HttpResponseRedirect(reverse('details', pk=id))
+    return HttpResponseRedirect(reverse('home'))
