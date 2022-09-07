@@ -53,6 +53,10 @@ class Art(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def total_number_of_likes(self):
+        """this counts the total number of likes"""
+        return self.likes.count()
 
 
 class Comment(models.Model):

@@ -64,13 +64,12 @@ def art_detail(request, id):
 
 
 def like_item(request, id):
-    """handles post likes"""
+    """Adds and removes likes on an art piece(details)"""
     details = get_object_or_404(Art, pk=id)
 
     if details.likes.filter(id=request.user.id).exists():
-        details.likes.remove(request.user)
+        details.likes.remove(request.user.id)
     else:
-        details.likes.add(request.user)
+        details.likes.add(request.user.id)
 
-    print('liked it')
     return HttpResponseRedirect(reverse('details', args=[id]))
