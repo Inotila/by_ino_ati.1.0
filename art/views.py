@@ -73,3 +73,18 @@ def like_item(request, id):
         details.likes.add(request.user.id)
 
     return HttpResponseRedirect(reverse('details', args=[id]))
+
+
+def comment_on_art(request, id):
+    """Handles users adding comments to item"""
+    details = get_object_or_404(Art, pk=id)
+    comments = details.comments.order_by('created_on')
+    user_comment = CommentForm(data=request.POST)
+
+    context = {
+        'details': details,
+        'comments': comments,
+        'user_comment': CommentForm
+    }
+
+    return render(request, context, 'art/details.html')
