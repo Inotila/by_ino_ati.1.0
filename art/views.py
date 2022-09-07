@@ -83,11 +83,22 @@ def comment_on_art(request, id):
     details = get_object_or_404(Art, pk=id)
     comments = details.comments.order_by('created_on')
     user_comment = CommentForm(data=request.POST)
+    if user_comments.is_valid():
+        user_comments.instance.email = request.user.email
+        user_comments.instance.name = request.user.username
+        user_comments.instance.email = request.user.email
+        comment = user_comments.save(commit=False)
+        comment.post = post
+        comment.save()
+        messages.success(request, "You have successfully commented")
+    else:
+        messages.error(request, "Something went wrong,try again!")
+        user_comments = CommentForm()
 
     context = {
         'details': details,
         'comments': comments,
-        'user_comment': CommentForm
+        'user_comment': CommentForm()
     }
 
     return render(request, context, 'art/details.html')
