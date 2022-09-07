@@ -168,8 +168,8 @@ footer {
 
 /* hero-img */
 
-.hero-image-container{
-    margin:0.5rem;
+.row>.col>#home-title{
+    font-family: Oswald !important;
 }
 
 /* welcoming text */

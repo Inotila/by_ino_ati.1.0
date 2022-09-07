@@ -2,24 +2,36 @@
 {% load static %}
 
 {% block content%}
-<div class="container-fluid">
+<div class="container-fluid mt-3">
     <!-- hero-image -->
-    <div class="row">
+    <!-- <div class="row">
         <div class="col d-flex justify-content-center hero-image-container">
             <img src="{% static 'images/logoblack.png' %}" id="hero-image" class="img-fluid" alt="logo">
         </div>
-    </div>
+    </div> -->
     <!-- welcome-text -->
     <div class="row">
         <div class="col d-flex justify-content-center welcome-text-container">
-            <p class="text-center">
-                Welcome to the official website of Inotila Opoeli Nghaamwa <br>
-                <a class="" href="#">[read more about Inotila]</a>
-            </p>
+            <h1 id="home-title">@by_ino_ati</h1>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <strong>
+                <p>
+                    The official online art store and gallery of Inotila Opoeli Nghaamwa <br>
+                </p>
+            </strong>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col text-muted text-center">
+            <a class="override-a-defualt" href="#">[read more about Inotila]</a>
         </div>
     </div>
     <!-- trending image links -->
-    <div class="row d-inline-flex justify-content-center">
+    <div class="row d-inline-flex justify-content-center mb-3">
         <div class="col-8 col-lg-4 col-md-8 trend-col">
             <div class="trending-Img-container fill-space">
                 <a href="{% url 'art' %}?category=1">
