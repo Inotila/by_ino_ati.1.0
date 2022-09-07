@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.db.models import Q
 from django.contrib.auth.models import User
-from .models import Art, Category
+from .models import Art, Category, Comment
 from .forms import CommentForm
 
 
@@ -46,21 +46,32 @@ def art_display(request):
     return render(request, 'art/art.html', context)
 
 
-def art_detail(request, id):
+def art_detail(request, id, *args, **kwargs):
     """
     renders a detailed display of a single art image
     """
-
     details = get_object_or_404(Art, pk=id)
-    comments = details.comments.order_by('created_on')
+    comments = details.art_commented_on.order_by('created_on')
     liked = False
     if details.likes.filter(id=request.user.id).exists():
         liked = True
+
+    user_comments = CommentForm(data=request.POST)
+
+    if user_comments.is_valid():
+        comment = user_comments.save(commit=False)
+        comment.details = details
+        # comment.save()
+        messages.success(request, "You have successfully commented")
+    else:
+        messages.error(request, "Something went wrong,try again!")
+        user_comments = CommentForm()
 
     context = {
         'details': details,
         "comments": comments,
         "liked": liked,
+        'user_comments': CommentForm()
     }
 
     return render(request, 'art/details.html', context)
@@ -78,27 +89,28 @@ def like_item(request, id):
     return HttpResponseRedirect(reverse('details', args=[id]))
 
 
-def comment_on_art(request, id):
-    """Handles users adding comments to item"""
-    details = get_object_or_404(Art, pk=id)
-    comments = details.comments.order_by('created_on')
-    user_comment = CommentForm(data=request.POST)
-    if user_comments.is_valid():
-        user_comments.instance.email = request.user.email
-        user_comments.instance.name = request.user.username
-        user_comments.instance.email = request.user.email
-        comment = user_comments.save(commit=False)
-        comment.post = post
-        comment.save()
-        messages.success(request, "You have successfully commented")
-    else:
-        messages.error(request, "Something went wrong,try again!")
-        user_comments = CommentForm()
+# def comment_on_art(request, id):
+#     """Handles users adding comments to item"""
+#     details = get_object_or_404(Art, pk=id)
+#     comments = details.comments.order_by('created_on')
+#     user_comment = CommentForm(data=request.POST)
+    
+#     if user_comments.is_valid():
+#         user_comments.instance.email = request.user.email
+#         user_comments.instance.name = request.user.username
+#         user_comments.instance.email = request.user.email
+#         comment = user_comments.save(commit=False)
+#         comment.post = post
+#         comment.save()
+#         messages.success(request, "You have successfully commented")
+#     else:
+#         messages.error(request, "Something went wrong,try again!")
+#         user_comments = CommentForm()
 
-    context = {
-        'details': details,
-        'comments': comments,
-        'user_comment': CommentForm()
-    }
+#     context = {
+#         'details': details,
+#         'comments': comments,
+#         'user_comment': CommentForm()
+#     }
 
-    return render(request, context, 'art/details.html')
+#     return render(request, context, 'art/details.html')

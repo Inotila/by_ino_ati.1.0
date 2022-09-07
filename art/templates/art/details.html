@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content%}
 <div class="container">
@@ -63,7 +64,7 @@
                     <p>{{details.date_completed}}</p>
                 </strong>
                 <!-- only display price and purchase button if art is available -->
-            {% if details.is_available %}
+                {% if details.is_available %}
                 <br>
                 <p>Price:</p>
                 <strong>
@@ -101,6 +102,34 @@
             </strong>
             {% endif %}
             {% endif %}
+            <div class="card mt-3">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h3 class="card-title">Comments</h3>
+                    </div>
+                    <!-- loops through comments and displays them in oder of date posted -->
+                    {% for comment in comments %}
+                    <div class="">
+                        <p>
+                            {{ comment.name }}
+                            :
+                            {{ comment.body }}
+                            <span class=" text-muted">
+                                {{ comment.created_on }}
+                            </span>
+                    </div>
+                    {% endfor %}
+                    <!-- comment form, only users who are authenticated can comment on post -->
+                    {% if user.is_authenticated %}
+                    <form class="comment-form" method="post">
+                        <h4 class="text-center" style="text-align: center;">Join the Conversation:</h4>
+                        {{ user_comments| crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-dark">comment</button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
