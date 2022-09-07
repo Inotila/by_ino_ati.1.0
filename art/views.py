@@ -73,4 +73,4 @@ def like_item(request, id):
         details.likes.add(request.user)
 
     print('liked it')
-    return HttpResponseRedirect(reverse('home'))
+    return HttpResponseRedirect(reverse('details', args=[id]))
