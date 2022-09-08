@@ -9,3 +9,4 @@ class CommentForm(forms.ModelForm):
         """makes only the comments and the body show"""
         model = Comment
         fields = ('body',)
+        ordering = ['created_on']
