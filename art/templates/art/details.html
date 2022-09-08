@@ -15,7 +15,7 @@
                 <div class="card mx-3 ">
                     <img class="card-img" src="{{ details.art_image.url }}"
                         alt="a picture of art work by artist inotila nghaamwa">
-                    <div class="card-body d-flex justify-content-between">
+                    <div class="card-body d-flex justify-content-between" id="img-card-body">
                         <!-- form for only signed in users to like post -->
                         {% if user.is_authenticated %}
                         <form action="{% url 'like_art_piece' details.id %}" method="post">
@@ -111,7 +111,7 @@
             <!-- comments card/section -->
             <div class="mb-3 card-container comment-card-container w-50">
                 <div class="card  mx-3 ">
-                    <div class="card-body mt-3">
+                    <div class="card-body">
                         <div class="text-center">
                             <h3 class="card-title"> <i class="far fa-comment-dots"></i> Art talk</h3>
                             <h4 class="text-center small" style="text-align: center;">Join the Conversation:</h4>
@@ -129,9 +129,9 @@
                                 <!-- edit and delete buttons, checks the mail of the user so user can only comment or edit own post-->
                                 {% if request.user == comment.user %}
                                 <a href="{% url 'edit' comment.id %}" class="override-a-defualt mr-1"><i
-                                        class="fas fa-pen" id="edit-icon"></i></a>
+                                        class="fas fa-pen small" id="edit-icon"></i></a>
                                 <a href="{% url 'delete' comment.id %}" class="override-a-defualt"><i
-                                        class="fas fa-times" id="delete-icon"></i></a>
+                                        class="fas fa-times small" id="delete-icon"></i></a>
                                 {% endif %}
                         </div>
                         {% endfor %}

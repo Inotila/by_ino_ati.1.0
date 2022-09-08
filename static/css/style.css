@@ -217,6 +217,20 @@ border: 1px solid #000;
 
 /*------------- details view details.html -----------------*/
 
+#img-card-body{
+padding: 0;
+}
+
+.textarea.form-control {
+    height: 3rem;
+    overflow-y: auto;
+    margin: 0;
+}
+
+.card-title{
+    margin: 0 !important;
+}
+
 #delete-icon{
     color: #023974;
 }
