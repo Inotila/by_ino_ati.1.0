@@ -217,6 +217,22 @@ border: 1px solid #000;
 
 /*------------- details view details.html ------------------*/
 
+#delete-icon{
+    color: #023974;
+}
+
+#delete-icon:hover{
+    color: #3888df;
+}
+
+#edit-icon{
+    color: #740202;
+}
+
+#edit-icon:hover{
+    color: #cc4040;
+}
+
  .complete-checkout, .go-to-checkout:hover {
     background-color: #79e067;
     color: #F5F5F5;

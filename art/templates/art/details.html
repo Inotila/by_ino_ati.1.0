@@ -114,28 +114,30 @@
                     <div class="card-body mt-3">
                         <div class="text-center">
                             <h3 class="card-title"> <i class="far fa-comment-dots"></i> Art talk</h3>
+                            <h4 class="text-center small" style="text-align: center;">Join the Conversation:</h4>
                         </div>
                         <!-- loops through comments and displays them in oder of date posted -->
                         {% for comment in comments %}
-                        <div class="">
+                        <div>
                             <p>
-                                {{ comment.user}}
+                                <span class="font-weight-bold">{{ comment.user}}</span>
                                 :
                                 {{ comment.body }}
-                                <span class=" text-muted">
+                                <span class=" text-muted small">
                                     {{ comment.created_on }}
                                 </span>
                                 <!-- edit and delete buttons, checks the mail of the user so user can only comment or edit own post-->
-                            {% if request.user == comment.user %}
-                            <a href="{% url 'edit' comment.id %}" class="override-a-defualt"><i class="fas fa-edit"></i></a>
-                            <a href="{% url 'delete' comment.id %}" class="override-a-defualt"><i class="fas fa-trash-alt"></i></a>
-                            {% endif %}
+                                {% if request.user == comment.user %}
+                                <a href="{% url 'edit' comment.id %}" class="override-a-defualt mr-1"><i
+                                        class="fas fa-pen" id="edit-icon"></i></a>
+                                <a href="{% url 'delete' comment.id %}" class="override-a-defualt"><i
+                                        class="fas fa-times" id="delete-icon"></i></a>
+                                {% endif %}
                         </div>
                         {% endfor %}
                         <!-- comment form, only users who are authenticated can comment on post -->
                         {% if user.is_authenticated %}
                         <form class="comment-form" method="post">
-                            <h4 class="text-center small" style="text-align: center;">Join the Conversation:</h4>
                             {{ user_comments| crispy }}
                             {% csrf_token %}
                             <button type="submit" class="btn btn-dark">comment</button>
