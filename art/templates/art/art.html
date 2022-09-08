@@ -4,20 +4,16 @@
 {% block content%}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 mb-3">
             <!-- Art post Column -->
             {% if category == "1" %}
             <h1 class="text-center welcome-text mt-3">Painting</h1>
-            {% else%}
-            <h1 class="text-center welcome-text mt-3">Online art Shop</h1>
-            {% endif %}
-            {% if category == "2" %}
+            {% elif category == "2" %}
             <h1 class="text-center welcome-text mt-3">Ink</h1>
-            {% else%}
-            {% endif %}
-            {% if category == "3" %}
+            {% elif category == "3" %}
             <h1 class="text-center welcome-text mt-3">Pencil</h1>
-                        <h1 class="text-center welcome-text mt-3">Online art Shop</h1>
+            {% else %}
+            <h1 class="text-center welcome-text mt-3" id="shop-title">Online art Shop </h1>
             {% endif %}
         </div>
     </div>
