@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-6 p-0">
             <div class="mb-3 card-container">
-                <div class="card mb-3 ">
+                <div class="card mx-3 ">
                     <img class="card-img" src="{{ details.art_image.url }}"
                         alt="a picture of art work by artist inotila nghaamwa">
                     <div class="card-body d-flex justify-content-between">
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="col-6 p-0 text-center">
-            <div class="mb-3">
+            <div class="mb-3  mx-3">
                 <h2>Details about art piece</h2>
                 <p>Media:</p>
                 <strong>
@@ -109,8 +109,8 @@
     <div class="row w-100">
         <div class="col-12 p-0 ">
             <!-- comments card/section -->
-            <div class="mb-3 card-container w-50">
-                <div class="card ">
+            <div class="mb-3 card-container comment-card-container w-50">
+                <div class="card  mx-3 ">
                     <div class="card-body mt-3">
                         <div class="text-center">
                             <h3 class="card-title"> <i class="far fa-comment-dots"></i> Art talk</h3>
@@ -119,12 +119,16 @@
                         {% for comment in comments %}
                         <div class="">
                             <p>
-                                {{ comment.name }}
+                                {{ comment.user}}
                                 :
                                 {{ comment.body }}
                                 <span class=" text-muted">
                                     {{ comment.created_on }}
                                 </span>
+                                <!-- edit and delete buttons, checks the mail of the user so user can only comment or edit own post-->
+                            {% if request.user == comment.user %}
+                            <a href="{% url 'delete' comment.id %}" class="override-a-defualt"><i class="fas fa-trash-alt"></i></a>
+                            {% endif %}
                         </div>
                         {% endfor %}
                         <!-- comment form, only users who are authenticated can comment on post -->
