@@ -3,39 +3,41 @@
 {% load crispy_forms_tags %}
 
 {% block content%}
-<div class="container">
+<div class="container-fluid ">
     <div class="row">
         <div class="col">
             <h1 class=" text-center welcome-text mt-3 mb-3">{{details.title}}</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col mr-3">
-            <div class="card mb-3 ">
-                <img class="card-img" src="{{ details.art_image.url }}"
-                    alt="a picture of art work by artist inotila nghaamwa">
-                <div class="card-body d-flex justify-content-between">
-                    <!-- form for only signed in users to like post -->
-                    {% if user.is_authenticated %}
-                    <form action="{% url 'like_art_piece' details.id %}" method="post">
-                        {% csrf_token %}
-                        {% if liked %}
-                        <button id="like-button" type="submit" name="user_art_like" value="{{details.id}}">
-                            <p><i class="fas fa-heart"></i></p>
-                        </button>
+        <div class="col-6 p-0">
+            <div class="mb-3 card-container">
+                <div class="card mb-3 ">
+                    <img class="card-img" src="{{ details.art_image.url }}"
+                        alt="a picture of art work by artist inotila nghaamwa">
+                    <div class="card-body d-flex justify-content-between">
+                        <!-- form for only signed in users to like post -->
+                        {% if user.is_authenticated %}
+                        <form action="{% url 'like_art_piece' details.id %}" method="post">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button id="like-button" type="submit" name="user_art_like" value="{{details.id}}">
+                                <p><i class="fas fa-heart"></i></p>
+                            </button>
+                            {% else %}
+                            <button id="unlike-button" type="submit" name="user_art_unlike" value="{{details.id}}">
+                                <p><i class="far fa-heart"></i></p>
+                            </button>
+                            {% endif %}
+                        </form>
                         {% else %}
-                        <button id="unlike-button" type="submit" name="user_art_unlike" value="{{details.id}}">
-                            <p><i class="far fa-heart"></i></p>
-                        </button>
+                        <p><i class="far fa-heart"></i></p>
                         {% endif %}
-                    </form>
-                    {% else %}
-                    <p><i class="far fa-heart"></i></p>
-                    {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col  text-center">
+        <div class="col-6 p-0 text-center">
             <div class="mb-3">
                 <h2>Details about art piece</h2>
                 <p>Media:</p>
@@ -102,36 +104,42 @@
             </strong>
             {% endif %}
             {% endif %}
-            <div class="card mt-3">
-                <div class="card-body">
-                    <div class="text-center">
-                        <h3 class="card-title">Comments</h3>
+        </div>
+    </div>
+    <div class="row w-100">
+        <div class="col-12 p-0 ">
+            <!-- comments card/section -->
+            <div class="mb-3 card-container w-50">
+                <div class="card ">
+                    <div class="card-body mt-3">
+                        <div class="text-center">
+                            <h3 class="card-title"> <i class="far fa-comment-dots"></i> Art talk</h3>
+                        </div>
+                        <!-- loops through comments and displays them in oder of date posted -->
+                        {% for comment in comments %}
+                        <div class="">
+                            <p>
+                                {{ comment.name }}
+                                :
+                                {{ comment.body }}
+                                <span class=" text-muted">
+                                    {{ comment.created_on }}
+                                </span>
+                        </div>
+                        {% endfor %}
+                        <!-- comment form, only users who are authenticated can comment on post -->
+                        {% if user.is_authenticated %}
+                        <form class="comment-form" method="post">
+                            <h4 class="text-center small" style="text-align: center;">Join the Conversation:</h4>
+                            {{ user_comments| crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-dark">comment</button>
+                        </form>
+                        {% endif %}
                     </div>
-                    <!-- loops through comments and displays them in oder of date posted -->
-                    {% for comment in comments %}
-                    <div class="">
-                        <p>
-                            {{ comment.name }}
-                            :
-                            {{ comment.body }}
-                            <span class=" text-muted">
-                                {{ comment.created_on }}
-                            </span>
-                    </div>
-                    {% endfor %}
-                    <!-- comment form, only users who are authenticated can comment on post -->
-                    {% if user.is_authenticated %}
-                    <form class="comment-form" method="post">
-                        <h4 class="text-center" style="text-align: center;">Join the Conversation:</h4>
-                        {{ user_comments| crispy }}
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-dark">comment</button>
-                    </form>
-                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 {% endblock %}
