@@ -21,11 +21,13 @@
                         <form action="{% url 'like_art_piece' details.id %}" method="post">
                             {% csrf_token %}
                             {% if liked %}
-                            <button class="like-btns" id="like-button" type="submit" name="user_art_like" value="{{details.id}}">
+                            <button class="like-btns" id="like-button" type="submit" name="user_art_like"
+                                value="{{details.id}}">
                                 <p><i class="fas fa-heart"></i></p>
                             </button>
                             {% else %}
-                            <button class="like-btns" id="unlike-button" type="submit" name="user_art_unlike" value="{{details.id}}">
+                            <button class="like-btns" id="unlike-button" type="submit" name="user_art_unlike"
+                                value="{{details.id}}">
                                 <p><i class="far fa-heart"></i></p>
                             </button>
                             {% endif %}
@@ -116,9 +118,9 @@
                             <h3 class="card-title"> <i class="far fa-comment-dots"></i> Art talk</h3>
                             <h4 class="text-center small" style="text-align: center;">Join the Conversation:</h4>
                         </div>
+                        <div class="comment-body-display">
                         <!-- loops through comments and displays them in oder of date posted -->
                         {% for comment in comments %}
-                        <div>
                             <p>
                                 <span class="font-weight-bold">{{ comment.user}}</span>
                                 :
@@ -133,8 +135,9 @@
                                 <a href="{% url 'delete' comment.id %}" class="override-a-defualt"><i
                                         class="fas fa-times small" id="delete-icon"></i></a>
                                 {% endif %}
-                        </div>
+                            </p>
                         {% endfor %}
+                    </div>
                         <!-- comment form, only users who are authenticated can comment on post -->
                         {% if user.is_authenticated %}
                         <form class="comment-form" method="post">
