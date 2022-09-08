@@ -179,7 +179,7 @@
                 <span class="text-uppercase">Go to profile</span>
             </a>
             {% else %}
-            <a href="" class="btn homepage-btn non-payment-btn">
+            <a href="{% url 'art' %}?is_available=True" class="btn homepage-btn non-payment-btn">
                 <span class="text-uppercase ">Shop more!</span>
             </a>
             {% endif %}
