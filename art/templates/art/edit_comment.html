@@ -13,27 +13,10 @@
         <div class="col-6 p-0">
             <div class="mb-3 card-container">
                 <div class="card mx-3 ">
-                    <img class="card-img" src="{{ details.art_image.url }}"
+                    <img class="card-img" src="{{ art.art_image.url }}"
                         alt="a picture of art work by artist inotila nghaamwa">
-                    <div class="card-body d-flex justify-content-between">
                         <!-- form for only signed in users to like post -->
-                        {% if user.is_authenticated %}
-                        <form action="{% url 'like_art_piece' details.id %}" method="post">
-                            {% csrf_token %}
-                            {% if liked %}
-                            <button id="like-button" type="submit" name="user_art_like" value="{{details.id}}">
-                                <p><i class="fas fa-heart"></i></p>
-                            </button>
-                            {% else %}
-                            <button id="unlike-button" type="submit" name="user_art_unlike" value="{{details.id}}">
-                                <p><i class="far fa-heart"></i></p>
-                            </button>
-                            {% endif %}
-                        </form>
-                        {% else %}
-                        <p><i class="far fa-heart"></i></p>
-                        {% endif %}
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -42,11 +25,11 @@
                 <h2>Details about art piece</h2>
                 <p>Media:</p>
                 <strong>
-                    <p>{{details.media}}</p>
+                    <p>{{art.media}}</p>
                 </strong>
                 <br>
                 <p>Framed:</p>
-                {% if details.is_framed %}
+                {% if art.is_framed %}
                 <strong>
                     <p>Yes</p>
                 </strong>
@@ -58,24 +41,24 @@
                 <br>
                 <p>Size:</p>
                 <strong>
-                    <p>{{details.size}}</p>
+                    <p>{{art.size}}</p>
                 </strong>
                 <br>
                 <p>Completed:</p>
                 <strong>
-                    <p>{{details.date_completed}}</p>
+                    <p>{{art.date_completed}}</p>
                 </strong>
                 <!-- only display price and purchase button if art is available -->
                 {% if details.is_available %}
                 <br>
                 <p>Price:</p>
                 <strong>
-                    <p>{{details.price|floatformat:2}} SEK</p>
+                    <p>{{art.price|floatformat:2}} SEK</p>
                 </strong>
             </div>
             {% if request.user.is_authenticated %}
             {% if bag_items %}
-            {% if details.id|lower in art_ids|lower %}
+            {% if art.id|lower in art_ids|lower %}
             <a href="{% url 'checkout' %}" id="after-add-to-bag-btn"
                 class="btn homepage-btn go-to-checkout mb-3">CHECKOUT</a>
             <p class="text-muted mb-3">Proceed to checkout to finish this purchase or <a class="text-muted"
@@ -127,7 +110,7 @@
                                 </span>
                                 <!-- edit and delete buttons, checks the mail of the user so user can only comment or edit own post-->
                             {% if request.user == comment.user %}
-                            <a href="{% url 'edit' comment.id %}" class="override-a-defualt"><i class="fas fa-edit"></i></a>
+                            <a href="{% url 'edit' comment.id %}"><i class="fas fa-edit"></i></a>
                             <a href="{% url 'delete' comment.id %}" class="override-a-defualt"><i class="fas fa-trash-alt"></i></a>
                             {% endif %}
                         </div>
