@@ -225,9 +225,10 @@ div>div>p>a {
 
 .like-btns {
     background: none;
-    margin: 3px;
-    font-size: x-large;
+    margin-left: 1.25rem;
+    font-size: 1.7rem;
     border: none;
+    padding:0;
 }
 
 #like-button{
@@ -480,14 +481,12 @@ select option[value=""] {
 
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
-    .logo {}
-
+   
     .search-bar {
         position: absolute;
         bottom: 0;
         width: 100%;
     }
-
 
     #search-box {
         width: 55%;
