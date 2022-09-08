@@ -97,4 +97,33 @@ def delete_comment(request, comment_id,):
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
     messages.success(request, "You have successfully deleted comment")
-    return redirect(reverse('details', args=[comment.art.id]))
+    return redirect(reverse('details', args=[comment.id]))
+
+
+def edit_comment(request, comment_id,):
+    """
+    this is handles the edit button. it gets the comment id from django.
+    the redirect path need to be fixed to redirect back to the art details
+    """
+    comment = get_object_or_404(Comment, id=comment_id)
+    if request.method == 'POST':
+        user_comments = CommentForm(request.POST, instance=comment)
+        if user_comments.is_valid():
+            user_comments.save()
+            messages.success(request, "You have successfully updated comment")
+            return redirect(reverse('details', args=[comment.art.id]))
+        else:
+            messages.error(request, "Something went wrong,try again!")
+    else:
+        CommentForm()
+    art = comment.art
+    user_comments = CommentForm(instance=comment)
+    context = {
+        "user_comments": user_comments,
+        'art': art,
+        'comment': comment,
+    }
+
+    template = 'art/edit_comment.html'
+
+    return render(request, template, context)

@@ -39,7 +39,7 @@ class Art(models.Model):
     date_completed = models.DateField(auto_now=False)
     price = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     art_image = CloudinaryField('image', blank=False)
-    likes = models.ManyToManyField(User, related_name='art_likes', blank=True)
+    likes = models.ManyToManyField(User, related_name='like_art_piece', blank=True)
     size = models.CharField(max_length=100, unique=False, default='cm')
     is_available = models.BooleanField(default=False, null=False)
     media = models.ForeignKey(Media, on_delete=models.CASCADE)
