@@ -2,4 +2,5 @@ User-agent: *
 Disallow:/accounts/
 Disallow:/bag/
 Disallow:/checkout/
+Disallow:/profile/
 Sitemap:https://byinoati.herokuapp.com/sitemap.xml
