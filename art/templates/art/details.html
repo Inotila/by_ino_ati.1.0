@@ -21,11 +21,11 @@
                         <form action="{% url 'like_art_piece' details.id %}" method="post">
                             {% csrf_token %}
                             {% if liked %}
-                            <button id="like-button" type="submit" name="user_art_like" value="{{details.id}}">
+                            <button class="like-btns" id="like-button" type="submit" name="user_art_like" value="{{details.id}}">
                                 <p><i class="fas fa-heart"></i></p>
                             </button>
                             {% else %}
-                            <button id="unlike-button" type="submit" name="user_art_unlike" value="{{details.id}}">
+                            <button class="like-btns" id="unlike-button" type="submit" name="user_art_unlike" value="{{details.id}}">
                                 <p><i class="far fa-heart"></i></p>
                             </button>
                             {% endif %}
