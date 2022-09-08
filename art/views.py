@@ -97,7 +97,7 @@ def delete_comment(request, comment_id,):
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
     messages.success(request, "You have successfully deleted comment")
-    return redirect(reverse('details', args=[comment.id]))
+    return redirect(reverse('details', args=[comment.art.id]))
 
 
 def edit_comment(request, comment_id,):
