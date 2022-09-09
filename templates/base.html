@@ -43,7 +43,7 @@
             <div class="col">
                 <div class="nav-user-proflie-container">
                     <ul class="nav justify-content-end">
-                        <li class="nav-item dropdown list-inline list-unstyled">
+                        <li class="nav-item dropdown list-inline list-unstyled" id="li-profil-menu">
                             <a href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <div class="text-center">
@@ -51,16 +51,13 @@
                                     <p>Profile</p>
                                 </div>
                             </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <div class="dropdown-menu border-0" id="profil-menu" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                <a href="" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Sign-up</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Sign-up</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                                 {% endif %}
                             </div>
                         </li>

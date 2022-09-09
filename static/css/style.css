@@ -115,6 +115,10 @@ nav {
     margin: 0.5rem;
 }
 
+#profil-menu{
+    position: static !important;
+}
+
 /*----------------- footer --------------- */
 footer {
     background-color: #000 !important;
