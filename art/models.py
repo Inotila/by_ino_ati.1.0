@@ -37,9 +37,11 @@ class Art(models.Model):
     title = models.CharField(max_length=250, null=False)
     caption = models.TextField()
     date_completed = models.DateField(auto_now=False)
-    price = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    price = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, default=0)
     art_image = CloudinaryField('image', blank=False)
-    likes = models.ManyToManyField(User, related_name='like_art_piece', blank=True)
+    likes = models.ManyToManyField(
+        User, related_name='like_art_piece', blank=True)
     size = models.CharField(max_length=100, unique=False, default='cm')
     is_available = models.BooleanField(default=False, null=False)
     media = models.ForeignKey(Media, on_delete=models.CASCADE)
@@ -53,7 +55,7 @@ class Art(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     def total_number_of_likes(self):
         """this counts the total number of likes"""
         return self.likes.count()
