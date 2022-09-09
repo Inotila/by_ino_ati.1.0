@@ -20,7 +20,7 @@
     </div>
     <div class="row g-3 mb-3">
         <!-- loops through all art to be displayed -->
-        {% for image in art %}
+        {% for image in art|dictsort:"date_completed" reversed %}
         <div class="col-12 mb-3 col-md-6 col-lg-4 d-flex justify-content-center art-card-container">
             <div class="card art-card">
                 <!-- card image if no image is assigned to the post a default image from static file will display -->
