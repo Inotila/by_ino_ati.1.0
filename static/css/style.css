@@ -254,6 +254,10 @@ div>div>p>a {
     color: #740202;
 }
 
+#un-auth-like-btn:hover {
+    color: #740202;
+}
+
 .comment-body-display{
     max-height:4.688rem;
     overflow-y:auto;

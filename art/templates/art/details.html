@@ -33,7 +33,13 @@
                             {% endif %}
                         </form>
                         {% else %}
-                        <p><i class="far fa-heart"></i></p>
+                        <form action="{% url 'like_art_piece' details.id %}" method="post">
+                            {% csrf_token %}
+                            <button class="like-btns" id="un-auth-like-btn" type="submit" name="user_art_unlike"
+                                value="{{details.id}}">
+                                <p><i class="far fa-heart"></i></p>
+                            </button>
+                        </form>
                         {% endif %}
                     </div>
                 </div>
@@ -116,11 +122,19 @@
                     <div class="card-body">
                         <div class="text-center">
                             <h3 class="card-title"> <i class="far fa-comment-dots"></i> Art talk</h3>
+                            {% if user.is_authenticated %}
                             <h4 class="text-center small" style="text-align: center;">Join the Conversation:</h4>
+                            {% else %}
+                            <h4 class="text-center small" style="text-align: center;"><strong><a
+                                        href="{% url 'account_login' %}" class="override-a-defualt">Login</a></strong>
+                                or <strong><a class="override-a-defualt"
+                                        href="{% url 'account_signup' %}">sign-up</a></strong> to join the Conversation:
+                            </h4>
+                            {% endif %}
                         </div>
                         <div class="comment-body-display">
-                        <!-- loops through comments and displays them in oder of date posted -->
-                        {% for comment in comments %}
+                            <!-- loops through comments and displays them in oder of date posted -->
+                            {% for comment in comments %}
                             <p>
                                 <span class="font-weight-bold">{{ comment.user}}</span>
                                 :
@@ -136,8 +150,8 @@
                                         class="fas fa-times small" id="delete-icon"></i></a>
                                 {% endif %}
                             </p>
-                        {% endfor %}
-                    </div>
+                            {% endfor %}
+                        </div>
                         <!-- comment form, only users who are authenticated can comment on post -->
                         {% if user.is_authenticated %}
                         <form class="comment-form" method="post">

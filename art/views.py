@@ -5,6 +5,7 @@ from django.db.models import Q
 from django.contrib.auth.models import User
 from .models import Art, Category, Comment
 from .forms import CommentForm
+from django.contrib.auth.decorators import login_required
 
 
 def art_display(request):
@@ -79,6 +80,7 @@ def art_detail(request, id, *args, **kwargs):
     return render(request, 'art/details.html', context)
 
 
+@login_required
 def like_item(request, id):
     """Adds and removes likes on an art piece(details)"""
     details = get_object_or_404(Art, pk=id)
