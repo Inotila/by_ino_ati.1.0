@@ -7,13 +7,13 @@
         <div class="col-12 mb-3">
             <!-- Art post Column -->
             {% if category == "1" %}
-            <h1 class="text-center welcome-text mt-3">Painting</h1>
+            <h1 class="text-center welcome-text mt-3">Paintings</h1>
             {% elif category == "2" %}
             <h1 class="text-center welcome-text mt-3">Ink</h1>
             {% elif category == "3" %}
             <h1 class="text-center welcome-text mt-3">Pencil</h1>
             {% else %}
-            <h1 class="text-center welcome-text mt-3" id="shop-title">Online art Shop </h1>
+            <h1 class="text-center welcome-text mt-3 text-uppercase" id="shop-title"><i class="fas fa-store"></i> <span class="a-art">a</span><span class="r-art">r</span><span class="t-art">t</span> Shop </h1>
             {% endif %}
         </div>
     </div>
@@ -24,7 +24,7 @@
             <div class="card art-card">
                 <!-- card image if no image is assigned to the post a default image from static file will display -->
                 <a href="{% url 'details' image.id %}"><img class="card-img art-img" src="{{ image.art_image.url }}"
-                    alt="a picture of art work by artist inotila nghaamwa"></a>
+                        alt="a picture of art work by artist inotila nghaamwa"></a>
             </div>
         </div>
         <!-- text that is displayed if no post have been uploaded yet and the page is empty -->

@@ -218,6 +218,17 @@ div>div>p>a {
 }
 
 /*------------- details view details.html -----------------*/
+.a-art{
+    color:#740202;
+}
+
+.r-art{
+    color:#b49404;
+}
+
+.t-art{
+    color: #023974;
+}
 
 #img-card-body {
     padding: 0;
@@ -296,7 +307,7 @@ div>div>p>a {
 .complete-checkout {
     background-color: #000;
     color: #fff;
-    border: 1px solid ##fff;
+    border: 1px solid #fff;
 }
 
 .go-to-checkout,
