@@ -43,13 +43,14 @@ p {
 
 
 /*--------------------------- nav bar ----------------------- */
-nav {
+header {
     background-color: #000;
     color: #F5F5F5;
     font-family: Oswald;
     font-weight: 200;
     padding: 0px !important;
     margin: 0px !important;
+    overflow:none !important;
 }
 
 .navbar-toggler {
@@ -93,7 +94,6 @@ nav {
     font-weight: 400;
     line-height: 1.5;
     color: #F5F5F5;
-
     background-color: #0000;
     border: none;
     border-radius: 0.25rem;
@@ -115,8 +115,10 @@ nav {
     margin: 0.5rem;
 }
 
-#profil-menu{
-    position: static !important;
+.dropdown-menu{
+    right: 0 !important;
+    left: auto;
+    min-width: 0 !important;
 }
 
 /*----------------- footer --------------- */

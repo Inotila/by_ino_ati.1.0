@@ -38,11 +38,11 @@
 
 <body class="d-flex flex-column h-100">
     <!-- header -->
-    <nav class="navbar navbar-expand-lg d-block">
+    <header class="navbar navbar-expand-lg d-block">
         <div class="row w-100">
             <div class="col">
                 <div class="nav-user-proflie-container">
-                    <ul class="nav justify-content-end">
+                    <ul class="nav justify-content-end list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="nav-item dropdown list-inline list-unstyled" id="li-profil-menu">
                             <a href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
@@ -51,7 +51,7 @@
                                     <p>Profile</p>
                                 </div>
                             </a>
-                            <div class="dropdown-menu border-0" id="profil-menu" aria-labelledby="user-options">
+                            <div class="dropdown-menu border-0" id="profile-menu" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
                                     <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -129,7 +129,7 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
