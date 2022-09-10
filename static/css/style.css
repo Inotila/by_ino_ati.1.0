@@ -139,7 +139,7 @@ footer {
 
 /* hero-img */
 
-.row>.col>#home-title {
+#home-title {
     font-family: Oswald !important;
 }
 
@@ -507,6 +507,10 @@ select option[value=""] {
 
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
+
+    #home-title {
+        font-size: 2.5rem;
+    }
    
     .search-bar {
         position: absolute;
