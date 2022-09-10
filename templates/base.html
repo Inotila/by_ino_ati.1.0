@@ -38,12 +38,12 @@
 
 <body class="d-flex flex-column h-100">
     <!-- header -->
-    <header class="navbar navbar-expand-lg d-block">
+    <nav class="navbar d-block" role="navigation">
         <div class="row w-100">
             <div class="col">
                 <div class="nav-user-proflie-container">
                     <ul class="nav justify-content-end list-inline list-unstyled text-center text-lg-right my-0">
-                        <li class="nav-item dropdown list-inline list-unstyled" id="li-profil-menu">
+                        <li class="dropdown list-inline list-unstyled" id="li-profil-menu">
                             <a href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <div class="text-center">
@@ -61,7 +61,7 @@
                                 {% endif %}
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <li>
                             <a class="{% if art_piece_count %}text-info font-weight-bold{% else %}text-black{% endif %}"
                                 href="{% url 'view_bag' %}">
                                 <div class="text-center">
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="row w-100 d-flex flex-row">
-            <div class="col-4 col-lg-3 off-padding">
+            <div class="col-5 col-lg-3 off-padding">
                 <div class="logo navbar-brand text-left">
                     <a href="{% url 'home' %}">@by_ino_ati</a>
                 </div>
@@ -104,32 +104,21 @@
                 </form>
             </div>
             <div class="col-2 col-lg-3 d-flex justify-content-end off-padding">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="toggleMobileMenu">
-                    <!-- list for nav bar links -->
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page"
-                                href="{% url 'art' %}?category=1">Paintings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=2">Ink</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=3">Pencil</a>
-                        </li>
-                    </ul>
-                </div>
+                <li class="dropdown list-unstyled">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span><i class="fas fa-bars"></i></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="dropdown-item" aria-current="page"
+                        href="{% url 'art' %}?category=1">Paintings</a>
+                        <a class="dropdown-item" aria-current="page" href="{% url 'art' %}?category=2">Ink</a>
+                        <a class="dropdown-item" aria-current="page" href="{% url 'art' %}?category=3">Pencil</a>
+                    </div>
+                  </li>
             </div>
         </div>
-    </header>
+    </nav>
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
