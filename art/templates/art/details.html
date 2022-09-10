@@ -46,8 +46,8 @@
             </div>
         </div>
         <div class="col-12 col-md-6 p-0 text-center">
-            <div class="mx-3 detail-container">
-                <h2>Details about art piece</h2>
+            <div class="mb-3 mx-3 detail-container">
+                <h2>Art info</h2>
                 <p>Media:</p>
                     <p>
                         <strong>{{details.media}}</strong>
@@ -74,15 +74,13 @@
                     <p>
                         <strong>{{details.date_completed}}</strong>
                     </p>
-            </div>
-            <div class="mb-3 mx-3 detail-container">
                 <!-- only display price and purchase button if art is available -->
                 {% if details.is_available %}
                     <br>
                     <p>Price:</p>
                         <p>
                             <strong>{{details.price|floatformat:2}} SEK</strong>
-                        </p>                
+                        </p>
                     {% if request.user.is_authenticated %}
                         {% if bag_items %}
                             {% if details.id|lower in art_ids|lower %}
@@ -113,8 +111,6 @@
                                 to purchase this piece and enjoy other features of this site.</p>
                         </strong>
                     {% endif %}
-                {% else %}
-                   <p>sold out</p>
                 {% endif %}
             </div>
         </div>

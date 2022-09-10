@@ -369,7 +369,7 @@ div>div>p>a {
 
 .detail-container{
     background-color: #fff;
-    height: 17vw !important;
+    height: 32.9vw !important;
 }
 
 /*------------- bag template ------------------*/
@@ -567,10 +567,8 @@ select option[value=""] {
 
 /* -------- details page -------- */
 
-.card-img-container>div>img{
-    width: 100% !important;
-    height: 100vw !important;
-    
+.detail-container>h2{
+    font-size: 1.5rem;
 }
 
 .detail-container{
@@ -592,5 +590,13 @@ select option[value=""] {
 
     .comment-form>button{
         width: 40%;
+    }
+}
+
+@media (max-width: 425px) {
+    .card-img-container>div>img{
+        width: 100% !important;
+        height: 100vw !important;
+        
     }
 }
