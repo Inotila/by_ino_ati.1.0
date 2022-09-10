@@ -18,13 +18,13 @@
             {% endif %}
         </div>
     </div>
-    <div class="row g-3 mb-3">
+    <div class="row">
         <!-- loops through all art to be displayed -->
         {% for image in art|dictsort:"date_completed" reversed %}
-        <div class="col-12 mb-3 col-md-6 col-lg-4 d-flex justify-content-center art-card-container">
-            <div class="card art-card">
+        <div class="col-4 col-md-4 col-lg-4 d-flex justify-content-center art-card-container">
+            <div class="card">
                 <!-- card image if no image is assigned to the post a default image from static file will display -->
-                <a href="{% url 'details' image.id %}"><img class="card-img art-img" src="{{ image.art_image.url }}"
+                <a href="{% url 'details' image.id %}"><img class="card-img-top" src="{{ image.art_image.url }}"
                         alt="a picture of art work by artist inotila nghaamwa"></a>
             </div>
         </div>
