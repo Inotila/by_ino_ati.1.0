@@ -234,7 +234,7 @@ div>div>p>a {
 
 /*------------- details view details.html -----------------*/
 .a-art{
-    color:#740202;
+    color: #740202;
 }
 
 .r-art{
@@ -344,6 +344,26 @@ div>div>p>a {
     border: 1px solid #000;
 }
 
+.comment-date{
+    font-size: xx-small;
+}
+
+.comment-form>button{
+    width: 20%;
+}
+
+.comment-card-container{
+    width: 50%;
+}
+
+#div_id_body>label{
+    display: none;
+    max-width: 5%;
+}
+
+.detail-container{
+    background-color: #fff;
+}
 /*------------- bag template ------------------*/
 .empty_bag_links {
     color: #000 !important;
@@ -531,8 +551,26 @@ select option[value=""] {
         font-size: 1.25rem;
         font-weight:300;
     }
+
  /* -------- index page -------- */
        #home-title {
         font-size: 2.5rem;
+    }
+
+/* -------- details page -------- */
+    .comment-card-container{
+        width: 100%;
+    }
+
+    .comment-date{
+        display: none;
+    }
+
+    .comment-body-display>p{
+        margin-bottom: 5px;
+    }
+
+    .comment-form>button{
+        width: 40%;
     }
 }

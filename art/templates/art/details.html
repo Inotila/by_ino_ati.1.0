@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6 p-0">
+        <div class="col-12 col-md-6 p-0">
             <div class="mb-3 card-container">
                 <div class="card mx-3 ">
                     <img class="card-img" src="{{ details.art_image.url }}"
@@ -45,8 +45,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-6 p-0 text-center">
-            <div class="mb-3 mx-3">
+        <div class="col-12 col-md-6 p-0 text-center">
+            <div class="mb-3 mx-3 detail-container">
                 <h2>Details about art piece</h2>
                 <p>Media:</p>
                     <p>
@@ -75,7 +75,7 @@
                         <strong>{{details.date_completed}}</strong>
                     </p>
             </div>
-            <div class="mb-3 mx-3">
+            <div class="mb-3 mx-3 ">
                 <!-- only display price and purchase button if art is available -->
                 {% if details.is_available %}
                     <br>
@@ -122,7 +122,7 @@
     <div class="row w-100">
         <div class="col-12 p-0 ">
             <!-- comments card/section -->
-            <div class="mb-3 card-container comment-card-container w-50">
+            <div class="mb-3 comment-card-container">
                 <div class="card  mx-3 ">
                     <div class="card-body">
                         <div class="text-center">
@@ -144,7 +144,7 @@
                                 <span class="font-weight-bold">{{ comment.user}}</span>
                                 :
                                 {{ comment.body }}
-                                <span class=" text-muted small">
+                                <span class=" text-muted comment-date">
                                     {{ comment.created_on }}
                                 </span>
                                 <!-- edit and delete buttons, checks the mail of the user so user can only comment or edit own post-->
@@ -162,7 +162,7 @@
                         <form class="comment-form" method="post">
                             {{ user_comments| crispy }}
                             {% csrf_token %}
-                            <button type="submit" class="btn btn-dark">comment</button>
+                            <button type="submit" class="btn homepage-btn">comment</button>
                         </form>
                         {% endif %}
                     </div>
