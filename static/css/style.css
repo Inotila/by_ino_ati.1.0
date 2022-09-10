@@ -135,6 +135,17 @@ footer {
     font-weight: 400;
 }
 
+#insta {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;        
+  }
+
+#facebook{
+    color: #4267B2;
+}
+
 /*------------------ Homepage index.html ----------------------*/
 
 /* hero-img */
@@ -507,12 +518,8 @@ select option[value=""] {
 
 /* media for devices smaller than tablets */
 @media (max-width: 768px) {
-
-    #home-title {
-        font-size: 2.5rem;
-    }
-   
-    .search-bar {
+     /* -------- nav -------- */
+     .search-bar {
         position: absolute;
         bottom: 0;
         width: 100%;
@@ -520,5 +527,15 @@ select option[value=""] {
 
     #search-box {
         width: 55%;
+    }
+    /* -------- footer --------*/
+
+    .social-media {
+        font-size: 1.25rem;
+        font-weight:300;
+    }
+ /* -------- index page -------- */
+       #home-title {
+        font-size: 2.5rem;
     }
 }
