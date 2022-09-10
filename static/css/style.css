@@ -56,8 +56,9 @@ nav {
 .navbar-toggler {
     padding: 0px;
     font-size: 1.25rem;
-    background-color: #c4c11e00;
-    border: 1px solid #f8f9fa;
+    background-color: #000;
+    color: #F5F5F5 !important;
+    border: none;
 }
 
 /* logo */
