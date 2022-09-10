@@ -553,7 +553,7 @@ select option[value=""] {
     }
 
  /* -------- index page -------- */
-       #home-title {
+       #shop-title,#pencil-title,#paintings-title,#ink-title,#details-title,#home-title {
         font-size: 2.5rem;
     }
 
