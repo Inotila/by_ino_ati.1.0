@@ -30,10 +30,10 @@ def index(request):
     else:
         submitted_form = 0
         mail_form = MailForm()
-    
+
     context = {
         "submitted_form": submitted_form,
         "mail_form": mail_form,
     }
-    
+
     return render(request, 'home/index.html', context)

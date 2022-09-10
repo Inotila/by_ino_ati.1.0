@@ -34,7 +34,8 @@ def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
-        f'This is a confirmation of a past purchase for purchase number {order_number}. '
+        f'This is a confirmation of a past'
+        ' purchase for purchase number {order_number}. '
         'A confirmation email was sent to you on the purchase date.'
     ))
 

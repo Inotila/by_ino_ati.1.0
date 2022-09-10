@@ -22,7 +22,9 @@ def art_display(request):
             is_available = request.GET['is_available']
             art = Art.objects.filter(is_available=is_available)
             if not art:
-                messages.error(request, "Sorry,the are no art works for sale right now. Please comeback later!")
+                messages.error(
+                    request, "Sorry,the are no art works for sale right"
+                    "now. Please comeback later!")
 
     if request.GET:
         if 'category' in request.GET:

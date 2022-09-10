@@ -3,8 +3,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from art.models import Art
 
-# Create your views here.
-
 
 def view_bag(request):
     """ A view that renders the bags contents page """
