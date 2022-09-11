@@ -476,6 +476,12 @@ select option[value=""] {
     margin: 0 !important;
   }
 
+  .icon-smile{
+    color: #cea906;
+    background: #000;
+    border-radius: 50%;
+  }
+
 /* ------------------------- stripe ----------------------- */
 
 .StripeElement,

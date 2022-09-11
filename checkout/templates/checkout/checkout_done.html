@@ -6,10 +6,15 @@
 <div class="container">
     <div class="row">
         <div class="col text-center mb-3">
-            <h2 class="welcome-text mt-3 mb-3">Thank You {{order.full_name}}!</h2>
+            <h2 class="mt-3">Thank You </h2>
+            <h2>{{order.full_name}} <i class="fas fa-smile-beam icon-smile"></i></h2>
             <hr class="checkout-done-hr">
-            <p class="text-black">Your order information is below. A confirmation email will be sent to
-                <strong>{{ order.email }}</strong>.</p>
+            <p>{{order.full_name}}, your support is much appreciated, enjoy your art and congradulation on expanding
+                your collection!</p>
+            <p>Your purchase information is below. A confirmation email will be sent to
+                {{ order.email }}<span class="small">(it might be in your spam folder)</span>, please check that all the details are correct.</p>
+            <p> <span class="small"> Please contact Inotila immediately on <strong>@byinoati@gmail.com</strong> if any
+                    of your information is incorrect.</span></p>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -162,7 +167,5 @@
             {% endif %}
         </div>
     </div>
-    </div>
 </div>
-
 {% endblock %}
