@@ -23,11 +23,11 @@
         <div class="col-12 col-lg-6">
             <p class="text-muted">Purchase History</p>
             <div class="order-history table-responsive">
-                <table class="table table-sm table-borderless">
+                <table class="table table-sm table-borderless profile-table">
                     <thead>
                         <tr>
                             <th>Order Number</th>
-                            <th>Date</th>
+                            <th class="date-table">Date</th>
                             <th>Art piece(s)</th>
                             <th>Purchase Total</th>
                         </tr>
@@ -41,7 +41,7 @@
                                         {{ order.order_number|truncatechars:6 }}
                                     </a>
                                 </td>
-                                <td>{{ order.date }}</td>
+                                <td class="date-table">{{ order.date }}</td>
                                 <td>
                                     <ul class="list-unstyled">
                                         {% for item in order.lineitems.all %}

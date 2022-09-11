@@ -608,8 +608,12 @@ select option[value=""] {
         margin: 0 !important;
     }
 
-    table{
+    .profile-table{
         font-size: small;
+    }
+
+    .date-table{
+        display:none;
     }
 }
 
