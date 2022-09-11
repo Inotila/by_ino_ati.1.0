@@ -45,51 +45,46 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 p-0 text-center">
-            <div class="mb-3 mx-3 detail-container">
-                <h2>Art info</h2>
-                <p>Media:</p>
-                    <p>
-                        <strong>{{details.media}}</strong>
-                    </p>
-                <br>
-                <p>Framed:</p>
-                {% if details.is_framed %}
-                    <p>
-                        <strong>Yes</strong>
-                    </p>
-                {% else %}
-                    <p>
-                        <strong>No</strong>
-                    </p>
-                    
-                {% endif %}
-                <br>
-                <p>Size:</p>
-                    <p>
-                        <strong>{{details.size}} </strong>
-                    </p>
-                <br>
-                <p>Completed:</p>
-                    <p>
-                        <strong>{{details.date_completed}}</strong>
-                    </p>
-                <!-- only display price and purchase button if art is available -->
-                {% if details.is_available %}
-                    <br>
-                    <p>Price:</p>
-                        <p>
-                            <strong>{{details.price|floatformat:2}} SEK</strong>
+        <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
+            <div class="mb-3 mx-3 detail-container ">
+                <div class="text-center details-text mx-3">
+                    <h2>Art info</h2>
+                    <p>Caption:</p>
+                    <p class="caption-text"><strong>{{details.caption}}</strong></p>
+                    <p>Media:</p>
+                        <p><strong>{{details.media}}</strong></p>
+                    <p>Framed:</p>
+                    {% if details.is_framed %}
+                        <p><strong>Yes</strong></p>
+                    {% else %}
+                        <p><strong>No</strong></p>
+                    {% endif %}
+                    <p>Size:</p>
+                        <p><strong>{{details.size}} </strong>
                         </p>
-                    {% if request.user.is_authenticated %}
-                        {% if bag_items %}
-                            {% if details.id|lower in art_ids|lower %}
-                                <a href="{% url 'checkout' %}" id="after-add-to-bag-btn"
-                                    class="btn homepage-btn go-to-checkout mb-3">CHECKOUT</a>
-                                <p class="text-muted mb-3">Proceed to checkout to finish this purchase or <a class="text-muted"
-                                        href="{% url 'art' %}?category=1">veiw more art</a></p>
+                    <p>Completed:</p>
+                        <p><strong>{{details.date_completed}}</strong></p>
+                    <!-- only display price and purchase button if art is available -->
+                    {% if details.is_available %}
+                    <p>Price:</p>
+                        <p><strong>{{details.price|floatformat:2}} SEK</strong></p>
+                        {% if request.user.is_authenticated %}
+                            {% if bag_items %}
+                                {% if details.id|lower in art_ids|lower %}
+                                    <a href="{% url 'checkout' %}" id="after-add-to-bag-btn"
+                                        class="btn homepage-btn go-to-checkout mb-3">CHECKOUT</a>
+                                    <p class="text-muted">Proceed to checkout to finish this purchase or <a class="text-muted"
+                                            href="{% url 'art' %}?category=1">veiw more art</a></p>
+                                {% else %}
+                                    <form class="mb-3" action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
+                                        {% csrf_token %}
+                                        <input type="submit" class="btn homepage-btn text-uppercase add-to-bag" data-art_id="{{ details.id }}"
+                                            value="Add to Bag">
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </form>
+                                {% endif %}
                             {% else %}
-                                <form action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
+                                <form class="mb-3" action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
                                     {% csrf_token %}
                                     <input type="submit" class="btn homepage-btn text-uppercase add-to-bag" data-art_id="{{ details.id }}"
                                         value="Add to Bag">
@@ -97,21 +92,12 @@
                                 </form>
                             {% endif %}
                         {% else %}
-                            <form action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
-                                {% csrf_token %}
-                                <input type="submit" class="btn homepage-btn text-uppercase add-to-bag" data-art_id="{{ details.id }}"
-                                    value="Add to Bag">
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            </form>
+                                <p><strong><a href="{% url 'account_signup' %}" class="override-a-defualt"> Sign-up</a> for free or <a
+                                        href="{% url 'account_login' %}" class="override-a-defualt">login</a>
+                                    to purchase this piece and enjoy other features.</strong></p>
                         {% endif %}
-                    {% else %}
-                        <strong>
-                            <p><a href="{% url 'account_signup' %}" class="override-a-defualt"> Sign-up</a> for free or <a
-                                    href="{% url 'account_login' %}" class="override-a-defualt">login</a>
-                                to purchase this piece and enjoy other features of this site.</p>
-                        </strong>
                     {% endif %}
-                {% endif %}
+                </div>
             </div>
         </div>
     </div>

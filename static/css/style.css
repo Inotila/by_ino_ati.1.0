@@ -150,7 +150,7 @@ footer {
 
 /* hero-img */
 
-#home-title {
+.welcome-text,#home-title {
     font-family: Oswald !important;
 }
 
@@ -232,6 +232,11 @@ div>div>p>a {
 }
 
 /*------------- details view details.html -----------------*/
+
+.caption-text{
+    margin: 0 5px 0 5px;
+}
+
 .a-art{
     color: #740202;
 }
@@ -246,6 +251,8 @@ div>div>p>a {
 
 #img-card-body {
     padding: 0;
+    border-top: thin solid #d2d2d2;
+background-color: rgb(219, 217, 217, .12);
 }
 
 .like-btns {
@@ -368,8 +375,12 @@ div>div>p>a {
 }
 
 .detail-container{
+    height:auto !important;
+    max-width: 60% !important;
+}
+
+.details-text{
     background-color: #fff;
-    height: 32.9vw !important;
 }
 
 /*------------- bag template ------------------*/
@@ -561,7 +572,7 @@ select option[value=""] {
     }
 
  /* -------- index page -------- */
-       #shop-title,#pencil-title,#paintings-title,#ink-title,#details-title,#home-title {
+       .welcome-text,#shop-title,#pencil-title,#paintings-title,#ink-title,#details-title,#home-title {
         font-size: 2.5rem;
     }
 
@@ -572,8 +583,9 @@ select option[value=""] {
 }
 
 .detail-container{
-    background-color: #fff;
     height: auto !important;
+    max-width: 100% !important;
+    min-width: 100% !important
 }
 
     .comment-card-container{
@@ -590,6 +602,14 @@ select option[value=""] {
 
     .comment-form>button{
         width: 40%;
+    }
+
+    .caption-text{
+        margin: 0 !important;
+    }
+
+    table{
+        font-size: small;
     }
 }
 
