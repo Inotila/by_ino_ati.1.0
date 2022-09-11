@@ -231,6 +231,11 @@ div>div>p>a {
     object-fit: cover;
 }
 
+.availabilty-status-text{
+    font-size: small;
+    color: #60b352;
+}
+
 /*------------- details view details.html -----------------*/
 
 .caption-text{
