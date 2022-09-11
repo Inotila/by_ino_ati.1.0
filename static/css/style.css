@@ -472,6 +472,10 @@ select option[value=""] {
     margin: 0 5px 0 5px !important;
   }
 
+  .checkout-done-hr{
+    margin: 0 !important;
+  }
+
 /* ------------------------- stripe ----------------------- */
 
 .StripeElement,
@@ -637,9 +641,17 @@ select option[value=""] {
 }
 
 @media (max-width: 425px) {
+    
     .card-img-container>div>img{
         width: 100% !important;
         height: 100vw !important;
         
+    }
+
+    
+/* -------- checkout done  page -------- */
+    
+    .user-info-chk-d{
+        font-size:small;
     }
 }
