@@ -58,14 +58,14 @@
                                 {{item.quantity}}
                             </p>
                         </td>
-                        <td class="subtotal-col">
+                        <td>
                             <p>
                                 {{item.art.price|floatformat:2}} SEK
                             </p>
                         </td>
                         <td>
                             <a class="remove-item" id="remove_{{ item.art_id }}" data-item="{{ item }}">
-                                <i class="fas fa-times"></i>
+                                <i class="fas fa-times small" id="delete-icon"></i>
                             </a>
                         </td>
                     </tr>
@@ -95,9 +95,8 @@
                         <td></td>
                         <td></td class="bag-art-details-col">
                         <td></td>
-                        <td></td>
-                        <td subtotal-col>
-                            <a href="{% url 'checkout' %}" class="btn homepage-btn add-to-bag">Proceed checkout</a>
+                        <td><a href="{% url 'checkout' %}" class="btn homepage-btn add-to-bag Proceed-to-checkout">Proceed checkout</a></td>
+                        <td class="subtotal-col">
                         </td>
                     </tr>
                 </table>

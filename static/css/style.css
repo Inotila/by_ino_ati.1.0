@@ -633,6 +633,14 @@ select option[value=""] {
         padding:0;
         margin:0;
     }
+
+/* -------- bag page -------- */
+
+    .Proceed-to-checkout{
+        position: absolute;
+        width:50% !important;
+        left:0;
+    }
 }
 
 @media (max-width: 425px) {
