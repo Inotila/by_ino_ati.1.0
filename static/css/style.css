@@ -414,39 +414,6 @@ background-color: rgb(219, 217, 217, .12);
     height: 2px;
 }
 
-/* Convenience classes - colors copied from Bootstrap */
-.arrow-primary {
-    border-bottom-color: #007bff !important;
-}
-
-.arrow-secondary {
-    border-bottom-color: #6c757d !important;
-}
-
-.arrow-success {
-    border-bottom-color: #28a745 !important;
-}
-
-.arrow-danger {
-    border-bottom-color: #dc3545 !important;
-}
-
-.arrow-warning {
-    border-bottom-color: #ffc107 !important;
-}
-
-.arrow-info {
-    border-bottom-color: #17a2b8 !important;
-}
-
-.arrow-light {
-    border-bottom-color: #f8f9fa !important;
-}
-
-.arrow-dark {
-    border-bottom-color: #343a40 !important;
-}
-
 .bag-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
@@ -455,13 +422,22 @@ background-color: rgb(219, 217, 217, .12);
 
 /* ----------------- checkout-------------------- */
 
+.icon-review{
+    color: #212529;
+}
+
+.icon-lock{
+    color: #fff;
+}
+
 #div-id_country>div>select {
-    padding: 0px;
+    padding: 0 !important;
 }
 
 select,
 select option {
     color: #000;
+    padding: 0 !important;
 }
 
 select:invalid,
@@ -487,6 +463,14 @@ select option[value=""] {
     margin: 0;
     height: 100%;
 }
+
+.please-note-checkout{
+    color:#740202 ;
+  }
+
+  .form-check>label{
+    margin: 0 5px 0 5px !important;
+  }
 
 /* ------------------------- stripe ----------------------- */
 
@@ -640,6 +624,15 @@ select option[value=""] {
         position: absolute;
         width:50% !important;
         left:0;
+    }
+
+ /* -------- checkout page -------- */
+    .please-note-checkout{
+        font-size:small;
+    }
+
+    .form-check{
+        font-size:small;
     }
 }
 

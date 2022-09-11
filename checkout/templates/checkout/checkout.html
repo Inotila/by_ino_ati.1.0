@@ -7,13 +7,13 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="text-center welcome-text mt-3 mb-3">Checkout</h1>
+            <h1 class="text-center welcome-text mt-3 mb-3"><strong>Checkout</strong></h1>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
             <strong>
-                <h2 class=" text-center">Order Summary </h2>
+                <h2 class=" text-center small">Purchase Summary </h2>
             </strong>
             <p class=" text-center">Number of art pieces in shopping bag: {{ art_piece_count }}</p>
             <hr class="w-25">
@@ -27,7 +27,7 @@
             </div>
             {% for item in bag_items %}
             <div class="row">
-                <div class="col-2 mb-1">
+                <div class="col-2 mb-1 p-0">
                     <a href="{% url 'details' item.art.id %}">
                         {% if item.art.art_image %}
                         <img class="w-100" src="{{ item.art.art_image.url }}" alt="{{ art.title }}">
@@ -35,7 +35,7 @@
                     </a>
                 </div>
                 <div class="col-5">
-                    <p class="my-0"><strong>Title:</strong> {{ item.art.title }}</p>
+                    <p class="my-0 small"><strong>Title:</strong> {{ item.art.title }}</p>
                     <p class="my-0 small text-muted"><strong> Qty:</strong> {{ item.quantity }}</p>
                 </div>
                 <div class="col-5 text-right">
@@ -48,45 +48,46 @@
                 <div class="col-7 offset-2">
 
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-md-3 ">
                     <p class="my-0"><strong>Art piece(s):</strong> {{ total | floatformat:2 }} SEK</p>
                     <p class="my-0"><strong>Delivery:</strong> {{ delivery | floatformat:2 }} SEK</p>
-                    <p class="my-0"><strong>Grand Total: {{ grand_total | floatformat:2 }} SEK</strong></p>
+                    <p class="my-0"><strong>Grand Total:</strong> {{ grand_total | floatformat:2 }} SEK</p>
                 </div>
             </div>
         </div>
         <div class="col">
-            <p>Please fill in the form to proceed to payment</p>
+            <p class="please-note-checkout text-center mb-3">Carefully fill in your delivery information to proceed to payment. Please ensure that all your information is correct.</p>
             <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
                 {% csrf_token %}
+                <h3 class="text-center"> <strong>Delivery information</strong></h3>
                 <fieldset>
-                    <legend>Delivery</legend>
+                    <legend>Personal details</legend>
                     {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                 </fieldset>
                 <fieldset>
-                    <legend>Details</legend>
-                    {{ order_form.phone_number | as_crispy_field }}
+                    <legend>Delivery location information</legend>
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
                     {{ order_form.postcode | as_crispy_field }}
                     {{ order_form.town_or_city| as_crispy_field }}
                     {{ order_form.county | as_crispy_field }}
                     {{ order_form.country | as_crispy_field }}
-                    <div class="form-check form-check-inline float-right mr-0">
+                    <div class="form-check form-check-inline d-flex justify-content-center">
                         {% if user.is_authenticated %}
-                        <label class="" for="id-save-info">Save this delivery information to my profile</label>
-                        <input class="" type="checkbox" id="id-save-info" name="save-info" checked>
+                        <label for="id-save-info">Save this delivery information to my profile</label>
+                        <input type="checkbox" id="id-save-info" name="save-info">
                         {% else %}
-                        <label class="" for="id-save-info">
-                            <a class="" href="{% url 'account_signup' %}">Create an account</a> or
-                            <a class="" href="{% url 'account_login' %}">login</a> to save this information
+                        <label for="id-save-info">
+                            <a href="{% url 'account_signup' %}">Create an account</a> or
+                            <a href="{% url 'account_login' %}">login</a> to save this information
                         </label>
                         {% endif %}
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>Payment</legend>
+                    <legend class="text-center"><strong>Payment</strong></legend>
                     <!-- Used to display stripe card element -->
                     <div class="mb-3" id="card-element"></div>
                     <!-- Used to display form errors -->
@@ -94,16 +95,16 @@
                     <!-- Pass the client secret to the view so we can get the payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
-                <div class="submit-button text-right mt-5 mb-2">
-                    <a href="{% url 'view_bag' %}" class="">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
+                <div class="submit-button text-right mx-3 mb-3">
+                    <a href="{% url 'view_bag' %}">
+                        <span class="icon-review">
+                            <i class="fas fa-shopping-bag fa-lg text-black"></i>
                         </span>
                         <span class="font-weight-bold override-a-defualt">Review Bag</span>
                     </a>
                     <button id="submit-button" class="complete-checkout">
                         <span class="font-weight-bold ">Complete purchase</span>
-                        <span class="icon">
+                        <span class="icon-lock">
                             <i class="fas fa-lock"></i>
                         </span>
                     </button>
