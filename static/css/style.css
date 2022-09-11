@@ -665,11 +665,17 @@ select option[value=""] {
         height: 100vw !important;
         
     }
-
     
 /* -------- checkout done  page -------- */
     
     .user-info-chk-d{
         font-size:small;
     }
+}
+
+@media (max-width: 320px){
+    #shop-title{
+        font-size: 35px;
+    }
+
 }
