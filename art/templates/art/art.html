@@ -22,14 +22,15 @@
             <p><i class="fas fa-palette"></i> Available</p>
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-3">
         <!-- loops through all art to be displayed -->
         {% for image in art|dictsort:"date_completed" reversed %}
         <div class="col-4 col-md-4 col-lg-4 d-flex justify-content-center art-card-container">
-            <div class="card">
+            <div class="card {% if image.is_available %}art-for-sale{% else %}art-not-for-sale{% endif %}">
                 <!-- card image if no image is assigned to the post a default image from static file will display -->
                 <a href="{% url 'details' image.id %}"><img class="card-img-top" src="{{ image.art_image.url }}"
-                        alt="a picture of art work by artist inotila nghaamwa"></a>
+                        alt="a picture of art work by artist inotila nghaamwa">
+                </a>
             </div>
         </div>
         <!-- text that is displayed if no post have been uploaded yet and the page is empty -->
