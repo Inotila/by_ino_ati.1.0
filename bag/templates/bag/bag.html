@@ -17,18 +17,18 @@
                     <thead>
                         <tr>
                             <th scope="col">Art Piece:</th>
-                            <th scope="col"></th>
+                            <th scope="col" class="bag-art-details-col"></th>
                             <th scope="col">Price:</th>
                             <th scope="col">Qty:</th>
-                            <th scope="col">Subtotal:</th>
+                            <th scope="col" class="subtotal-col">Subtotal:</th>
                         </tr>
                     </thead>
                     {% for item in bag_items %}
                     <tr>
-                        <td class="p-3 w-25">
+                        <td class="p-0">
                             <img class="img-fluid rounded" src="{{ item.art.art_image.url }}">
                         </td>
-                        <td>
+                        <td class="bag-art-details-col">
                             <p>
                                 {{item.art.title}}
                             </p>
@@ -36,7 +36,7 @@
                                 {{item.art.size}}
                             </p>
                             <p>
-                                {{item.art.Media}}
+                                {{item.art.media}}
                             </p>
                             {% if item.art.is_framed %}
                             <p>
@@ -58,7 +58,7 @@
                                 {{item.quantity}}
                             </p>
                         </td>
-                        <td>
+                        <td class="subtotal-col">
                             <p>
                                 {{item.art.price|floatformat:2}} SEK
                             </p>
@@ -71,16 +71,15 @@
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td class="p-3 w-25">
-                            <img class="img-fluid rounded" src="{{ item.art.art_image.url }}">
+                        <td>
+                        </td>
+                        <td class="bag-art-details-col">
                         </td>
                         <td>
                         </td>
                         <td>
                         </td>
-                        <td>
-                        </td>
-                        <td>
+                        <td class="subtotal-col">
                             <p>
                                 Total: {{total|floatformat:2}} SEK
                             </p>
@@ -94,10 +93,10 @@
                     </tr>
                     <tr>
                         <td></td>
+                        <td></td class="bag-art-details-col">
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td>
+                        <td subtotal-col>
                             <a href="{% url 'checkout' %}" class="btn homepage-btn add-to-bag">Proceed checkout</a>
                         </td>
                     </tr>

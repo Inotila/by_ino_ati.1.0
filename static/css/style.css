@@ -393,6 +393,12 @@ background-color: rgb(219, 217, 217, .12);
     cursor: pointer;
 }
 
+.subtotal-col{
+    width: 20%;
+}
+
+/*------------- toasts ------------------*/
+
 .message-container {
     position: fixed;
     top: 72px;
@@ -614,6 +620,18 @@ select option[value=""] {
 
     .date-table{
         display:none;
+    }
+    
+/* -------- details page -------- */
+    .bag-art-details-col{
+    display:none;    
+    }
+
+    .add-to-bag{
+        max-width :50% !important;
+        font-size:1rem;
+        padding:0;
+        margin:0;
     }
 }
 
