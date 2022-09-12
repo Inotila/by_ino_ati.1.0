@@ -243,6 +243,10 @@ div>div>p>a {
 
 .availabilty-status-text{
     font-size: small;
+    color: #000;
+}
+
+.availabilty-status-icon{
     color: #60b352;
 }
 
