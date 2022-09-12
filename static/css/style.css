@@ -50,7 +50,6 @@ nav {
     font-weight: 200;
     padding: 0px !important;
     margin: 0px !important;
-    overflow:none !important;
 }
 
 .navbar-toggler {
@@ -85,7 +84,6 @@ nav {
 }
 
 .input-group-text {
-    display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
     align-items: center;
