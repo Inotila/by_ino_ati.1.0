@@ -38,7 +38,7 @@
 
 <body class="d-flex flex-column h-100">
     <!-- header -->
-    <nav class="navbar d-block" role="navigation">
+    <nav class="navbar d-block">
         <div class="row w-100">
             <div class="col">
                 <div class="nav-user-proflie-container">
@@ -116,31 +116,14 @@
                                 <a class="nav-link activen" aria-current="page" href="{% url 'art' %}?is_available=True" >Shop</a>
                                 <a class="nav-link active" aria-current="page"
                                                                   href="{% url 'art' %}?category=1">Paintings</a>
-                               <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=2">Ink</a>
-                               <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=3">Pencil</a>
+                                <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=2">Ink</a>
+                                <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=3">Pencil</a>
                                 <a href="{% url 'home' %}" id="nav-menu-link"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="nav-menu-link">
-                                    <a href="{% url 'home' %}" id="all-products-link"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Home
-                                    </a>
-                                    <a href="#" id="all-products-link" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        Ink
-                                    </a>
-                                    <a  href="{% url 'art' %}?category=2" id="all-products-link"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Paitings
-                                    </a>
-                                    <a  href="{% url 'art' %}?category=3" id="all-products-link"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Pencil
-                                    </a>
-                                </div>
                             </li>
                         </ul>
+                    </div>
                 </nav>
             </div>
         </div>
