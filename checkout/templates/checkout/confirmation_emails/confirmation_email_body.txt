@@ -5,13 +5,13 @@ This is a confirmation of your purchase of art works from @by_ino_ati. Congratul
 Purchase Number: {{ order.order_number }}
 Purchase Date: {{ order.date }}
 
-Purchase Total: ${{ order.order_total }}
+Purchase Total: {{ order.order_total }} SEK
 Delivery: {{ order.delivery_cost }} SEK
 Grand Total: {{ order.grand_total }} SEK
 
 Your art work will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}. Along with the art work you will also find a letter of Authentication, please keep it safe. In the event that you hand the ownership of the art work to another person or entity please inform us so that we update our records. Such measure will help protect your investment.
 
-We've got your phone number on file as {{ order.phone_number }}. If this or any of your other details are not correct please inform us immidiately.
+We've got your phone number on file as {{ order.phone_number }}. If this or any of your other details are not correct please inform us immediately.
 
 NB! All copy rights of the art work you have purchased remains the property of Mr Inotila Opoeli Nghaamwa, any reproduction of this art is a direct violation of this right and is strictly prohibited.
 
