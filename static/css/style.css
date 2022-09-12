@@ -427,7 +427,7 @@ background-color: rgb(219, 217, 217, .12);
 }
 
 .bag-notification-wrapper {
-    height: 100px;
+    height: auto;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -656,6 +656,10 @@ select option[value=""] {
     .form-check{
         font-size:small;
     }
+
+    .subtotal-col{
+       font-size: small;
+    }
 }
 
 @media (max-width: 425px) {
@@ -663,7 +667,6 @@ select option[value=""] {
     .card-img-container>div>img{
         width: 100% !important;
         height: 100vw !important;
-        
     }
     
 /* -------- checkout done  page -------- */

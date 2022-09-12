@@ -33,7 +33,7 @@ def remove_from_bag(request, art_id):
         id = None
         bag = request.session.get('bag', {})
         bag.pop(art_id)
-        messages.success(request, f'Removed {art.title} from your bag')
+        messages.info(request, f'Removed {art.title} from your bag')
         request.session['bag'] = bag
 
         return HttpResponse(status=200)

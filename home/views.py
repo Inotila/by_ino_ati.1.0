@@ -19,7 +19,7 @@ def index(request):
                 mail_form.instance.user = user
                 mail_form.save()
                 if request.POST.get("join"):
-                    messages.success(
+                    messages.info(
                         request,
                         "You have successfully joined the mailing list!")
                 else:

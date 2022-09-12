@@ -67,7 +67,7 @@ def art_detail(request, id, *args, **kwargs):
             user_comments.instance.art = Art.objects.get(id=id)
             user_comments.instance.user = request.user
             user_comments.save()
-            messages.success(request, "You have successfully commented")
+            messages.info(request, "You have successfully commented")
         else:
             messages.error(request, "Something went wrong,try again!")
             user_comments = CommentForm()
@@ -100,7 +100,7 @@ def delete_comment(request, comment_id,):
     redirects the the redirect need to be fixed"""
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
-    messages.success(request, "You have successfully deleted comment")
+    messages.info(request, "You have successfully deleted comment")
     return redirect(reverse('details', args=[comment.art.id]))
 
 
@@ -114,7 +114,7 @@ def edit_comment(request, comment_id,):
         user_comments = CommentForm(request.POST, instance=comment)
         if user_comments.is_valid():
             user_comments.save()
-            messages.success(request, "You have successfully updated comment")
+            messages.info(request, "You have successfully updated comment")
             return redirect(reverse('details', args=[comment.art.id]))
         else:
             messages.error(request, "Something went wrong,try again!")

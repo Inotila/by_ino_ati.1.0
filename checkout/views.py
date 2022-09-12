@@ -163,7 +163,7 @@ def checkout_done(request, order_number):
         if user_profile_form.is_valid():
             user_profile_form.save()
 
-    messages.success(request, f'Purchase successfully processed! \
+    messages.info(request, f'Purchase successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
 
