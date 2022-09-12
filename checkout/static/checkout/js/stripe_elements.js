@@ -40,7 +40,7 @@ card.addEventListener('change', function (event) {
         `;
         $(errorDiv).html(html);
     } else {
-        errorDiv.textContent = ''
+        errorDiv.textContent = '';
     }
 });
 
