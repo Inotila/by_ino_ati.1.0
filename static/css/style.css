@@ -576,11 +576,12 @@ select option[value=""] {
         bottom: 0;
         width: 100%;
     }
-
-    #search-box {
-        width: 55%;
-    }
+    
     /* -------- footer --------*/
+
+    .privacy-copyright-text{
+        font-size: small;
+    }
 
     .social-media {
         font-size: 1.25rem;
