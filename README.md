@@ -149,84 +149,84 @@ Users could-
 4. If they could navigate the application.
 5. If all the links worked and all the buttons fire correctly.
 6. If they could sign up, and sign in and out of the site.
+7. If they could add an item to bag.
+8. If they could remove an item from the bag.
+9. if they could make a payment and receive confirmation of that payment.
 
 Site admin could
-1. Manage site post
+1. Manage site products by adding, removing and updating them
 2. Create, Read, Update, delete post and other site contents
-3. Create draft posts to complete later
 
 Test Methodology:
-All the tests performed were done manually. The users were sent a link with a list of instructions and they reported back their results.
+All the tests performed were done manually. The users were sent a link with a list of instructions and they reported back their results ( see images.14 ).
+
+![User test task list](static/images/screenshots/feedback.png)
+Image.14
+
  
 ### User test
 
-According to the feedback my users gave me the navigation of the application was simple to understand and navigate, and furthermore the understood what the intention of the app was from the moment they landed on the home page. User were asked to sign up, like a post and comment on a post. Furthermore, they were tasked with editing and then deleting a post which they did successfully. The users said they enjoyed the app and that it was a very similar experience to social media which made it relatable but with less distraction.
+According to the feedback my users gave me the navigation of the application was simple to understand and navigate, and furthermore they understood what the intention of the app was from the moment they landed on the home page. User were asked to sign up, like a post and comment on a post. Furthermore, they were tasked with editing and then deleting a post which they did successfully. Most importantly users where asked to purchase an art piece which meant they had to user they full feautres of the site listed. The users said they enjoyed the app.
 
-I too did these manual test to ensure that the apps features works as expected. And below are the results:
+I also did these manual test and a few extra that only the admin could do to ensure that the apps features works as expected. And below are the results:
 
 ### Admin test
 
-![an image of the testing done on the app](static/images/data.png)
+![Admin test](static/images/screenshots/admin.png)
 Figure 1: Admin panel
 
-I created a super user to make post on the app and view the data from the backend (see Figure 1). And this all worked. All post on the app where upload via the admin panel and I could view users who signed up to the app and their comments. In addition, I could see if they joined the mailing list or not.
+I created a super user to add products to the app and view data from the backend (see Figure 1). And this all worked. All theproducts on the app where upload via the admin panel and I could view users who signed up to the app,thier order, comments, and likes. In addition, I could see if they joined the mailing list or not.
 
 ### Signup, sign-in and sign-out test
 
-![an image of the testing done on the app](static/images/signup.png)
+![Sign-up test](static/images/screenshots/up.png)
 Figure 2: sign-up
 
-![an image of the testing done on the app](static/images/signout.png)
+![an image of the testing done on the app](static/images/screenshots/out.png)
 Figure 3: sign-out
 
-I created also logged in as a regular user ( Pokemon) in the front end to ensure that the post are rendering as expected (see Figure 2), that all the pages are displaying with no broken links, and that the UI looks as intended. The signup function works, I could sign in and out (see Figure 3) without any issues.
+![A successful login](static/images/screenshots/done.png)
+Figure 3.1: successful login
+
+I signed-up, signed-in, and sign-out as user non-superuser in the front end to ensure that the post are rendering as expected, that all the pages are displaying with no broken links, and that the UI looks as intended. The signup function works, I could sign in and out (see Figure 3.1) without any issues.
 
 ### Home page test
-![an image of the testing done on the app](static/images/homepage.png)
+![an image of the testing done on the app](static/images/screenshots/home.png)
 Figure 4: Home page view
 
-I started by testing that all the links in the navbar and the home page buttons work and lead to where they are intended and they did (see Figure 4). The logo will send you home, as will the home link in navbar. The ink, painting, and pencil links in the navbar and the homepage buttons all lead to their respective pages.
+I started by testing that all the links in the navbar and the home page buttons work and lead to where they are intended and they did (see Figure 4). The logo will send you home, as will the home link in navbar. The shop, ink, painting, and pencil links in the navbar and the homepage buttons all lead to their respective pages.
 
 ### Art page test
-![an image of the testing done on the app](static/images/gridview.png)
+![an image of the testing done on the app](static/images/screenshots/grid.png)
 Figure 5: Art page view for Paintings
 
-![an image of the testing done on the app](static/images/gridview1.png)
-Figure 6: Art page view for Ink
-
-![an image of the testing done on the app](static/images/gridview2.png)
-Figure 7: Art page view for Pencil
-
-Using the account of the fake user I created I test to see if all the art view were displaying and that the images were rendering properly (see Figure 5, 6, & 7). All the images were rending properly. I did however discover that the like counter was displaying unwanted text when the user is not authenticated, so I had to fix that.
+ I test to see if all the art view were displaying and that the images were rendering properly (see Figure 5). All the images were rending properly.
 
 ### Like, comment, edit, and delete test
 
-![an image of the testing done on the app](static/images/comment.png)
+![an image of the testing done on the app](static/images/screenshots/crud.png)
 Figure 8: test comment
 
-![an image of the testing done on the app](static/images/edit.png)
+![an image of the testing done on the app](static/images/screenshots/crud.png)
 Figure 9: edited the text.
 
-![an image of the testing done on the app](static/images/like.png)
+![an image of the testing done on the app](static/images/screenshots/like.png)
 Figure 10: liked post
 
-![an image of the testing done on the app](static/images/delete.png)
+![an image of the testing done on the app](static/images/screenshots/dcomment.png)
 Figure 11: deleted the comment
 
-I tested that like, comment, edit and delete buttons all work by going to the page of a single post and liked the post, created a comment, edited it and then deleted it. I created a test comment (see Figure 8). I then edited the text (see Figure 9).I liked the post, indicated by the black heart (see Figure 10). I then deleted the comment I edited earlier(see Figure 11).All of these buttons redirected me to the right page and executed exactly what I expected them to do in terms of CRUD functionality.
+I tested that like, comment, edit and delete buttons all work by going to the page of a single post and liked the post, created a comment, edited it and then deleted it. I created a test comment (see Figure 8). I then edited the text (see Figure 9).I liked the post, indicated by the red heart (see Figure 10). I then deleted the comment I edited earlier(see Figure 11).All of these buttons redirected me to the right page and executed exactly what I expected them to do in terms of CRUD functionality.
 
 ### Mailing list test
-![an image of the testing done on the app](static/images/maillist2.png)
-Figure 12: Mail list option just below the buttons (ink, paintings and pencil)
+![an image of the testing done on the app](static/images/screenshots/mail.png)
+Figure 12: Mail list in the admin joined from the front end
 
-![an image of the testing done on the app](static/images/maillist.png)
-Figure 13: Mail list option just below the buttons (ink, paintings and pencil) with a success message below the nav bar
-
-For the mailing list I created a fake user namee Max. Max was able to join the mail list by clicking the join option and then the submit button (see Figure 12). After joining, Max was notified about this success (see Figure 13). From this test I could conclude that all the button in this form work as expected.
+For the mailing list I created a user name Inotila. Inotila was able to join the mail list by clicking the join option and then the submit button. After joining, i checked in the admin to see if the user was registered and he was (see Figure 12).
 
 ### Accessibility and performance test
-![an image of the validators that the app was run through](static/images/lighthouse.png)
-Figure 14: Lighthouse report
+![an image of the validators that the app was run through](static/images/validation/lighthouse.png)
+Figure 13: Lighthouse report
 
 This app also meets the accessibility requirements of lighthouse in devtools. I ran it through light house and it got above 90% for all the criteria (see Figure 14).
 
