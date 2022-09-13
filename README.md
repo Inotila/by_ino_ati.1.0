@@ -1,120 +1,141 @@
 ![logo](static/images/logoblack.png)
 
-To the live page from the terminal type:
+To host the page on your local server type in the cli:
 
 `python3 manage.py runserver`
 
-To run the webpage click on this link: [by_ino_ati](https://by-ino-ati.herokuapp.com/)
+To run the webpage click on this link: [by_ino_ati](https://byinoati.herokuapp.com/)
 
-![Am I responsive image](static/images/responsive.png)
-# by_ino_ati(Portfolio 4)
+![Am I responsive image](static/images/imireponsive/responsive.png)
+# by_ino_ati(Portfolio 5)
 
 This project is for my final submission for my fifth milestone. The aim of the project is to code and deploy a responsive e-commerce website using Java Script, python+ django, HTML and CSS. 
 
 ## About by_ino_ati
 
-Is a web application where users can view and interact with art by artist Inotila Nghaamwa (the owner of the page). 
+A web application where users can view art works, interact with the art works and buy art by artist Inotila Nghaamwa (the owner of the page). 
 
-The site owner is an artist, and would like to offer users a platform where they can view and interact with his art work by being able to like and comment on individual pictures. In addition the owner would like to be able to handle data at the back end and make post on to the page using the backend. Furthermore, the owner would like to also be able to communicate the latest art works to his users via email, so he want to give user the opportunity to sign up for a mailing list. The owner would like to keep adding features to the site and updating it to increase the way in which site users can engage with the content, the owner and each other.
+The site owner is an artist, and would like to offer users a platform where they can view, interact and purchase his art work. In addition the owner would like to be able to handle data at the backend and manage his product by adding, removing, updating his product from the admin pannel. Furthermore, the owner would like to also be able to communicate with site users via email, so he want to give user the opportunity to sign up for a mailing list. The owner would like to keep adding features to the site and updating it to increase the way in which site users can engage with the content, the owner and each other. 
 
-The users are primarily art enthusiasts, art collectors, and other people in the artistic community. These user would like to easily navigate the application and be able to interact with the content and other users on the app. Furthermore, get feedback from the app when they perform an action. In addition user want to be able to clearly view the content in a manner that they are familiar with like on applications like Instagram.
+The users are primarily art enthusiasts, art collectors, and other people in the artistic community. They would like to view art works, and buy them too. These user would like to easily navigate the application and be able to interact with the content and other users on the app. Furthermore, get feedback from the app when they perform an action. In addition user want to be able to clearly view the content in a manner that they are familiar with like on applications like Instagram.
 
 ## Value
 
-Users can view the art work, in well categorized pages and also in full single view. In addition, users can interact with the content by liking and commenting on it. Users also have the ability to delete and update their comments, the app has a full CRUD functionality.
+Users can easily sign-up or sign in, and this allows them to have full access to all features of the site. They can view the art works and purchase them, in well categorized pages. They payment system is an easy to system and is interactive in that it sends messages when the user action has successeed or failed. In addition, users can interact with the content by liking and commenting on it. Users also have the ability to delete and update their comments, the app has a full CRUD functionality. Users can remove items from their bag before they checkout. And they can also choose to update their delivery details in their profile page, and they can select to have the data stored when they are checking out an item. 
 
-In addition, the UI is easy to understand and navigate. Furthermore, the site offers the user feedback alerting the users on consequence of their actions are. The app has an easy sign up, login and logout pages. Only users who are signed up can comment or like the content. This gives the owner the ability to get valuable data from the users to interact with them, and users get the ability to change and add data as they please.
+In addition, the UI is easy to understand and navigate. For a better UX, site user can see how many items are in their bag by looking at the top right corner of the site where a bag counter is (see image.1). Icons help the user understand what the intention of the button is such as the search icon in the nav bar, or the "x" icon that deletes comments or removes items from the bag.
+
+The site owner has a platform to conduct recieve payments for his business, communicate with his customers, and he can also store and view data to better understand his customers.
+
+![bag item counter](static/images/screenshots/counter.png)
 
 ## Potential features (before starting)
+image.1
 
-1. A grid view of art works
-2. Like content.
-3. Comment on post and view comments from other users and the amount of comments a post received.
-4. An easy to understand UI.
-5. An easy signup process to be authenticated.
-6. View details about the art work.
-7. Purchase the art work
+1. A grid view of art works and details view.
+2. Like button.
+3. Share button
+4. Comment section with CRUD functionality.
+5. Add items to bag.
+6. Remove items from nag
+7. Pay for items and recieve confirmation of payment. 
 8. Live bids on art works.
-9. A view and review items in shopping bag.
-10. Easy payment method.
-11. A booking page where site users can book artist for a commission.
+9. View and review items in shopping bag.
+10. A booking page where site users can book artist for a commission.
+11. Social media login/signup
+12. sign-up to join maillist
+13. Search functionality
+14. burger menu for mobile devices
+15. An Admin pannel to add and remove products
+16. Autheniticated login and secure user rights
+17. Link to social media accounts
 
 ## Actual Features (end product)
-1. Welcome/home page -
+1. A grid view of art works -
 
-![Home page image](static/images/homepage.png)
-On this page the user is welcomed, and the tone/vibe of the game is set. From this page first-time users will be able to know that this is an art application.
+Use view art works on in catagorized grid views ( see image.2). These images when clicked will direct the user to a detailed page of the art work where users can make informed choices and add items to bag ( see image.3). All images across all catagories share this same view.
 
-In addition, the home page offers navigation buttons that are simply titled in order for them to easily understand what exactly it is that the button will do/take them to. 
+![Grid view of items](static/images/screenshots/grid.jpg)
+Image.2
 
-2. Art view/grid pages (Painting, Ink, Pencil) - 
+![Details about the art piece](static/images/screenshots/info.jpg)
+Image.3
 
-![grid view of the art display](static/images/gridview.png)
+2. Like button. - 
 
-![grid view of the art display](static/images/gridview1.png)
+Users can like and unlike individual art works. A like is indicated by the heart being fully read( see image.4), and unlike is indicated by the heart having only a black border.
 
-![grid view of the art display](static/images/gridview2.png)
+![The like button](static/images/screenshots/info.jpg)
+Image.4
 
-This page is where users can view all the content on offer in their categories. On this page user can also see how many likes a specific post has. And they can click on the page title to further view a large singular image.
+3. Comment section with CRUD functionality - 
+Users have full CRUD functionality as they can create, ready, update, and delete own comments(see image.5). The can also read comments from others.
 
+![CRUD with Comment](static/images/screenshots/crud.png)
+Image.5
 
-3. Art detail page - 
+4. Add items to bag and remove them-
+User can view items in their bag, add availiable items to their bag,for checking out late (see image.6).  Users can also remove the items should they wish to do so (see image.7 ).
 
-![an image of the comment section in the app](static/images/comment.png)
-![an image of the like section in the app](static/images/like.png)
+![The add to bag button](static/images/screenshots/add.png)
+Image.6
 
-This page contains a single view of the image clicked on by the user from the art view page. On this page users can get a better look at the content. 
+![An empty bag after a successful removal](static/images/screenshots/remove.png)
+Image.6
 
-In addition users who are signed in can like the content and they can leave and edit comments. This a platform that art lovers can discuss what they are seeing.
+5. Pay for items and recieve confirmation of payment - 
 
-4. Signup/sign-out - 
+Site user can make secured payments and recieve email confirmation of the payment when it is processed succussfuly (see image. and image.9 )
 
-![an image of the signup section in the app](static/images/signup.png)
+![Payment platform](static/images/screenshots/payment.png)
+Image.8
 
-![an image of the sign-out section in the app](static/images/signout.png)
+![Email confirmation](static/images/screenshots/email.png)
+Image.9
 
-![an image of the alerts in the app](static/images/alerts.png)
+6. An Admin pannel to add and remove products
 
-![an image of the alerts in the app](static/images/alerts1.png)
+This application that has a easy to navigate admin panel where the owner can view data and make post to the main page (see image.10 ). 
 
-On this page user can sign up to gain full access to apps functionality. It is an easy and quick process for the user. When user is logged the nav bar, in addition to a message alert, will let them know that they have logged in because the option to login will change to log out.
+![The admin pannel](static/images/screenshots/admin.png)
+Image.10
 
-In addition, the app has an easy sign-out page.
+7. Search functionalitys-
 
-4. A functioning database in the backend-
+User can search for art works by their title using the search bar in the nav( see top of image.2)
 
-![an image of the data in the app](static/images/data.png)
+8. footer-
 
-This application that has a easy to navigate admin panel where the owner can view data and make post to the main page. In addition the owner can also create drafts post that he can completed at a later stage.
+A footer to keep social media links. These links open in new tabs to not take the user away from the website. The social media links are useful for the users because they encourage the user to get in contact with the developer on other platforms (see image.11).
 
-5. Logo - 
+![The footer with social links](static/images/screenshots/footer.png)
+Image.11
 
-![an image of the logo in the app](static/images/logoblack.png)
+9. Authenticated login, sign-up, and sign-out with secured user premissions - 
 
-A nice logo that also serves as a home button.
+Users can securely sign up to the app in order to gain full site user permissions/features. The site has role based accessibilyt to certain features. Users can't access sensitive information or make any changes that are only restricted to the site adim or other users (see image.11,12, and 13).
 
-6. Footer and social media links-
+![The sign-out page](static/images/screenshots/out.png)
+Image.12
 
-A footer to keep social media links. These links are links that open in new tabs so as to not take the user away from the website.
+![The sign-up page](static/images/screenshots/up.png)
+Image.13
 
-The social media links are useful for the users because they encourage the user to get in contact with the developer on other platforms (Facebook, Instagram and YouTube).
-
-7. Join Mail list
-
-![an image of the mailing list section in the app](static/images/maillist2.png)
-
-![an image of the mailing list section in the app](static/images/maillist.png)
+10. Join Mail list-
 
 Users can join a mailing list or opt out of it. This mailing list gives user the option of getting timely updates about new art pieces and sales that are live on the app.
 
 The owner can user this to get data to communicate directly with site users.
 
+11. Burger menu -
+Foor better Ui/Ux the smaller screens have collapsing burger menu( see image.2).
+
 ## Future Features
-1. A Status to bar that will show the availability of the arts pieces and their prices
-2. Users will be able to share post to other apps
-3. Users will be able to make bids on art pieces
-4. User will be able to like content from the grid view page to
-5. The number of comments a post gets will also be displayed
+1. Share button - users can share art works they like on their social media pages and contacts.
+2. Live bids on art works - the site will host live bids with secure payment systems for auctions.
+3. A booking page where site users can book artist for a commission - users can user a calender feature to book the artist for commision works without confiliting schedulings.
+4. Social media login/signup -users can signup and login using their social media accounts.
+5. A flixible grid layout - users can change the layout of the grid view on each othe catergory pages.
 
 ## Testing
 
