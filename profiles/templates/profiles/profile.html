@@ -3,8 +3,7 @@
 
 
 {% block content%}
-<div class="overlay"></div>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col">
             <h1 class="text-center welcome-text mt-3 mb-3">My Profile</h1>
@@ -13,7 +12,8 @@
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-12 col-lg-6"><p class="text-muted">Default Delivery Information</p>
+        <div class="col-12 col-lg-6">
+            <p class="text-muted">Default Delivery Information</p>
             <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
@@ -34,33 +34,34 @@
                     </thead>
                     <tbody>
                         {% for order in orders %}
-                            <tr>
-                                <td>
-                                    <a class="override-a-defualt" href="{% url 'order_history' order.order_number %}"
+                        <tr>
+                            <td>
+                                <a class="override-a-defualt" href="{% url 'order_history' order.order_number %}"
                                     title="{{ order.order_number }}">
-                                        {{ order.order_number|truncatechars:6 }}
-                                    </a>
-                                </td>
-                                <td class="date-table">{{ order.date }}</td>
-                                <td>
-                                    <ul class="list-unstyled">
-                                        {% for item in order.lineitems.all %}
-                                            <li class="small">
-                                                {{ item.art.title }} x{{ item.quantity }}
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </td>
-                                <td>${{ order.grand_total }} SEK</td>
-                            </tr>
+                                    {{ order.order_number|truncatechars:6 }}
+                                </a>
+                            </td>
+                            <td class="date-table">{{ order.date }}</td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                    <li class="small">
+                                        {{ item.art.title }} x{{ item.quantity }}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>${{ order.grand_total }} SEK</td>
+                        </tr>
                         {% endfor %}
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-{% endblock %}
-{% block postloadjs %}
+</div>
+    {% endblock %}
+    {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}
