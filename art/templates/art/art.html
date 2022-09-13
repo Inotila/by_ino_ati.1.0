@@ -29,7 +29,7 @@
             <div class="card {% if image.is_available %}art-for-sale{% else %}art-not-for-sale{% endif %}">
                 <!-- card image if no image is assigned to the post a default image from static file will display -->
                 <a href="{% url 'details' image.id %}"><img class="card-img-top" src="{{ image.art_image.url }}"
-                        alt="a picture of art work by artist inotila nghaamwa">
+                        alt="a picture of art work by artist inotila nghaamwa" aria-label="an image link leads to details about the art work">
                 </a>
             </div>
         </div>

@@ -72,7 +72,7 @@
                             {% if bag_items %}
                                 {% if details.id|lower in art_ids|lower %}
                                     <a href="{% url 'checkout' %}" id="after-add-to-bag-btn"
-                                        class="btn homepage-btn go-to-checkout mb-3">CHECKOUT</a>
+                                        class="btn homepage-btn go-to-checkout mb-3" aria-label="A button to checkout item">CHECKOUT</a>
                                     <p class="text-muted">Proceed to checkout to finish this purchase or <a class="text-muted"
                                             href="{% url 'art' %}?category=1">veiw more art</a></p>
                                 {% else %}
