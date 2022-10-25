@@ -20,7 +20,8 @@ DEBUG = 'DEVELOPMENT' in os.environ
 # DISABLE_COLLECTSTATIC = 1
 
 ALLOWED_HOSTS = [
-    'byinoati.herokuapp.com', 'localhost', 'www.byinoati.com'
+    'byinoati.herokuapp.com', 'localhost', 'www.byinoati.com',
+    'byinoati.com', 'https://www.byinoati.com'
     ]
 
 
