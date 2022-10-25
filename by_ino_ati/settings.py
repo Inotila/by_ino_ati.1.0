@@ -19,7 +19,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 # DISABLE_COLLECTSTATIC = 1
 
-ALLOWED_HOSTS = ['byinoati.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [
+    'byinoati.herokuapp.com', 'localhost', 'https://www.byinoati.com'
+    ]
 
 
 # Application definition
