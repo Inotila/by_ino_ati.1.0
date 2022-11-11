@@ -50,7 +50,11 @@
                                 aria-expanded="false">
                                 <div class="text-center">
                                     <i class="fas fa-user fa-lg"></i>
+                                    {% if request.user.is_authenticated %}
+                                    <p>{{ user.username }}</p>
+                                    {% else %}
                                     <p>Profile</p>
+                                    {% endif %}
                                 </div>
                             </a>
                             <div class="dropdown-menu border-0" id="profile-menu" aria-labelledby="user-options">
