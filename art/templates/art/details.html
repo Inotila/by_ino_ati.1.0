@@ -52,50 +52,50 @@
                     <p>Caption:</p>
                     <p class="caption-text"><strong>"{{details.caption}} "</strong></p>
                     <p>Media:</p>
-                        <p><strong>{{details.media}}</strong></p>
+                    <p><strong>{{details.media}}</strong></p>
                     <p>Framed:</p>
                     {% if details.is_framed %}
-                        <p><strong>Yes</strong></p>
+                    <p><strong>Yes</strong></p>
                     {% else %}
-                        <p><strong>No</strong></p>
+                    <p><strong>No</strong></p>
                     {% endif %}
                     <p>Size:</p>
-                        <p><strong>{{details.size}} </strong>
-                        </p>
+                    <p><strong>{{details.size}} </strong>
+                    </p>
                     <p>Completed:</p>
-                        <p><strong>{{details.date_completed}}</strong></p>
+                    <p><strong>{{details.date_completed}}</strong></p>
                     <!-- only display price and purchase button if art is available -->
                     {% if details.is_available %}
                     <p>Price:</p>
-                        <p><strong>{{details.price|floatformat:2}} SEK</strong></p>
-                        {% if request.user.is_authenticated %}
-                            {% if bag_items %}
-                                {% if details.id|lower in art_ids|lower %}
-                                    <a href="{% url 'checkout' %}" id="after-add-to-bag-btn"
-                                        class="btn homepage-btn go-to-checkout mb-3" aria-label="A button to checkout item">CHECKOUT</a>
-                                    <p class="text-muted">Proceed to checkout to finish this purchase or <a class="text-muted"
-                                            href="{% url 'art' %}?category=1">veiw more art</a></p>
-                                {% else %}
-                                    <form class="mb-3" action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
-                                        {% csrf_token %}
-                                        <input type="submit" class="btn homepage-btn text-uppercase add-to-bag" data-art_id="{{ details.id }}"
-                                            value="Add to Bag">
-                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                    </form>
-                                {% endif %}
-                            {% else %}
-                                <form class="mb-3" action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
-                                    {% csrf_token %}
-                                    <input type="submit" class="btn homepage-btn text-uppercase add-to-bag" data-art_id="{{ details.id }}"
-                                        value="Add to Bag">
-                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                </form>
-                            {% endif %}
-                        {% else %}
-                                <p><strong><a href="{% url 'account_signup' %}" class="override-a-defualt"> Sign-up</a> for free or <a
-                                        href="{% url 'account_login' %}" class="override-a-defualt">login</a>
-                                    to purchase this piece and enjoy other features.</strong></p>
-                        {% endif %}
+                    <p><strong>{{details.price|floatformat:2}} SEK</strong></p>
+                    {% if request.user.is_authenticated %}
+                    {% if bag_items %}
+                    {% if details.id|lower in art_ids|lower %}
+                    <a href="{% url 'checkout' %}" id="after-add-to-bag-btn"
+                        class="btn homepage-btn go-to-checkout mb-3" aria-label="A button to checkout item">CHECKOUT</a>
+                    <p class="text-muted">Proceed to checkout to finish this purchase or <a class="text-muted"
+                            href="{% url 'art' %}?category=1">veiw more art</a></p>
+                    {% else %}
+                    <form class="mb-3" action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
+                        {% csrf_token %}
+                        <input type="submit" class="btn homepage-btn text-uppercase add-to-bag"
+                            data-art_id="{{ details.id }}" value="Add to Bag">
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </form>
+                    {% endif %}
+                    {% else %}
+                    <form class="mb-3" action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
+                        {% csrf_token %}
+                        <input type="submit" class="btn homepage-btn text-uppercase add-to-bag"
+                            data-art_id="{{ details.id }}" value="Add to Bag">
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </form>
+                    {% endif %}
+                    {% else %}
+                    <p><strong><a href="{% url 'account_signup' %}" class="override-a-defualt"> Sign-up</a> for free or
+                            <a href="{% url 'account_login' %}" class="override-a-defualt">login</a>
+                            to purchase this piece and enjoy other features.</strong></p>
+                    {% endif %}
                     {% endif %}
                 </div>
             </div>
@@ -153,10 +153,10 @@
         </div>
     </div>
     <div id="full-img-overlay">
-        <a href="{% url 'delete' comment.id %}" class="override-a-defualt"><i
-            class="fas fa-times small" id="delete-icon"></i></a>
-            <img src="{{ details.art_image.url }}"
-                        alt="a picture of art work by artist inotila nghaamwa">
+        <a href="" class="override-a-defualt d-flex flex-column align-items-end mr-3 mt-3">
+            <i class="fas fa-times small" id="close-full-img-icon"></i>
+        </a>
+        <img id="full-img" class="rounded mx-auto d-block" src="{{ details.art_image.url }}" alt="a picture of art work by artist inotila nghaamwa">
     </div>
 </div>
 {% endblock %}

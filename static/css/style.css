@@ -393,6 +393,25 @@ background-color: rgb(219, 217, 217, .12);
     background-color: #fff;
 }
 
+#full-img-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(87, 96, 97, 0.75);
+    z-index: 9999;
+}
+
+#full-img{
+    max-height: 100%;
+}
+
+#close-full-img-icon{
+    color: #fff;
+    font-size: large;
+}
+
 /*------------- bag template ------------------*/
 .empty_bag_links {
     color: #000 !important;
