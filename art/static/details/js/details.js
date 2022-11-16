@@ -6,10 +6,10 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
     overlay.style.visibility = 'hidden';  
   });
 
-  document.getElementById("img-small-view").addEventListener("click", function(event){
-    event.preventDefault();
-     overlay.style.visibility = 'visible';
-  });
+  // document.getElementById("img-small-view").addEventListener("click", function(event){
+  //   event.preventDefault();
+  //    overlay.style.visibility = 'visible';
+  // });
 
   document.getElementById("full-img-text-btn").addEventListener("click", function(event){
     event.preventDefault();
