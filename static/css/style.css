@@ -409,6 +409,7 @@ background-color: rgb(219, 217, 217, .12);
 
 #full-img{
     max-height: 100%;
+    max-width:100%;
 }
 
 #close-full-img-icon{
@@ -419,6 +420,10 @@ background-color: rgb(219, 217, 217, .12);
 #close-full-img-icon:hover{
     color: #cc4040;
     text-decoration: none !important;
+}
+
+#full-img-text-btn{
+    color: #000 !important;
 }
 
 /*------------- bag template ------------------*/
