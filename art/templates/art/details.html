@@ -152,5 +152,11 @@
             </div>
         </div>
     </div>
+    <div id="full-img-overlay">
+        <a href="{% url 'delete' comment.id %}" class="override-a-defualt"><i
+            class="fas fa-times small" id="delete-icon"></i></a>
+            <img src="{{ details.art_image.url }}"
+                        alt="a picture of art work by artist inotila nghaamwa">
+    </div>
 </div>
 {% endblock %}
