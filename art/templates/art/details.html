@@ -11,12 +11,14 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-6 p-0">
-            <a href="" id="full-img-text-btn"><p class="text-center small">[view full image]</p></a>
-            <div class="mb-3 card-img-container">
+            
+            <div class="card-img-container">
                 <div class="card mx-3 details-art-img-container">
+                    <a href="#" id="details-img-full-view-anchor">
                         <img class="card-img-top" src="{{ details.art_image.url }}"
                         alt="a picture of art work by artist inotila nghaamwa">
                     <div class="card-body d-flex justify-content-between" id="img-card-body">
+                    </a>
                         <!-- form for only signed in users to like post -->
                         {% if user.is_authenticated %}
                         <form action="{% url 'like_art_piece' details.id %}" method="post">
@@ -45,6 +47,7 @@
                     </div>
                 </div>
             </div>
+            <a href="#" id="full-img-text-btn"><p class="text-center small mb-3">[view image in full screen mode]</p></a>
         </div>
         <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
             <div class="mb-3 mx-3 detail-container ">
@@ -154,7 +157,7 @@
         </div>
     </div>
     <div id="full-img-overlay">
-        <a href="" class="override-a-defualt d-flex flex-column align-items-end mr-3 mt-3">
+        <a href="#" class="override-a-defualt d-flex flex-column align-items-end mr-3 mt-3">
             <i class="fas fa-times small" id="close-full-img-icon"></i>
         </a>
         <img id="full-img" class="rounded mx-auto d-block" src="{{ details.art_image.url }}" alt="a picture of art work by artist inotila nghaamwa">

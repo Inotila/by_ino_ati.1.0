@@ -410,6 +410,11 @@ background-color: rgb(219, 217, 217, .12);
 #full-img{
     max-height: 100%;
     max-width:100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 #close-full-img-icon{
@@ -696,9 +701,9 @@ select option[value=""] {
 
 @media (max-width: 425px) {
     
-    .card-img-container>div>img{
+    .card-img-container>div>a>img{
         width: 100% !important;
-        height: 100vw !important;
+        height: auto !important;
     }
     
 /* -------- checkout done  page -------- */
