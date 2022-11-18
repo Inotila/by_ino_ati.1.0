@@ -328,6 +328,13 @@ background-color: rgb(219, 217, 217, .12);
     color: #740202;
 }
 
+#share-btn{
+      background: none;
+    margin-right: 1.25rem;
+    font-size: 1.7rem;
+    padding:0;
+}
+
 .comment-body-display{
     max-height:4.688rem;
     overflow-y:auto;
