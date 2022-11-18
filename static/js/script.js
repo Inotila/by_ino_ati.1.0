@@ -37,14 +37,14 @@ window.onload = () => {
 
     const acceptFn = event => {
         saveToStorage(storageType)
-        consentPopup.classList.add('hidden');
+        consentPopup.style.visibility = 'hidden';
     }
 
     acceptBtn.addEventListener('click', acceptFn);
 
     if (shouldShowPopup(storageType)){
         setTimeout(() => {
-            consentPopup.classList.remove('hidden');
+            consentPopup.style.visibility = 'visible';
         }, 500);
     }
 };
