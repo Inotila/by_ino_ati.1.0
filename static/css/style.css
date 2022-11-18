@@ -151,19 +151,33 @@ footer {
 /* cookies consent popup */
 
 #consent-popup{
+    color:#fff;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(22, 183, 201, 0.75);
+    background: rgb(0 0 0 / 95%);
     z-index: 9999;
     margin: 0;
-    padding: 2rem;
+    padding: 1rem;
     transition: opacity .8s ease;
 }
 
 .hidden {
 opacity: 0;
+}
+
+#privacy-policy-consent-popup{
+      font-style: italic;
+    text-decoration: underline;
+}
+
+#accept-cookies-btn{
+    background-color: #fff;
+}
+
+#accept-cookies-btn:hover{
+    background-color: #79e067;
 }
 
 /*------------------ Homepage index.html ----------------------*/

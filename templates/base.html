@@ -177,12 +177,17 @@
             Inotila Opoeli Nghaamwa
         </p>
     </footer>
-    <div id="consent-popup" class="hidden d-flex justify-content-center">
-        <p><strong>Cookies consent:</strong> By using this site you have agreed to our <a
-                href="https://www.privacypolicygenerator.info/live.php?token=pv9dRiKKr2GFN3kv7aNg3HgdE8lL288d">terms &
-                conditions of our privacy policy</a>.
+    <div id="consent-popup" class="hidden">
+        <h3 class="text-center"><i class="fas fa-cookie-bite"></i> Cookies consent:</h3>
+        <p class="text-center">By using this site you are agreeing to the terms &
+            conditions of our <a id="privacy-policy-consent-popup"
+                href="https://www.privacypolicygenerator.info/live.php?token=pv9dRiKKr2GFN3kv7aNg3HgdE8lL288d">privacy
+                policy</a>. We don't share your information with 3rd parties.
         </p>
-        Please <a href="#" id="accept"> Accept</a> these before using our site.
+        <div class="text-center mt-3">
+            <a href="#" id="accept-cookies-btn" class="btn"> Accept</a>
+        </div>
+
     </div>
     <script src="{% static 'js/script.js' %}"></script>
 </body>

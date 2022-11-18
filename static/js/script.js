@@ -33,7 +33,7 @@ const saveToStorage = () => storageType.setItem(consentPropertyName, true);
 
 window.onload = () => {
     const consentPopup = document.getElementById('consent-popup');
-    const acceptBtn = document.getElementById('accept');
+    const acceptBtn = document.getElementById('accept-cookies-btn');
 
     const acceptFn = event => {
         saveToStorage(storageType)
