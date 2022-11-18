@@ -446,6 +446,18 @@ background-color: rgb(219, 217, 217, .12);
     z-index: 9999;
 }
 
+#share-div-overlay{
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    background: rgba(87, 96, 97, 0.75);
+    z-index: 9999;
+    padding: 2rem;
+}  
+
 #full-img{
     max-height: 100%;
     max-width:100%;
