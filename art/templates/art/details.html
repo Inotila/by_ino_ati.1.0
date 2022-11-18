@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load social_share %}
 
 {% block content%}
 <div class="container-fluid ">
@@ -171,18 +172,17 @@
     </div>
     <!-- share div overlay -->
     <div id="share-div-overlay">
-        <p class="text-center">Share to:</p>
-        <p class="m-0 text-center social-media">
-            <a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram-square ms-3" id="insta"
-                    aria-label="A link to instagram"></i></a>
-            <a href="#" target="_blank" rel="noopener"><i class="fab fa-facebook-square ms-3" id="facebook"
-                    aria-label="A link to facebook"></i></a>
-            <a href="#" rel="noopener"><i class="fab fa-twitter-square"  aria-label="A link to twitter"></i></a>
-            <a href="#" rel="noopener"><i class="fab fa-pinterest-square"  aria-label="A link to pinterest"></i></a>
-            <a href="#" class="override-a-defualt">
-                <i class="fas fa-times small" id="close-share-div-icon"></i>
-            </a>
-        </p>
+        <a href="#" class="override-a-defualt d-flex flex-column align-items-end mr-3">
+            <i class="fas fa-times small" id="close-share-div-icon"></i>
+        </a>
+        <p class="text-center" id="share-overlay-text">share on:</p>
+        <div  class="d-flex justify-content-center">
+            {% post_to_facebook object_or_url %}
+            {% post_to_twitter object_or_url %}
+            {% post_to_whatsapp object_or_url  %}
+            {% post_to_linkedin object_or_url %}
+        </div>
+
     </div>
 </div>
 <script src="{% static 'details/js/details.js' %}"></script>

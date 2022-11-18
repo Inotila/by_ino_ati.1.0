@@ -32,3 +32,4 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
     event.preventDefault();
     shareOverlay.style.visibility = 'hidden';  
   });
+  

@@ -453,7 +453,7 @@ background-color: rgb(219, 217, 217, .12);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 100%;
-    background: rgba(87, 96, 97, 0.75);
+   background: rgb(0 0 0 / 95%);
     z-index: 9999;
     padding: 2rem;
 }  
@@ -468,7 +468,30 @@ background-color: rgb(219, 217, 217, .12);
     transform: translateY(-50%);
 }
 
+#share-overlay-text{
+    color:#fff;
+    font-size:x-large;
+}
+
+
+#twitter-share-icon{
+    color:#00acee ;
+}
+
+#whatsapp-icon{
+    color:#25D366;
+}
+
+#linedin-share-icon{
+    color:  #0A66C2;
+}
+
 #close-full-img-icon{
+    color: #fff;
+    font-size: large;
+}
+
+#close-share-div-icon{
     color: #fff;
     font-size: large;
 }
@@ -480,6 +503,11 @@ background-color: rgb(219, 217, 217, .12);
 
 #full-img-text-btn{
     color: #000 !important;
+}
+
+.share-link-icon{
+    font-size:3rem;
+    padding:1rem;
 }
 
 /*------------- bag template ------------------*/
