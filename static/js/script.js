@@ -18,7 +18,11 @@ const cookieStorage = {
     return cookies[key];
     },
     setItem: (key, value) => {
-        document.cookie = `${key}=${value}`
+        const now = new Date();
+        let expiryDate = new Date(now);
+        expiryDate.setDate(now.getDate() + 365);
+        document.cookie = `${key}=${value}; expires=${expiryDate}; SameSite=Lax; secure`;
+
     },
 };
 
@@ -41,6 +45,6 @@ window.onload = () => {
     if (shouldShowPopup(storageType)){
         setTimeout(() => {
             consentPopup.classList.remove('hidden');
-        }, 2000);
+        }, 500);
     }
 };

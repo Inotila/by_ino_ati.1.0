@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <!-- favicon -->
-        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
@@ -103,7 +103,7 @@
                             <button class="search-icon-button" type="submit" aria-label="A search button">
                                 <span class="input-group-text" id="search-icon-container">
                                     <i class="fas fa-search"></i>
-                                    </span>
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -119,13 +119,15 @@
                         <ul class="navbar-nav w-auto mx-auto">
                             <li class="nav-item dropdown d-lg-flex flex-lg-row">
                                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                                <a class="nav-link activen" aria-current="page" href="{% url 'art' %}?is_available=True" >Shop</a>
+                                <a class="nav-link activen" aria-current="page"
+                                    href="{% url 'art' %}?is_available=True">Shop</a>
                                 <a class="nav-link active" aria-current="page"
-                                                                  href="{% url 'art' %}?category=1">Paintings</a>
+                                    href="{% url 'art' %}?category=1">Paintings</a>
                                 <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=2">Ink</a>
-                                <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=3">Pencil</a>
-                                <a href="{% url 'home' %}" id="nav-menu-link"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link active" aria-current="page"
+                                    href="{% url 'art' %}?category=3">Pencil</a>
+                                <a href="{% url 'home' %}" id="nav-menu-link" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
                                 </a>
                             </li>
                         </ul>
@@ -135,7 +137,7 @@
         </div>
     </nav>
     {% if messages %}
-    <div class="message-container"  id="alert-message">
+    <div class="message-container" id="alert-message">
         {% for message in messages %}
         {% with message.level as level %}
         {% if level == 40 %}
@@ -167,7 +169,7 @@
             <a href="https://www.instagram.com/by_ino_ati/" target="_blank" rel="noopener"><i
                     class="fab fa-instagram-square ms-3" id="insta" aria-label="A link to instagram"></i></a>
             <a href="https://www.facebook.com/byinoati/" target="_blank" rel="noopener"><i
-                    class="fab fa-facebook-square ms-3"  id="facebook" aria-label="A link to facebook"></i></a>
+                    class="fab fa-facebook-square ms-3" id="facebook" aria-label="A link to facebook"></i></a>
         </p>
         <p class="m-0 text-center text-muted privacy-copyright-text">
             <a href="https://www.privacypolicygenerator.info/live.php?token=pv9dRiKKr2GFN3kv7aNg3HgdE8lL288d"
@@ -176,9 +178,13 @@
         </p>
     </footer>
     <div id="consent-popup" class="hidden d-flex justify-content-center">
-        <p>By using this site you have agreed to our <a href="#">T&Cs</a>.</p>
-        Please <a href="#" id="accept"> Accept</a> these before using out site.
+        <p><strong>Cookies consent:</strong> By using this site you have agreed to our <a
+                href="https://www.privacypolicygenerator.info/live.php?token=pv9dRiKKr2GFN3kv7aNg3HgdE8lL288d">terms &
+                conditions of our privacy policy</a>.
+        </p>
+        Please <a href="#" id="accept"> Accept</a> these before using our site.
     </div>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>
