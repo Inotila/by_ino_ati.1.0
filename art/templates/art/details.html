@@ -17,154 +17,154 @@
                     <a href="#" id="details-img-full-view-anchor">
                         <img class="card-img-top" src="{{ details.art_image.url }}"
                             alt="a picture of art work by artist inotila nghaamwa">
-                        <div class="card-body d-flex justify-content-between" id="img-card-body">
                     </a>
-                    <!-- form for only signed in users to like post -->
-                    {% if user.is_authenticated %}
-                    <form action="{% url 'like_art_piece' details.id %}" method="post">
-                        {% csrf_token %}
-                        {% if liked %}
-                        <button class="like-btns" id="like-button" type="submit" name="user_art_like"
-                            value="{{details.id}}">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        {% else %}
-                        <button class="like-btns" id="unlike-button" type="submit" name="user_art_unlike"
-                            value="{{details.id}}">
-                            <i class="far fa-heart"></i>
-                        </button>
-                        {% endif %}
-                    </form>
-                    {% else %}
-                    <form action="{% url 'like_art_piece' details.id %}" method="post">
-                        {% csrf_token %}
-                        <button class="like-btns" id="un-auth-like-btn" type="submit" name="user_art_unlike"
-                            value="{{details.id}}">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </form>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-        <a href="#" id="full-img-text-btn">
-            <p class="text-center small mb-3">[view image in full screen mode]</p>
-        </a>
-    </div>
-    <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
-        <div class="mb-3 mx-3 detail-container ">
-            <div class="text-center mx-3">
-                <h2>Art info</h2>
-                <p>Caption:</p>
-                <p class="caption-text"><strong>"{{details.caption}} "</strong></p>
-                <p>Media:</p>
-                <p><strong>{{details.media}}</strong></p>
-                <p>Framed:</p>
-                {% if details.is_framed %}
-                <p><strong>Yes</strong></p>
-                {% else %}
-                <p><strong>No</strong></p>
-                {% endif %}
-                <p>Size:</p>
-                <p><strong>{{details.size}} </strong>
-                </p>
-                <p>Completed:</p>
-                <p><strong>{{details.date_completed}}</strong></p>
-                <!-- only display price and purchase button if art is available -->
-                {% if details.is_available %}
-                <p>Price:</p>
-                <p><strong>{{details.price|floatformat:2}} SEK</strong></p>
-                {% if request.user.is_authenticated %}
-                {% if bag_items %}
-                {% if details.id|lower in art_ids|lower %}
-                <a href="{% url 'checkout' %}" id="after-add-to-bag-btn" class="btn homepage-btn go-to-checkout mb-3"
-                    aria-label="A button to checkout item">CHECKOUT</a>
-                <p class="text-muted">Proceed to checkout to finish this purchase or <a class="text-muted"
-                        href="{% url 'art' %}?category=1">veiw more art</a></p>
-                {% else %}
-                <form class="mb-3" action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
-                    {% csrf_token %}
-                    <input type="submit" class="btn homepage-btn text-uppercase add-to-bag"
-                        data-art_id="{{ details.id }}" value="Add to Bag">
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                </form>
-                {% endif %}
-                {% else %}
-                <form class="mb-3" action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
-                    {% csrf_token %}
-                    <input type="submit" class="btn homepage-btn text-uppercase add-to-bag"
-                        data-art_id="{{ details.id }}" value="Add to Bag">
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                </form>
-                {% endif %}
-                {% else %}
-                <p><strong><a href="{% url 'account_signup' %}" class="override-a-defualt"> Sign-up</a> for free or
-                        <a href="{% url 'account_login' %}" class="override-a-defualt">login</a>
-                        to purchase this piece and enjoy other features.</strong></p>
-                {% endif %}
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row w-100">
-    <div class="col-12 p-0 ">
-        <!-- comments card/section -->
-        <div class="mb-3 comment-card-container">
-            <div class="card  mx-3 ">
-                <div class="card-body">
-                    <div class="text-center">
-                        <h3 class="card-title"> <i class="far fa-comment-dots"></i> Art talk</h3>
+                    <div class="card-body d-flex justify-content-between" id="img-card-body">
+                        <!-- form for only signed in users to like post -->
                         {% if user.is_authenticated %}
-                        <h4 class="text-center small" style="text-align: center;">Join the Conversation:</h4>
+                        <form action="{% url 'like_art_piece' details.id %}" method="post">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button class="like-btns" id="like-button" type="submit" name="user_art_like"
+                                value="{{details.id}}">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            {% else %}
+                            <button class="like-btns" id="unlike-button" type="submit" name="user_art_unlike"
+                                value="{{details.id}}">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            {% endif %}
+                        </form>
                         {% else %}
-                        <h4 class="text-center small" style="text-align: center;"><strong><a
-                                    href="{% url 'account_login' %}" class="override-a-defualt">Login</a></strong>
-                            or <strong><a class="override-a-defualt"
-                                    href="{% url 'account_signup' %}">sign-up</a></strong> to join the Conversation:
-                        </h4>
+                        <form action="{% url 'like_art_piece' details.id %}" method="post">
+                            {% csrf_token %}
+                            <button class="like-btns" id="un-auth-like-btn" type="submit" name="user_art_unlike"
+                                value="{{details.id}}">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </form>
                         {% endif %}
                     </div>
-                    <div class="comment-body-display">
-                        <!-- loops through comments and displays them in oder of date posted -->
-                        {% for comment in comments|dictsort:"created_on" reversed %}
-                        <p>
-                            <span class="font-weight-bold">{{ comment.user}}</span>
-                            :
-                            {{ comment.body }}
-                            <span class=" text-muted comment-date">
-                                {{ comment.created_on }}
-                            </span>
-                            <!-- edit and delete buttons, checks the mail of the user so user can only comment or edit own post-->
-                            {% if request.user == comment.user %}
-                            <a href="{% url 'edit' comment.id %}" class="override-a-defualt mr-1"><i
-                                    class="fas fa-pen small" id="edit-icon"></i></a>
-                            <a href="{% url 'delete' comment.id %}" class="override-a-defualt"><i
-                                    class="fas fa-times small" id="delete-icon"></i></a>
-                            {% endif %}
-                        </p>
-                        {% endfor %}
-                    </div>
-                    <!-- comment form, only users who are authenticated can comment on post -->
-                    {% if user.is_authenticated %}
-                    <form class="comment-form" method="post">
-                        {{ user_comments| crispy }}
+                </div>
+            </div>
+            <a href="#" id="full-img-text-btn">
+                <p class="text-center small mb-3">[view image in full screen mode]</p>
+            </a>
+        </div>
+        <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
+            <div class="mb-3 mx-3 detail-container ">
+                <div class="text-center mx-3">
+                    <h2>Art info</h2>
+                    <p>Caption:</p>
+                    <p class="caption-text"><strong>"{{details.caption}} "</strong></p>
+                    <p>Media:</p>
+                    <p><strong>{{details.media}}</strong></p>
+                    <p>Framed:</p>
+                    {% if details.is_framed %}
+                    <p><strong>Yes</strong></p>
+                    {% else %}
+                    <p><strong>No</strong></p>
+                    {% endif %}
+                    <p>Size:</p>
+                    <p><strong>{{details.size}} </strong>
+                    </p>
+                    <p>Completed:</p>
+                    <p><strong>{{details.date_completed}}</strong></p>
+                    <!-- only display price and purchase button if art is available -->
+                    {% if details.is_available %}
+                    <p>Price:</p>
+                    <p><strong>{{details.price|floatformat:2}} SEK</strong></p>
+                    {% if request.user.is_authenticated %}
+                    {% if bag_items %}
+                    {% if details.id|lower in art_ids|lower %}
+                    <a href="{% url 'checkout' %}" id="after-add-to-bag-btn"
+                        class="btn homepage-btn go-to-checkout mb-3" aria-label="A button to checkout item">CHECKOUT</a>
+                    <p class="text-muted">Proceed to checkout to finish this purchase or <a class="text-muted"
+                            href="{% url 'art' %}?category=1">veiw more art</a></p>
+                    {% else %}
+                    <form class="mb-3" action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
                         {% csrf_token %}
-                        <button type="submit" class="btn homepage-btn float-right">comment</button>
+                        <input type="submit" class="btn homepage-btn text-uppercase add-to-bag"
+                            data-art_id="{{ details.id }}" value="Add to Bag">
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </form>
+                    {% endif %}
+                    {% else %}
+                    <form class="mb-3" action="{% url 'add_to_bag' details.id %}" method="POST" id="add_to_bag_form">
+                        {% csrf_token %}
+                        <input type="submit" class="btn homepage-btn text-uppercase add-to-bag"
+                            data-art_id="{{ details.id }}" value="Add to Bag">
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </form>
+                    {% endif %}
+                    {% else %}
+                    <p><strong><a href="{% url 'account_signup' %}" class="override-a-defualt"> Sign-up</a> for free or
+                            <a href="{% url 'account_login' %}" class="override-a-defualt">login</a>
+                            to purchase this piece and enjoy other features.</strong></p>
+                    {% endif %}
                     {% endif %}
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div id="full-img-overlay">
-    <a href="#" class="override-a-defualt d-flex flex-column align-items-end mr-3 mt-3">
-        <i class="fas fa-times small" id="close-full-img-icon"></i>
-    </a>
-    <img id="full-img" class="rounded mx-auto d-block" src="{{ details.art_image.url }}"
-        alt="a picture of art work by artist inotila nghaamwa">
-</div>
+    <div class="row w-100">
+        <div class="col-12 p-0 ">
+            <!-- comments card/section -->
+            <div class="mb-3 comment-card-container">
+                <div class="card  mx-3 ">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h3 class="card-title"> <i class="far fa-comment-dots"></i> Art talk</h3>
+                            {% if user.is_authenticated %}
+                            <h4 class="text-center small" style="text-align: center;">Join the Conversation:</h4>
+                            {% else %}
+                            <h4 class="text-center small" style="text-align: center;"><strong><a
+                                        href="{% url 'account_login' %}" class="override-a-defualt">Login</a></strong>
+                                or <strong><a class="override-a-defualt"
+                                        href="{% url 'account_signup' %}">sign-up</a></strong> to join the Conversation:
+                            </h4>
+                            {% endif %}
+                        </div>
+                        <div class="comment-body-display">
+                            <!-- loops through comments and displays them in oder of date posted -->
+                            {% for comment in comments|dictsort:"created_on" reversed %}
+                            <p>
+                                <span class="font-weight-bold">{{ comment.user}}</span>
+                                :
+                                {{ comment.body }}
+                                <span class=" text-muted comment-date">
+                                    {{ comment.created_on }}
+                                </span>
+                                <!-- edit and delete buttons, checks the mail of the user so user can only comment or edit own post-->
+                                {% if request.user == comment.user %}
+                                <a href="{% url 'edit' comment.id %}" class="override-a-defualt mr-1"><i
+                                        class="fas fa-pen small" id="edit-icon"></i></a>
+                                <a href="{% url 'delete' comment.id %}" class="override-a-defualt"><i
+                                        class="fas fa-times small" id="delete-icon"></i></a>
+                                {% endif %}
+                            </p>
+                            {% endfor %}
+                        </div>
+                        <!-- comment form, only users who are authenticated can comment on post -->
+                        {% if user.is_authenticated %}
+                        <form class="comment-form" method="post">
+                            {{ user_comments| crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn homepage-btn float-right">comment</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="full-img-overlay">
+        <a href="#" class="override-a-defualt d-flex flex-column align-items-end mr-3 mt-3">
+            <i class="fas fa-times small" id="close-full-img-icon"></i>
+        </a>
+        <img id="full-img" class="rounded mx-auto d-block" src="{{ details.art_image.url }}"
+            alt="a picture of art work by artist inotila nghaamwa">
+    </div>
 </div>
 <script src="{% static 'details/js/details.js' %}"></script>
 {% endblock %}
