@@ -177,12 +177,11 @@
         </a>
         <p class="text-center" id="share-overlay-text">share on:</p>
         <div  class="d-flex justify-content-center">
-            {% post_to_facebook object_or_url %}
-            {% post_to_twitter object_or_url %}
-            {% post_to_whatsapp object_or_url  %}
-            {% post_to_linkedin object_or_url %}
+            {% post_to_facebook details.art_image.url details.title %}
+            {% post_to_twitter details.caption details.art_image.url details.title %}
+            {% post_to_whatsapp details.art_image.url details.title %}
+            {% post_to_linkedin details.art_image.url %}
         </div>
-
     </div>
 </div>
 <script src="{% static 'details/js/details.js' %}"></script>
