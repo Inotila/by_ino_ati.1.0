@@ -161,10 +161,7 @@ footer {
     margin: 0;
     padding: 1rem;
     transition: opacity .8s ease;
-}
-
-.hidden {
-opacity: 0;
+    visibility: hidden;
 }
 
 #privacy-policy-consent-popup{

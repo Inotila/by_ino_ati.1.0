@@ -10,39 +10,39 @@ setTimeout(function () {
 // cookies consent
 
 const cookieStorage = {
-    getItem: (key) => {
+    getItem: (item) => {
         const cookies = document.cookie
         .split(';')
         .map(cookie => cookie.split('='))
-    .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }),{});
-    return cookies[key];
+        .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }),{});
+    return cookies[item];
     },
-    setItem: (key, value) => {
+    setItem: (item, value) => {
         const now = new Date();
         let expiryDate = new Date(now);
         expiryDate.setDate(now.getDate() + 365);
-        document.cookie = `${key}=${value}; expires=${expiryDate}; SameSite=Lax; secure`;
-
+        document.cookie = `${item}=${value}; expires=${expiryDate}; SameSite=Lax; secure`;
     },
 };
 
 const storageType = cookieStorage;
 const consentPropertyName = 'byinoati_consent';
+
 const shouldShowPopup = () => !storageType.getItem(consentPropertyName);
 const saveToStorage = () => storageType.setItem(consentPropertyName, true);
 
 window.onload = () => {
-    const consentPopup = document.getElementById('consent-popup');
-    const acceptBtn = document.getElementById('accept-cookies-btn');
 
     const acceptFn = event => {
-        saveToStorage(storageType)
+        saveToStorage(storageType);
         consentPopup.style.visibility = 'hidden';
     }
 
+    const consentPopup = document.getElementById('consent-popup');
+    const acceptBtn = document.getElementById('accept-cookies-btn');
     acceptBtn.addEventListener('click', acceptFn);
 
-    if (shouldShowPopup(storageType)){
+    if (shouldShowPopup(storageType)) {
         setTimeout(() => {
             consentPopup.style.visibility = 'visible';
         }, 500);
