@@ -21,7 +21,7 @@ const cookieStorage = {
         const now = new Date();
         let expiryDate = new Date(now);
         expiryDate.setDate(now.getDate() + 365);
-        document.cookie = `${item}=${value}; expires=${expiryDate}; SameSite=Lax; secure`;
+        document.cookie = `${item}=${value}; expires=${expiryDate}; SameSite=Lax; secure; path=/`;
     },
 };
 
