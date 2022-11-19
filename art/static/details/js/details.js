@@ -1,7 +1,7 @@
 // full image view
 
 const overlay = document.getElementById("full-img-overlay");
-overlay.style.visibility = 'hidden'
+overlay.style.visibility = 'hidden';
 
 document.getElementById("close-full-img-icon").addEventListener("click", function(event){
     event.preventDefault();
@@ -21,7 +21,7 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
   // share button
 
   const shareOverlay = document.getElementById("share-div-overlay");
-  shareOverlay.style.visibility = 'hidden'
+  shareOverlay.style.visibility = 'hidden';
 
   document.getElementById("share-btn").addEventListener("click", function(event){
     event.preventDefault();
@@ -33,3 +33,6 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
     shareOverlay.style.visibility = 'hidden';  
   });
   
+  window.onload = () => {
+    
+  }

@@ -441,6 +441,7 @@ background-color: rgb(219, 217, 217, .12);
     height: 100%;
     background: rgba(87, 96, 97, 0.75);
     z-index: 9999;
+    visibility : hidden;
 }
 
 #share-div-overlay{
@@ -453,6 +454,7 @@ background-color: rgb(219, 217, 217, .12);
    background: rgb(0 0 0 / 95%);
     z-index: 9999;
     padding: 2rem;
+    visibility : hidden;
 }  
 
 #full-img{
