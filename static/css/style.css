@@ -177,6 +177,11 @@ footer {
     background-color: #79e067;
 }
 
+/*------------------ login ----------------------*/
+
+#google-login{
+    max-width: 30%;
+}
 /*------------------ Homepage index.html ----------------------*/
 
 /* hero-img */
@@ -783,6 +788,12 @@ select option[value=""] {
         width: 100% !important;
         height: auto !important;
     }
+
+/* -------- login -------- */
+
+    #google-login{
+    max-width: 50%;
+}
     
 /* -------- checkout done  page -------- */
     
