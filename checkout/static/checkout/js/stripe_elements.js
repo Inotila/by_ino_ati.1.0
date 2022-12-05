@@ -47,39 +47,6 @@ card.addEventListener('change', function (event) {
 // Handle form submit
 var form = document.getElementById('checkout-form');
 
-
-
-function checkPaymentFlow(){
-
-    const countyArray = ['skane', 'skanese'];
-const countryArray = ['sweden','denmark'];
-
-const selectedCounty = ($.trim(form.county.value)).toLowerCase();
-const selectedCountry = ($.trim(form.country.value)).toLowerCase();
-
-const isAcceptedCounty = countyArray.includes(selectedCounty)
-const isAcceptedCountry = countryArray.includes(selectedCountry)
-
-const buttonSub = document.getElementById("submit-button")
-
-if (isAcceptedCountry === true && isAcceptedCounty === true) {
-    buttonSub.disabled = false;
-    alert("in sweden " + selectedCountry + selectedCounty)
-}else {
-    buttonSub.disabled = true;
-        alert("not in sweden " + selectedCounty + selectedCountry)
-}
-}
-
-document.getElementById("div_id_county").getElementsByTagName('input').addEventListener("change", function(){
-    checkPaymentFlow();
-    alert("county")
-})
-document.getElementById("div_id_country").getElementsByTagName('input').addEventListener("change", function(){
-    checkPaymentFlow();
-    alert("countrrrry")
-})
-
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
