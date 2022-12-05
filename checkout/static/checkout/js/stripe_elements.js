@@ -51,7 +51,7 @@ var form = document.getElementById('checkout-form');
 
 function checkPaymentFlow(){
 
-    const countyArray = ['skane', 'skanese'];
+const countyArray = ['skåne'];
 const countryArray = ['sweden','denmark'];
 
 const selectedCounty = ($.trim(form.county.value)).toLowerCase();

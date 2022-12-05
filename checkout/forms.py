@@ -28,7 +28,7 @@ class OrderFrom(forms.ModelForm):
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
-        self.fields['county'].disabled = True
+        self.fields['county'].disabled = False
         for field in self.fields:
             if field != 'country':
                 if self.fields[field].required:
