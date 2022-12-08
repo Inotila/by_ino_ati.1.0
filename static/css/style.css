@@ -306,6 +306,36 @@ div>div>p>a {
 background-color: rgb(219, 217, 217, .12);
 }
 
+#lens{
+    width: 100px;
+    height:100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #023974;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#result{
+    position: absolute;
+    width: 100%;
+    height: 33vw;
+    left: 100%;
+    /* top: 30px; */
+    border: 2px solid #023974;
+    z-index: 99999;
+    margin-left: 16px;
+    margin-right: 16px;
+    background-color: #fff;
+}
+
+#zoom-btn{
+    background: none;
+    margin-right: 1.25rem;
+    font-size: 1.7rem;
+    padding:0;
+}
+
 .like-btns {
     background: none;
     margin-left: 1.25rem;
@@ -331,7 +361,7 @@ background-color: rgb(219, 217, 217, .12);
 }
 
 #share-btn{
-      background: none;
+    background: none;
     margin-right: 1.25rem;
     font-size: 1.7rem;
     padding:0;
@@ -495,7 +525,7 @@ background-color: rgb(219, 217, 217, .12);
     font-size: large;
 }
 
-#close-share-div-icon{
+#close-share-div-icon{deta
     color: #fff;
     font-size: large;
 }
