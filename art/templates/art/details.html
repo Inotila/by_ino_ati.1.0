@@ -14,11 +14,13 @@
         <div class="col-12 col-md-6 p-0">
 
             <div class="card-img-container">
-                <div class="card mx-3 details-art-img-container">
+                <div id="img-container" class="card mx-3 details-art-img-container">
                     <a href="#" id="details-img-full-view-anchor">
-                        <img class="card-img-top" src="{{ details.art_image.url }}"
+                        <img id="normal-image" class="card-img-top" src="{{ details.art_image.url }}"
                             alt="a picture of art work by artist inotila nghaamwa">
                     </a>
+                    <div id="lens"></div>
+                    <div id="result"></div>
                     <div class="card-body d-flex justify-content-between" id="img-card-body">
                         <!-- form for only signed in users to like post -->
                         {% if user.is_authenticated %}
@@ -45,6 +47,9 @@
                             </button>
                         </form>
                         {% endif %}
+                        <a href="#" id="zoom-btn" class="override-a-defualt">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
                         <a href="#" id="share-btn" class="override-a-defualt">
                             <i class="fas fa-share"></i>
                         </a>
