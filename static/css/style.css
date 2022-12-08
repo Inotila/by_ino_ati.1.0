@@ -314,6 +314,8 @@ background-color: rgb(219, 217, 217, .12);
     left: 0;
     border: 2px solid #023974;
     background-color: rgba(255, 255, 255, 0.5);
+    visibility: hidden;
+    z-index: 99999;
 }
 
 #result{
@@ -328,6 +330,13 @@ background-color: rgb(219, 217, 217, .12);
     margin-right: 16px;
     background-color: #fff;
     background-repeat:no-repeat;
+    visibility: hidden;
+}
+
+#zoom-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #zoom-btn{
@@ -335,6 +344,16 @@ background-color: rgb(219, 217, 217, .12);
     margin-right: 1.25rem;
     font-size: 1.7rem;
     padding:0;
+    margin: 0;
+}
+
+#zoom-out-btn{
+    background: none;
+    margin-right: 1.25rem;
+    font-size: 1.7rem;
+    padding:0;
+    display: none;
+    margin: 0;
 }
 
 .like-btns {
@@ -524,9 +543,10 @@ background-color: rgb(219, 217, 217, .12);
 #close-full-img-icon{
     color: #fff;
     font-size: large;
+    z-index: 999999;
 }
 
-#close-share-div-icon{deta
+#close-share-div-icon{
     color: #fff;
     font-size: large;
 }
