@@ -11,11 +11,20 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
   document.getElementById("details-img-full-view-anchor").addEventListener("click", function(event){
     event.preventDefault();
      overlay.style.visibility = 'visible';
+     overlay.style.visibility = 'visible';
+    result.style.visibility = 'hidden';
+    lens.style.visibility = 'hidden';
+    zoomOutBtn.style.display = 'none';
+    zoomInBtn.style.display = 'unset';
   });
 
   document.getElementById("full-img-text-btn").addEventListener("click", function(event){
     event.preventDefault();
-     overlay.style.visibility = 'visible';
+    overlay.style.visibility = 'visible';
+    result.style.visibility = 'hidden';
+    lens.style.visibility = 'hidden';
+    zoomOutBtn.style.display = 'none';
+    zoomInBtn.style.display = 'unset';
   });
 
   // share button
@@ -26,11 +35,16 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
   document.getElementById("share-btn").addEventListener("click", function(event){
     event.preventDefault();
     shareOverlay.style.visibility = 'visible';
+    result.style.visibility = 'hidden';
+    lens.style.visibility = 'hidden';
+    zoomOutBtn.style.display = 'none';
+    zoomInBtn.style.display = 'none';
   });
 
   document.getElementById("close-share-div-icon").addEventListener("click", function(event){
     event.preventDefault();
     shareOverlay.style.visibility = 'hidden';  
+    zoomInBtn.style.display = 'unset';
   });
   
   window.onload = () => {
@@ -44,11 +58,30 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
   const normalImage = document.getElementById('normal-image')
   const lens = document.getElementById('lens')
   const result = document.getElementById('result')
+  const zoomInBtn = document.getElementById("zoom-btn")
+  const zoomOutBtn = document.getElementById('zoom-out-btn')
 
   const containerRect = container.getBoundingClientRect()
   const imageRect = normalImage.getBoundingClientRect()
   const lensRect = lens.getBoundingClientRect()
   const resultRect = result.getBoundingClientRect()
+
+  zoomInBtn.addEventListener("click", function(event){
+    event.preventDefault();
+   lens.style.visibility = 'visible';
+   result.style.visibility = 'visible';
+   zoomOutBtn.style.display = 'unset';
+   zoomInBtn.style.display = 'none';
+  });
+
+  zoomOutBtn.addEventListener("click", function(event){
+    event.preventDefault();
+   result.style.visibility = 'hidden';
+   lens.style.visibility = 'hidden';
+   zoomOutBtn.style.display = 'none';
+   zoomInBtn.style.display = 'unset';
+  });
+
 
   container.addEventListener('mousemove', zoomImage)
 
