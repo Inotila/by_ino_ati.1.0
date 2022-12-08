@@ -307,8 +307,8 @@ background-color: rgb(219, 217, 217, .12);
 }
 
 #lens{
-    width: 100px;
-    height:100px;
+    width: 200px;
+    height:200px;
     position: absolute;
     top: 0;
     left: 0;
@@ -318,15 +318,16 @@ background-color: rgb(219, 217, 217, .12);
 
 #result{
     position: absolute;
-    width: 100%;
+    width: 33vw;
     height: 33vw;
     left: 100%;
-    /* top: 30px; */
+    top: 0px;
     border: 2px solid #023974;
     z-index: 99999;
     margin-left: 16px;
     margin-right: 16px;
     background-color: #fff;
+    background-repeat:no-repeat;
 }
 
 #zoom-btn{
