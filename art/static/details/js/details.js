@@ -5,14 +5,17 @@ overlay.style.visibility = 'hidden';
 
 document.getElementById("close-full-img-icon").addEventListener("click", function(event){
     event.preventDefault();
-    overlay.style.visibility = 'hidden';  
+    overlay.style.visibility = 'hidden';
+    detailsContainer.style.visibility = 'visible';
   });
 
   document.getElementById("details-img-full-view-anchor").addEventListener("click", function(event){
     event.preventDefault();
-     overlay.style.visibility = 'visible';
-     overlay.style.visibility = 'visible';
+    overlay.style.visibility = 'visible';
+    overlay.style.visibility = 'visible';
     result.style.visibility = 'hidden';
+    resultContainer.style.visibility = 'hidden';
+    detailsContainer.style.visibility = 'visible';
     lens.style.visibility = 'hidden';
     zoomOutBtn.style.display = 'none';
     zoomInBtn.style.display = 'unset';
@@ -22,6 +25,8 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
     event.preventDefault();
     overlay.style.visibility = 'visible';
     result.style.visibility = 'hidden';
+    resultContainer.style.visibility = 'hidden';
+    detailsContainer.style.visibility = 'visible';
     lens.style.visibility = 'hidden';
     zoomOutBtn.style.display = 'none';
     zoomInBtn.style.display = 'unset';
@@ -36,6 +41,8 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
     event.preventDefault();
     shareOverlay.style.visibility = 'visible';
     result.style.visibility = 'hidden';
+    resultContainer.style.visibility = 'hidden';
+    detailsContainer.style.visibility = 'visible';
     lens.style.visibility = 'hidden';
     zoomOutBtn.style.display = 'none';
     zoomInBtn.style.display = 'none';
@@ -60,7 +67,8 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
   const result = document.getElementById('result')
   const zoomInBtn = document.getElementById("zoom-btn")
   const zoomOutBtn = document.getElementById('zoom-out-btn')
-
+  const resultContainer = document.getElementById('result-container')
+  const detailsContainer = document.getElementById('details-container-id')
   const containerRect = container.getBoundingClientRect()
   const imageRect = normalImage.getBoundingClientRect()
   const lensRect = lens.getBoundingClientRect()
@@ -70,6 +78,8 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
     event.preventDefault();
    lens.style.visibility = 'visible';
    result.style.visibility = 'visible';
+   resultContainer.style.visibility = 'visible';
+   detailsContainer.style.visibility = 'hidden';
    zoomOutBtn.style.display = 'unset';
    zoomInBtn.style.display = 'none';
   });
@@ -77,6 +87,8 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
   zoomOutBtn.addEventListener("click", function(event){
     event.preventDefault();
    result.style.visibility = 'hidden';
+   resultContainer.style.visibility = 'hidden';
+   detailsContainer.style.visibility = 'visible';
    lens.style.visibility = 'hidden';
    zoomOutBtn.style.display = 'none';
    zoomInBtn.style.display = 'unset';

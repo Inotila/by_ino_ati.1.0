@@ -14,14 +14,16 @@
         <div class="col-12 col-md-6 p-0">
 
             <div class="card-img-container">
-                <div  class="card mx-3 details-art-img-container">
+                <div class="card mx-3 details-art-img-container">
                     <div id="img-container" class="details-art-img-container">
                         <a href="#" id="details-img-full-view-anchor">
                             <img id="normal-image" class="card-img-top" src="{{ details.art_image.url }}"
                                 alt="a picture of art work by artist inotila nghaamwa">
                         </a>
                         <div id="lens"></div>
-                        <div id="result"></div>
+                        <div id="result-container">
+                            <div id="result"></div>
+                        </div>
                     </div>
                     <div class="card-body d-flex justify-content-between" id="img-card-body">
                         <!-- form for only signed in users to like post -->
@@ -41,17 +43,20 @@
                             {% endif %}
                         </form>
                         {% else %}
-                        <form action="{% url 'like_art_piece' details.id %}" method="post">
-                            {% csrf_token %}
                             <button class="like-btns" id="un-auth-like-btn" type="submit" name="user_art_unlike"
                                 value="{{details.id}}">
                                 <i class="far fa-heart"></i>
                             </button>
-                        </form>
                         {% endif %}
-                        <a href="#" id="zoom-btn" class="override-a-defualt">
-                            <i class="fas fa-search-plus"></i>
-                        </a>
+                        <div id="zoom-div" class="text-center">
+                            <a href="#" id="zoom-btn" class="override-a-defualt">
+                                <i class="fas fa-search-plus"></i>
+                            </a>
+                            <a href="#" id="zoom-out-btn" class="override-a-defualt">
+                                <i class="fas fa-search-minus"></i>
+                            </a>
+                        </div>
+
                         <a href="#" id="share-btn" class="override-a-defualt">
                             <i class="fas fa-share"></i>
                         </a>
@@ -63,7 +68,7 @@
             </a>
         </div>
         <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
-            <div class="mb-3 mx-3 detail-container ">
+            <div id="details-container-id" class="mb-3 mx-3 detail-container ">
                 <div class="text-center mx-3">
                     <h2>Art info</h2>
                     <p>Caption:</p>
@@ -176,9 +181,9 @@
         </a>
         <div class="d-flex justify-content-center">
             <img id="full-img" class="rounded mx-auto d-block" src="{{ details.art_image.url }}"
-            alt="a picture of art work by artist inotila nghaamwa">
+                alt="a picture of art work by artist inotila nghaamwa">
         </div>
-        
+
     </div>
     <!-- share div overlay -->
     <div id="share-div-overlay">
@@ -186,7 +191,7 @@
             <i class="fas fa-times small" id="close-share-div-icon"></i>
         </a>
         <p class="text-center" id="share-overlay-text">share on:</p>
-        <div  class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
             {% post_to_facebook details.art_image.url details.title %}
             {% post_to_twitter details.caption details.art_image.url details.title %}
             {% post_to_whatsapp details.art_image.url details.title %}
