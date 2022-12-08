@@ -36,3 +36,32 @@ document.getElementById("close-full-img-icon").addEventListener("click", functio
   window.onload = () => {
     
   }
+
+
+  // zoom in functionality
+
+  const container = document.getElementById('img-container')
+  const normalImage = document.getElementById('normal-image')
+  const lens = document.getElementById('lens')
+  const result = document.getElementById('result')
+
+  const containerRect = container.getBoundingClientRect()
+  const imageRect = normalImage.getBoundingClientRect()
+  const lensRect = lens.getBoundingClientRect()
+  const resultRect = result.getBoundingClientRect()
+
+  container.addEventListener('mousemove', zoomImage)
+
+  function zoomImage(e){
+    console.log('zoom image', e.clientX, e.clientY)
+
+    let x = e.clientX - containerRect.left - lensRect.width / 2;
+    let y = e.clientY - containerRect.top - lensRect.height / 2;
+
+    let minX = 0;
+    let minY = 0;
+    let maxX = containerRect.width - lensRect.width;
+
+    lens.style.left = x + "px";
+    lens.style.top = y + "px";
+  }
