@@ -20,8 +20,8 @@
                             <img id="normal-image" class="card-img-top" src="{{ details.art_image.url }}"
                                 alt="a picture of art work by artist inotila nghaamwa">
                         </a>
-                        <div id="lens"></div>
-                        <div id="result-container">
+                        <div id="lens" class="d-none d-lg-block"></div>
+                        <div id="result-container" class="d-none d-lg-block">
                             <div id="result"></div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                                 <i class="far fa-heart"></i>
                             </button>
                         {% endif %}
-                        <div id="zoom-div" class="text-center">
+                        <div id="zoom-div" class="text-center d-none d-lg-block">
                             <a href="#" id="zoom-btn" class="override-a-defualt">
                                 <i class="fas fa-search-plus"></i>
                             </a>
