@@ -275,7 +275,7 @@ div>div>p>a {
 
 .card-img-top-details {
     width: 100%;
-    height:auto;
+    height:33vw;
     object-fit: cover;
 }
 
@@ -856,6 +856,13 @@ select option[value=""] {
         width: 100% !important;
         height: auto !important;
     }
+
+    .card-img-top-details {
+        width: 100%;
+        height: auto !important;
+        object-fit: cover;
+    }
+    
 
 /* -------- login -------- */
 
