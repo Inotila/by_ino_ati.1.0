@@ -273,6 +273,13 @@ div>div>p>a {
     object-fit: cover;
 }
 
+.card-img-top-details {
+    width: 100%;
+    height:auto;
+    object-fit: cover;
+}
+
+
 .availabilty-status-text{
     font-size: small;
     color: #000;
