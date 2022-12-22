@@ -148,6 +148,10 @@ footer {
     color: #4267B2;
 }
 
+#email-footer-span{
+    color: #F5F5F5;
+}
+
 /* cookies consent popup */
 
 #consent-popup{
