@@ -251,6 +251,25 @@ div>div>p>a {
     font-weight: bold;
 }
 
+/*------------- bio view bio.html ------------------*/
+
+#bio-heading{
+    font-family: Oswald !important;
+}
+
+#bio-img-container{
+    display: inline-block;
+    width: 30vh;
+    height: 30vh;
+    background: url('../images/ati.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+#bio-text{
+    width:50%;
+}
 /*------------- art view art.html ------------------*/
 
 .art-card-container {
@@ -772,6 +791,10 @@ select option[value=""] {
         font-weight:300;
     }
 
+    #bio-text{
+        width:100%;
+    }
+
  /* -------- index page -------- */
        .welcome-text,.welcome-detail-text,#shop-title,#pencil-title,#paintings-title,#ink-title,#details-title,#home-title {
         font-size: 2.5rem;
@@ -879,7 +902,7 @@ select option[value=""] {
 }
 
 @media (max-width: 320px){
-    #shop-title{
+    #shop-title,#bio-heading{
         font-size: 35px;
     }
 
