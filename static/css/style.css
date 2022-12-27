@@ -366,8 +366,6 @@ background-color: rgb(219, 217, 217, .12);
     width: 33vw;
     height: 33vw;
     margin: 0 auto;
-    /* left: 100%;
-    top: 0px; */
     z-index: 99999;
     background-repeat:no-repeat;
     visibility: hidden;

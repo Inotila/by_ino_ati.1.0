@@ -60,6 +60,7 @@
             <form action="{% url 'checkout' %}" method="POST" id="checkout-form">
                 {% csrf_token %}
                 <h3 class="text-center"> <strong>Delivery information</strong></h3>
+                <p class="please-note-checkout small text-center"> NB! Delivery is limited to the Skåne county in Sweden.</p>
                 <fieldset>
                     <legend>Personal details</legend>
                     {{ order_form.full_name | as_crispy_field }}
