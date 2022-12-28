@@ -88,8 +88,10 @@
                     <p><strong>{{details.date_completed}}</strong></p>
                     <!-- only display price and purchase button if art is available -->
                     {% if details.is_available %}
+                    {% if request.user.is_authenticated %}
                     <p>Price:</p>
                     <p><strong>{{details.price|floatformat:2}} SEK</strong></p>
+                    {% endif %}
                     {% if request.user.is_authenticated %}
                     {% if bag_items %}
                     {% if details.id|lower in art_ids|lower %}
