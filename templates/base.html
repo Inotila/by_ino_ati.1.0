@@ -1,6 +1,7 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
@@ -31,16 +32,20 @@
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/" defer></script>
     <title>@by_ino_ati</title>
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DFNBMV2X5N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DFNBMV2X5N"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-DFNBMV2X5N');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DFNBMV2X5N');
+    </script>
+</head>
+
 <body class="d-flex flex-column h-100">
     <!-- header -->
     <nav class="navbar d-block" role="navigation">
@@ -106,7 +111,7 @@
                             <button class="search-icon-button" type="submit">
                                 <span class="input-group-text" id="search-icon-container">
                                     <i class="fas fa-search"></i>
-                                    </span>
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -122,19 +127,21 @@
                         <ul class="navbar-nav w-auto mx-auto">
                             <li class="nav-item dropdown d-lg-flex flex-lg-row">
                                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                                <a class="nav-link activen" aria-current="page" href="{% url 'art' %}?is_available=True" >shop</a>
+                                <a class="nav-link activen" aria-current="page"
+                                    href="{% url 'art' %}?is_available=True">shop</a>
                                 <a class="nav-link active" aria-current="page"
-                                                                  href="{% url 'art' %}?category=1">Paintings</a>
-                               <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=2">Ink</a>
-                               <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=3">Pencil</a>
-                               <a class="nav-link active" aria-current="page" href="{% url 'bio' %}">Bio</a>
-                                <a class="" href="{% url 'home' %}" id="nav-menu-link"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    href="{% url 'art' %}?category=1">Paintings</a>
+                                <a class="nav-link active" aria-current="page" href="{% url 'art' %}?category=2">Ink</a>
+                                <a class="nav-link active" aria-current="page"
+                                    href="{% url 'art' %}?category=3">Pencil</a>
+                                <a class="nav-link active" aria-current="page" href="{% url 'bio' %}">Bio</a>
+                                <a class="" href="{% url 'home' %}" id="nav-menu-link" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
                                 </a>
                                 <div class="dropdown-menu border-0" aria-labelledby="nav-menu-link">
-                                    <a class="" href="{% url 'home' %}" id="all-products-link"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Home
+                                    <a class="" href="{% url 'home' %}" id="all-products-link" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        Home
                                     </a>
                                     <a class="" href="#" id="all-products-link" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
@@ -148,10 +155,10 @@
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Pencil
                                     </a>
-                                    <a class="" href="{% url 'bio' %}" id="all-products-link"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Bio
-                                </a>
+                                    <a class="" href="{% url 'bio' %}" id="all-products-link" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        Bio
+                                    </a>
                                 </div>
                             </li>
                         </ul>
@@ -211,4 +218,5 @@
     </div>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
+
 </html>
